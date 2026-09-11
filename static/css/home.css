@@ -1,822 +1,452 @@
-/* =========================================================
-   LE VAURÉ HOME — PRODUCT CARD OVERRIDES
-   Clean images / no white overlay
-========================================================= */
-
-
-/* =========================================================
-   PRODUCT GRID
-========================================================= */
-
-.home-product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
+/* LE VAURÉ — editorial luxury rebrand layer */
+:root {
+    --lv-ink: #17271f;
+    --lv-deep: #1b2a22;
+    --lv-cream: #f4f0e8;
+    --lv-paper: #faf8f2;
+    --lv-stone: #d9d4ca;
+    --lv-muted: #6d716c;
 }
 
-.home-product-card {
-    min-width: 0;
+body {
+    background: var(--lv-paper);
+    color: var(--lv-ink);
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+::selection { background: var(--lv-ink); color: var(--lv-paper); }
 
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.home-product-image {
-    position: relative;
-    width: 100%;
-    height: 380px;
-    overflow: hidden;
-    background: transparent;
+.sw-topbar {
+    min-height: 28px;
+    padding: 0 4vw;
+    background: var(--lv-deep);
 }
+.sw-topbar-left, .sw-topbar-message { letter-spacing: .16em; }
 
-.home-product-image::before,
-.home-product-image::after {
-    display: none !important;
-    content: none !important;
+.sw-header {
+    background: rgba(250,248,242,.96);
+    border-bottom: 1px solid rgba(23,39,31,.14);
+    backdrop-filter: blur(12px);
 }
-
-.home-product-image > a:first-child {
-    position: relative;
-    z-index: 1;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    background: transparent;
+.sw-navbar {
+    min-height: 82px;
+    max-width: 100%;
+    padding: 0 4vw;
 }
-
-.home-product-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    background: transparent !important;
-
-    transition: transform 0.35s ease;
+.sw-logo { text-decoration: none; }
+.sw-logo img { display: none; }
+.sw-logo span {
+    display: inline !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 2.1vw, 34px);
+    font-weight: 500;
+    letter-spacing: .025em;
+    color: var(--lv-ink);
 }
-
-.home-product-card:hover .home-product-image img {
-    transform: scale(1.025);
+.sw-main-menu { gap: clamp(18px, 2vw, 34px); }
+.sw-main-menu a {
+    font-size: 10px;
+    letter-spacing: .14em;
+    font-weight: 600;
 }
+.sw-main-menu a::after { background: var(--lv-ink); }
+.sw-icon-btn svg { stroke: var(--lv-ink); }
 
-
-/* =========================================================
-   PRODUCT INFO
-========================================================= */
-
-.home-product-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    align-items: flex-start;
-
-    padding-top: 14px;
+.site-footer { background: var(--lv-deep); color: var(--lv-paper); }
+.footer-brand-line img { display:none; }
+.footer-brand-line strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: .04em;
 }
+.footer-brand p { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.sw-benefits { background: #ece8df; border-color: #d8d1c5; }
 
-.home-product-info > div {
-    min-width: 0;
-}
-
-.home-product-info small {
-    display: block;
-    margin-bottom: 6px;
-}
-
-.home-product-info h3 {
+.lv-eyebrow {
     margin: 0;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .28em;
+    text-transform: uppercase;
 }
-
-.home-product-info h3 a {
+.lv-text-link {
     color: inherit;
     text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
 }
-
-.home-product-info strong {
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   QUICK ADD / VIEW / SOLD OUT
-========================================================= */
-
-.home-quick-add,
-.home-printify-view,
-.home-soldout {
-    position: absolute;
-
-    right: 12px;
-    bottom: 12px;
-
-    z-index: 20;
-}
-
-.home-quick-add button {
-    width: 44px;
-    height: 44px;
-
-    border: 0;
-
-    background: #000;
-    color: #fff;
-
-    cursor: pointer;
-
-    font-size: 24px;
-    line-height: 1;
-}
-
-.home-printify-view {
+.lv-text-link span, .lv-btn span { margin-left: 10px; }
+.lv-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 40px;
-
-    padding: 0 16px;
-
-    background: #000;
-    color: #fff;
-
+    min-height: 48px;
+    padding: 0 26px;
     text-decoration: none;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 0.08em;
-}
-
-.home-soldout {
-    left: 12px;
-    right: auto;
-
-    top: 12px;
-    bottom: auto;
-
-    padding: 8px 10px;
-
-    background: #000;
-    color: #fff;
-
     font-size: 10px;
     font-weight: 700;
-
-    letter-spacing: 0.08em;
+    letter-spacing: .15em;
+    transition: .2s ease;
 }
-
-
-/* =========================================================
-   HERO
-   Remove transparent / white overlay
-========================================================= */
+.lv-btn-dark { background: var(--lv-deep); color: #fff; border: 1px solid var(--lv-deep); }
+.lv-btn-dark:hover { background: transparent; color: var(--lv-deep); }
 
 .lv-hero {
-    position: relative;
+    min-height: 690px;
+    display: grid;
+    grid-template-columns: 38% 52% 10%;
+    background: #ddd8ce;
     overflow: hidden;
 }
-
-.lv-hero::before,
-.lv-hero::after,
-.lv-hero-visual::before,
-.lv-hero-visual::after {
-    display: none !important;
-    content: none !important;
-}
-
-.lv-hero-visual {
-    position: absolute;
-    inset: 0;
-
-    z-index: 0;
-
-    overflow: hidden;
-
-    background: transparent !important;
-}
-
-.lv-hero-visual img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    background: transparent !important;
-}
-
-.lv-hero-copy,
-.lv-hero-aside {
+.lv-hero-copy {
     position: relative;
     z-index: 2;
-}
-
-
-/* =========================================================
-   CATEGORY CARDS
-   MEN / WOMEN / ACCESSORIES
-========================================================= */
-
-.lv-categories {
-    position: relative;
-}
-
-.lv-category-card {
-    position: relative;
-
-    overflow: hidden;
-
-    background: transparent !important;
-}
-
-
-/* REMOVE ALL WHITE / CREAM OVERLAYS */
-
-.lv-category-card::before,
-.lv-category-card::after {
-    display: none !important;
-    content: none !important;
-
-    background: transparent !important;
-
-    opacity: 0 !important;
-}
-
-
-/* CATEGORY IMAGE */
-
-.lv-category-card img {
-    position: relative;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    background: transparent !important;
-
-    transition: transform 0.4s ease;
-}
-
-
-/* SMALL HOVER ZOOM */
-
-.lv-category-card:hover img {
-    transform: scale(1.025);
-}
-
-
-/* CATEGORY TEXT */
-
-.lv-category-card > span {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    z-index: 10;
-
-    opacity: 1 !important;
-
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   STORY IMAGE
-========================================================= */
-
-.home-story-image {
-    display: block;
-
-    width: 100%;
-    height: 320px;
-
-    overflow: hidden;
-
-    background: transparent;
-}
-
-.home-story-image::before,
-.home-story-image::after {
-    display: none !important;
-    content: none !important;
-}
-
-.home-story-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   HERITAGE IMAGE
-   Keep image natural / remove whitening
-========================================================= */
-
-.lv-story-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.lv-story-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    mix-blend-mode: normal !important;
-}
-
-
-/* =========================================================
-   RESPONSIVE — 1200PX
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .home-product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .home-product-image {
-        height: 360px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .home-product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    .home-product-image {
-        height: 340px;
-    }
-
-    .home-story-image {
-        height: 280px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-========================================================= */
-
-@media (max-width: 560px) {
-
-    .home-product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-product-image {
-        height: 420px;
-    }
-
-    .home-product-info {
-        padding-top: 12px;
-    }
-
-    .home-story-image {
-        height: 320px;
-    }
-}
-
-/* =========================================================
-   LE VAURÉ — SINGLE CLOTHES BANNER
-========================================================= */
-
-.lv-clothes-section {
-    display: block !important;
-    width: 100%;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-.lv-clothes-card {
-    position: relative;
-
-    display: block;
-
-    width: 100%;
-    height: 520px;
-
-    overflow: hidden;
-
-    background: transparent !important;
-
-    text-decoration: none;
-    color: #102017;
-}
-
-
-/* IMAGE */
-
-.lv-clothes-card img {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    transition: transform .6s ease;
-}
-
-
-/* NO OVERLAY */
-
-.lv-clothes-card::before,
-.lv-clothes-card::after {
-    display: none !important;
-    content: none !important;
-}
-
-
-/* TEXT */
-
-.lv-clothes-card .lv-clothes-content {
-    position: absolute;
-
-    left: 76px;
-    bottom: 60px;
-    right: auto;
-    top: auto;
-
-    z-index: 5;
-
+    padding: clamp(68px, 8vw, 120px) 3vw 50px 8vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    background: transparent !important;
 }
-
-
-/* CLOTHES TITLE */
-
-.lv-clothes-content strong {
-    display: block;
-
-    margin: 0 0 12px;
-
+.lv-hero-copy h1 {
+    margin: 24px 0 12px;
     font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(46px, 5vw, 76px);
-    line-height: .95;
-
+    font-size: clamp(58px, 7vw, 112px);
     font-weight: 400;
-
-    letter-spacing: -.04em;
-
-    color: #102017;
+    line-height: .88;
+    letter-spacing: -.035em;
+    white-space: nowrap;
 }
-
-
-/* EXPLORE */
-
-.lv-clothes-content small {
-    display: block;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .2em;
-
-    text-transform: uppercase;
-
-    color: #102017;
-}
-
-
-/* HOVER */
-
-.lv-clothes-card:hover img {
-    transform: scale(1.02);
-}
-
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .lv-clothes-card {
-        height: 440px;
-    }
-
-    .lv-clothes-card .lv-clothes-content {
-        left: 38px;
-        bottom: 38px;
-    }
-}
-
-
-/* MOBILE */
-
-@media (max-width: 560px) {
-
-    .lv-clothes-section {
-        margin-top: 6px;
-    }
-
-    .lv-clothes-card {
-        height: 420px;
-    }
-
-    .lv-clothes-card .lv-clothes-content {
-        left: 24px;
-        bottom: 28px;
-    }
-
-    .lv-clothes-content strong {
-        font-size: 44px;
-    }
-}
-
-/* =========================================================
-   LE VAURÉ — MEN / WOMEN TWO CARDS
-========================================================= */
-
-.lv-two-categories {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-    width: 100%;
-
-    gap: 8px;
-    padding: 8px 0;
+.lv-tagline {
     margin: 0;
-}
-
-
-/* CARD */
-
-.lv-two-categories .lv-category-card {
-    position: relative;
-
-    display: block;
-
-    width: 100%;
-    height: 360px;
-
-    overflow: hidden;
-
-    background: transparent !important;
-
-    text-decoration: none;
-}
-
-
-/* REMOVE OLD OVERLAYS */
-
-.lv-two-categories .lv-category-card::before,
-.lv-two-categories .lv-category-card::after {
-    display: none !important;
-    content: none !important;
-}
-
-
-/* IMAGE */
-
-.lv-two-categories .lv-category-card img {
-    position: absolute;
-    inset: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    filter: none !important;
-    mix-blend-mode: normal !important;
-
-    background: transparent !important;
-
-    transition: transform .45s ease;
-}
-
-
-/* TEXT */
-
-.lv-two-categories .lv-category-card > span {
-    position: absolute !important;
-
-    left: 34px !important;
-    bottom: 28px !important;
-    right: auto !important;
-    top: auto !important;
-
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    background: transparent !important;
-}
-
-
-/* MEN / WOMEN */
-
-.lv-two-categories .lv-category-card strong {
-    display: block;
-
-    margin-bottom: 8px;
-
     font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(21px, 2vw, 30px);
+    font-style: italic;
+    line-height: 1.3;
+}
+.lv-actions { margin-top: 46px; display: flex; align-items:center; gap: 28px; flex-wrap: wrap; }
+.lv-slide-index { margin-top: auto; padding-top: 60px; font-size: 10px; letter-spacing: .24em; }
+.lv-hero-visual { position: relative; min-width: 0; }
+.lv-hero-visual::after {
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(221,216,206,.92) 0, rgba(221,216,206,.12) 24%, rgba(0,0,0,0) 55%);
+    pointer-events:none;
+}
+.lv-hero-visual img { width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.75) contrast(.92); }
+.lv-hero-aside {
+    border-left: 1px solid rgba(23,39,31,.25);
+    display:flex; flex-direction:column; justify-content:center; gap:18px;
+    padding: 20px 1.8vw;
+    font-size:9px; font-weight:600; letter-spacing:.22em;
+}
 
-    font-size: 38px;
-    line-height: 1;
-
+.lv-intro {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 110px 40px;
+    text-align:center;
+}
+.lv-intro > p:first-child { font-size:9px; letter-spacing:.28em; }
+.lv-intro h2, .lv-products h2, .lv-story h2 {
+    margin: 14px 0;
+    font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
+    letter-spacing: -.025em;
+}
+.lv-intro h2 { font-size: clamp(44px, 5vw, 76px); }
+.lv-intro-copy { max-width: 620px; margin: 20px auto 0; color:var(--lv-muted); font-family:Georgia,serif; font-size:19px; line-height:1.55; }
 
-    color: #102017;
+.lv-products { padding: 85px 5vw 110px; background: #f2eee6; }
+.lv-products-head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:48px; }
+.lv-products h2 { font-size: clamp(42px, 4vw, 64px); }
+.home-product-grid { gap: 22px; }
+.home-product-image { height: 410px; background:#ebe7de !important; }
+.home-product-image img { background:#ebe7de !important; object-fit:cover !important; transition:transform .45s ease !important; }
+.home-product-card:hover .home-product-image img { transform:scale(1.018) !important; }
+.home-product-info { font-size: 12px; }
+.home-product-info small { color:var(--lv-muted); font-size:9px; letter-spacing:.13em; text-transform:uppercase; }
+.home-product-info h3 { font-family:Georgia,serif; font-weight:400; font-size:17px; }
+.home-product-info strong { font-size:12px; font-weight:500; }
+.home-quick-add button, .home-printify-view { background:var(--lv-deep); }
+.lv-empty { min-height:300px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:22px; }
+.lv-empty h3 { margin:0; font-family:Georgia,serif; font-size:clamp(34px,4vw,58px); font-weight:400; }
+
+.lv-story {
+    min-height: 520px;
+    display:grid;
+    grid-template-columns: 50% 40% 10%;
+    background:var(--lv-deep);
+    color:#f5f1e9;
+}
+.lv-story-image { overflow:hidden; }
+.lv-story-image img { width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(.35) sepia(.18) brightness(.72); }
+.lv-story-copy { padding:75px 7vw; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+.lv-story-copy h2 { font-size:clamp(54px,6vw,88px); margin:22px 0 16px; }
+.lv-story-copy > p:not(.lv-eyebrow) { max-width:520px; margin:0 0 38px; font-family:Georgia,serif; font-style:italic; font-size:20px; line-height:1.5; color:#c9c7bf; }
+.lv-story-note { border-left:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; padding:30px 12px; font-size:9px; line-height:2.8; letter-spacing:.22em; text-align:center; }
+
+@media (max-width: 980px) {
+    .lv-hero { grid-template-columns: 1fr; min-height: auto; }
+    .lv-hero-copy { min-height: 520px; padding: 70px 7vw 50px; background: linear-gradient(180deg,#ddd8ce,#e8e3da); }
+    .lv-hero-copy h1 { white-space:normal; }
+    .lv-hero-visual { height: 520px; }
+    .lv-hero-visual::after { background:linear-gradient(180deg,rgba(221,216,206,.35),transparent 25%); }
+    .lv-hero-aside { display:none; }
+    .lv-story { grid-template-columns:1fr; }
+    .lv-story-image { height:440px; }
+    .lv-story-note { display:none; }
 }
 
-
-/* EXPLORE */
-
-.lv-two-categories .lv-category-card small {
-    display: block;
-
-    font-size: 9px;
-    font-weight: 700;
-
-    letter-spacing: .18em;
-
-    color: #102017;
-
-    text-transform: uppercase;
+@media (max-width: 720px) {
+    .sw-topbar-left { display:none; }
+    .sw-topbar { grid-template-columns:1fr auto; padding:0 14px; }
+    .sw-topbar-message { text-align:left; font-size:8px; }
+    .sw-navbar { min-height:68px; padding:0 18px; }
+    .sw-logo span { font-size:22px; }
+    .lv-hero-copy { min-height:450px; padding:58px 24px 40px; }
+    .lv-hero-copy h1 { font-size:58px; }
+    .lv-hero-visual { height:360px; }
+    .lv-actions { gap:20px; }
+    .lv-intro { padding:78px 24px; }
+    .lv-products { padding:65px 20px 80px; }
+    .lv-products-head { align-items:flex-start; flex-direction:column; }
+    .home-product-image { height:430px; }
+    .lv-story-image { height:340px; }
+    .lv-story-copy { padding:60px 24px 70px; }
 }
 
+/* ==========================================================
+   LE VAURÉ — FULL STOREFRONT REDESIGN
+   Editorial / quiet-luxury system. Loaded last, so backend
+   markup and Django form logic remain untouched.
+========================================================== */
+:root{
+  --lv-ivory:#f4f0e7; --lv-paper:#faf8f2; --lv-ink:#17241c; --lv-soft:#716f67;
+  --lv-line:rgba(23,36,28,.16); --lv-moss:#22392b; --lv-white:#fffdf8;
+  --lv-serif:"Times New Roman",Times,serif; --lv-sans:Arial,Helvetica,sans-serif;
+}
+html{scroll-behavior:smooth} body{background:var(--lv-paper)!important;color:var(--lv-ink)!important;font-family:var(--lv-sans);letter-spacing:.01em}
+main{min-height:55vh} a{color:inherit} ::selection{background:var(--lv-ink);color:var(--lv-white)}
 
-/* HOVER */
+/* chrome */
+.sw-topbar{min-height:30px!important;padding:0 4vw!important;background:var(--lv-ink)!important;color:var(--lv-white)!important;border:0!important;font-size:9px!important;letter-spacing:.18em!important}
+.sw-topbar-left{opacity:.75}.sw-topbar-message a{color:inherit!important;text-underline-offset:3px}.top-location{display:none!important}
+.language-btn,.language-menu button{color:inherit!important}.language-menu{background:var(--lv-ink)!important;border:1px solid rgba(255,255,255,.25)!important}
+.sw-header{background:rgba(250,248,242,.96)!important;border-bottom:1px solid var(--lv-line)!important;position:sticky!important;top:0!important;z-index:80!important;backdrop-filter:blur(16px)}
+.sw-navbar{min-height:74px!important;padding:0 4vw!important;max-width:none!important}.sw-logo{gap:0!important;text-decoration:none!important}.sw-logo img{display:none!important}.sw-logo span{display:block!important;font-family:var(--lv-serif)!important;font-size:29px!important;font-weight:500!important;letter-spacing:.02em!important}
+.sw-main-menu{gap:28px!important}.sw-main-menu a{font-size:10px!important;letter-spacing:.12em!important;font-weight:500!important;padding:29px 0!important}.sw-main-menu a:hover{opacity:.55}
+.sw-header-tools{gap:7px!important}.sw-icon-btn{width:35px!important;height:35px!important;border-radius:50%!important}.sw-icon-btn:hover{background:rgba(23,36,28,.06)!important}.sw-icon-btn svg{width:18px!important;height:18px!important;stroke:var(--lv-ink)!important;stroke-width:1.4!important;fill:none!important}
+.sw-cart-count{background:var(--lv-ink)!important;color:white!important}
+.messages{max-width:1200px;margin:18px auto;padding:0 24px}.message{border:1px solid var(--lv-line)!important;background:var(--lv-ivory)!important;color:var(--lv-ink)!important;border-radius:0!important}
 
-.lv-two-categories .lv-category-card:hover img {
-    transform: scale(1.025);
+/* shared editorial typography/buttons */
+.eyebrow,.lv-eyebrow,.account-label{font-size:10px!important;letter-spacing:.22em!important;font-weight:600!important;text-transform:uppercase!important}
+.btn,.lv-btn,.cart-checkout-btn,.checkout-submit,.sw-success-primary,.account-shop-button,.sw-wishlist-add-cart,.sw-wishlist-shop-btn{background:var(--lv-ink)!important;color:var(--lv-white)!important;border:1px solid var(--lv-ink)!important;border-radius:0!important;letter-spacing:.15em!important;font-size:10px!important;font-weight:600!important;transition:.25s ease!important}
+.btn:hover,.lv-btn:hover,.cart-checkout-btn:hover,.checkout-submit:hover,.sw-success-primary:hover,.account-shop-button:hover,.sw-wishlist-add-cart:hover,.sw-wishlist-shop-btn:hover{background:transparent!important;color:var(--lv-ink)!important}
+input,select,textarea{border:0!important;border-bottom:1px solid var(--lv-line)!important;border-radius:0!important;background:transparent!important;color:var(--lv-ink)!important;box-shadow:none!important}
+input:focus,select:focus,textarea:focus{outline:none!important;border-bottom-color:var(--lv-ink)!important}
+
+/* home refinements */
+.lv-hero{min-height:690px!important;background:var(--lv-ivory)!important}.lv-hero-copy h1,.lv-intro h2,.lv-products h2,.lv-story h2{font-family:var(--lv-serif)!important;font-weight:400!important;letter-spacing:-.035em!important}.lv-hero-copy h1{font-size:clamp(60px,8vw,132px)!important}.lv-hero-visual img{filter:saturate(.65) contrast(.95)!important}.home-product-card{background:transparent!important}.home-product-image{background:#efede6!important;aspect-ratio:4/5!important;overflow:hidden!important}.home-product-image img{width:100%!important;height:100%!important;object-fit:contain!important;transition:transform .6s ease!important}.home-product-card:hover .home-product-image img{transform:scale(1.025)}
+
+/* shop */
+.shop-page{background:var(--lv-paper)!important}.shop-hero{padding:90px 4vw 54px!important;border-bottom:1px solid var(--lv-line)!important;background:var(--lv-ivory)!important}.shop-hero h1{font-family:var(--lv-serif)!important;font-size:clamp(54px,8vw,110px)!important;font-weight:400!important;letter-spacing:-.04em!important;line-height:.9!important}.shop-intro{max-width:560px!important;color:var(--lv-soft)!important;line-height:1.7!important}.shop-tools{padding:22px 4vw!important;border-bottom:1px solid var(--lv-line)!important;background:var(--lv-paper)!important}.shop-search input,.shop-sort select{height:44px!important}.shop-categories{gap:8px!important}.shop-categories .btn{background:transparent!important;color:var(--lv-ink)!important;border:1px solid var(--lv-line)!important;padding:11px 15px!important}.shop-categories .btn.active,.shop-categories .btn:hover{background:var(--lv-ink)!important;color:var(--lv-white)!important}.shop-grid,.grid{padding:40px 4vw 90px!important;gap:32px 18px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important}.product-card{background:transparent!important;border:0!important;box-shadow:none!important}.product-visual{background:#eeece5!important;aspect-ratio:4/5!important;overflow:hidden!important}.product-visual img{width:100%!important;height:100%!important;object-fit:contain!important;transition:transform .5s ease}.product-card:hover .product-visual img{transform:scale(1.025)}.product-details,.product-info{padding:14px 0!important}.product-details h3,.product-info h3{font-family:var(--lv-serif)!important;font-size:19px!important;font-weight:400!important}.quick-add,.product-view{border-radius:0!important}
+
+/* product detail */
+.pd-old-page{background:var(--lv-paper)!important}.pd-old-layout{max-width:1480px!important;margin:auto!important;padding:42px 4vw 100px!important;gap:6vw!important;align-items:start!important}.pd-old-gallery{background:#efede6!important}.pd-old-main-image{background:#efede6!important;min-height:640px!important}.pd-old-main-image img{object-fit:contain!important;max-height:760px!important}.pd-old-info{padding-top:24px!important;position:sticky!important;top:115px!important}.pd-old-category{letter-spacing:.2em!important;font-size:9px!important}.pd-old-title{font-family:var(--lv-serif)!important;font-weight:400!important;font-size:clamp(42px,4.4vw,72px)!important;letter-spacing:-.035em!important;line-height:.95!important;margin:20px 0!important}.pd-old-price{font-family:var(--lv-serif)!important;font-size:23px!important}.pd-old-description{color:var(--lv-soft)!important;line-height:1.75!important}.pd-old-buy-row{gap:8px!important}.pd-old-add-cart,.pd-old-buy-now{border-radius:0!important;min-height:54px!important;letter-spacing:.15em!important;font-size:10px!important}.pd-old-add-cart{background:var(--lv-ink)!important;color:white!important;border:1px solid var(--lv-ink)!important}.pd-old-buy-now{background:transparent!important;color:var(--lv-ink)!important;border:1px solid var(--lv-ink)!important}.pd-old-accordion-content{color:var(--lv-soft)!important}.pd-product-thumb{border-radius:0!important;background:#efede6!important}.pd-product-thumb.is-active{border-color:var(--lv-ink)!important}
+
+/* cart */
+.cart-page{max-width:1400px!important;margin:auto!important;padding:70px 4vw 110px!important}.cart-header h1{font-family:var(--lv-serif)!important;font-size:clamp(50px,7vw,92px)!important;font-weight:400!important;letter-spacing:-.04em!important}.cart-layout{gap:5vw!important}.cart-item{border-top:1px solid var(--lv-line)!important;padding:25px 0!important;background:transparent!important}.cart-item-image{background:#efede6!important;border-radius:0!important;width:140px!important;height:170px!important;object-fit:contain!important}.cart-product-name{font-family:var(--lv-serif)!important;font-size:22px!important}.cart-summary{background:var(--lv-ivory)!important;border:0!important;border-radius:0!important;padding:34px!important;position:sticky!important;top:120px!important}.cart-summary h2{font-family:var(--lv-serif)!important;font-weight:400!important;font-size:34px!important}.cart-quantity-row input{width:70px!important}.cart-remove-btn{letter-spacing:.12em!important;font-size:9px!important}.empty-cart{text-align:center!important;padding:110px 20px!important}.empty-cart h2{font-family:var(--lv-serif)!important;font-size:50px!important;font-weight:400!important}
+
+/* checkout */
+.checkout-page{background:var(--lv-paper)!important;padding:70px 4vw 110px!important}.checkout-header{max-width:1400px!important;margin:0 auto 50px!important}.checkout-header h1{font-family:var(--lv-serif)!important;font-size:clamp(50px,7vw,92px)!important;font-weight:400!important;letter-spacing:-.04em!important}.checkout-layout{max-width:1400px!important;margin:auto!important;gap:6vw!important}.checkout-form-wrap{background:transparent!important;border:0!important;padding:0!important}.checkout-section-title{font-family:var(--lv-serif)!important;font-size:28px!important;font-weight:400!important;border-bottom:1px solid var(--lv-line)!important;padding-bottom:15px!important}.checkout-field label{font-size:9px!important;letter-spacing:.16em!important}.checkout-field input,.checkout-field select,.checkout-field textarea{min-height:48px!important}.checkout-summary{background:var(--lv-ivory)!important;border:0!important;border-radius:0!important;padding:34px!important;position:sticky!important;top:120px!important}.checkout-summary h2{font-family:var(--lv-serif)!important;font-size:34px!important;font-weight:400!important}.checkout-summary-product{font-family:var(--lv-serif)!important}.checkout-submit{min-height:58px!important}
+
+/* wishlist/account/success/auth */
+.sw-wishlist-page,.account-page,.sw-success-page,.auth,.verify-page{background:var(--lv-paper)!important}.sw-wishlist-shell,.account-shell{max-width:1400px!important;padding-left:4vw!important;padding-right:4vw!important}.sw-wishlist-top h1,.account-hero h1,.sw-success-heading h1,.auth h1,.verify-card h1{font-family:var(--lv-serif)!important;font-weight:400!important;letter-spacing:-.04em!important}.sw-wishlist-top h1,.account-hero h1{font-size:clamp(52px,7vw,90px)!important}.sw-wishlist-card{border:0!important;background:transparent!important}.sw-wishlist-visual{background:#efede6!important}.sw-wishlist-name{font-family:var(--lv-serif)!important;font-size:20px!important}.account-profile-card,.account-support-card,.account-order-card{background:var(--lv-ivory)!important;border:0!important;border-radius:0!important}.account-avatar{background:var(--lv-ink)!important;color:white!important}.account-order-number{font-family:var(--lv-serif)!important}.sw-success-card{max-width:900px!important;background:var(--lv-ivory)!important;border:0!important;border-radius:0!important}.sw-success-heading h1{font-size:clamp(64px,9vw,118px)!important}.auth{min-height:70vh!important;padding:90px 20px!important}.auth>div,.verify-card{width:min(100%,520px)!important;background:var(--lv-ivory)!important;border:0!important;border-radius:0!important;padding:48px!important;box-shadow:none!important}.auth h1,.verify-card h1{font-size:56px!important}.auth form p{margin:22px 0!important}.auth label{font-size:9px!important;letter-spacing:.15em!important}.auth input{width:100%!important;min-height:48px!important}.auth .btn.full{width:100%!important;min-height:54px!important}
+
+/* drawer */
+.sw-cart-drawer{background:var(--lv-paper)!important}.sw-cart-drawer-head,.sw-cart-drawer-foot{border-color:var(--lv-line)!important}.sw-cart-drawer-head strong{font-family:var(--lv-serif)!important;font-size:26px!important;font-weight:400!important}.sw-cart-drawer-image{background:#efede6!important}.sw-cart-drawer-checkout{background:var(--lv-ink)!important;color:#fff!important;border-radius:0!important}
+
+/* benefits/footer */
+.sw-benefits{background:var(--lv-ivory)!important;border-top:1px solid var(--lv-line)!important;border-bottom:1px solid var(--lv-line)!important;padding:34px 4vw!important}.sw-benefit strong{font-size:9px!important;letter-spacing:.14em!important}.sw-benefit span{color:var(--lv-soft)!important}.site-footer{background:var(--lv-ink)!important;color:#e9e6de!important;padding:68px 4vw 26px!important}.footer-grid{max-width:1500px!important;margin:auto!important}.footer-brand-line img{display:none!important}.footer-brand-line strong{font-family:var(--lv-serif)!important;font-size:33px!important;font-weight:400!important}.footer-brand p{color:rgba(255,255,255,.62)!important;font-family:var(--lv-serif)!important;font-style:italic!important;font-size:18px!important}.footer-column strong{font-size:9px!important;letter-spacing:.2em!important}.footer-column a{color:rgba(255,255,255,.7)!important}.footer-column a:hover{color:#fff!important}.footer-bottom,.footer-privacy{border-color:rgba(255,255,255,.14)!important}.footer-cookie-settings{color:#fff!important}
+
+/* legal */
+.legal-page,.legal-shell{background:var(--lv-paper)!important}.legal-page h1,.legal-shell h1{font-family:var(--lv-serif)!important;font-weight:400!important}
+
+@media(max-width:1050px){.sw-main-menu{display:none!important}.shop-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.pd-old-layout,.cart-layout,.checkout-layout,.account-layout{grid-template-columns:1fr!important}.pd-old-info,.cart-summary,.checkout-summary{position:static!important}.lv-hero-aside{display:none!important}.sw-benefits{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){.sw-topbar-left,.sw-topbar-right{display:none!important}.sw-topbar{justify-content:center!important}.sw-navbar{min-height:62px!important;padding:0 18px!important}.sw-logo span{font-size:23px!important}.sw-header-tools .sw-icon-btn:first-child{display:none!important}.lv-hero{min-height:auto!important}.lv-hero-copy{padding:55px 22px!important}.lv-hero-copy h1{font-size:58px!important}.shop-hero,.shop-tools,.shop-grid,.grid,.cart-page,.checkout-page,.pd-old-layout{padding-left:20px!important;padding-right:20px!important}.shop-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:26px 10px!important}.product-details h3,.product-info h3{font-size:16px!important}.pd-old-main-image{min-height:420px!important}.cart-item-main{gap:16px!important}.cart-item-image{width:100px!important;height:125px!important}.checkout-fields.two-columns{grid-template-columns:1fr!important}.sw-benefits{grid-template-columns:1fr!important}.footer-grid{grid-template-columns:1fr 1fr!important;gap:40px 20px!important}.footer-brand{grid-column:1/-1}.auth>div,.verify-card{padding:34px 22px!important}.auth h1,.verify-card h1{font-size:43px!important}}
+
+
+/* ==========================================================
+   LE VAURÉ — EDITORIAL V2
+   Matches the approved visual across shop, auth, wishlist,
+   account center, cart and checkout while preserving logic.
+========================================================== */
+.sw-topbar{display:none!important}
+.sw-header{top:0!important;background:rgba(247,244,236,.97)!important}
+.sw-navbar{display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important;min-height:66px!important;padding:0 4vw!important;position:relative}
+.sw-main-menu{grid-column:1!important;grid-row:1!important;justify-self:start!important;display:flex!important;gap:32px!important}
+.sw-main-menu a{font-family:var(--lv-serif)!important;text-transform:none!important;letter-spacing:0!important;font-size:13px!important;font-weight:400!important;padding:24px 0!important}
+.sw-logo{grid-column:2!important;grid-row:1!important;justify-self:center!important}
+.sw-logo span{font-size:31px!important;line-height:1!important}
+.sw-header-tools{grid-column:3!important;grid-row:1!important;justify-self:end!important}
+
+.lv-hero{display:grid!important;grid-template-columns:44% 56%!important;min-height:610px!important;position:relative!important;overflow:hidden!important;border-bottom:5px solid var(--lv-paper)!important}
+.lv-hero-copy{padding:92px 4vw 55px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;z-index:2!important;background:linear-gradient(90deg,rgba(231,225,214,.92),rgba(231,225,214,.35),transparent)!important}
+.lv-hero-copy h1{font-size:clamp(70px,8vw,128px)!important;margin:20px 0 16px!important;line-height:.86!important}
+.lv-tagline{font-family:var(--lv-serif)!important;font-style:italic!important;font-size:20px!important;line-height:1.35!important}
+.lv-hero-visual{position:absolute!important;inset:0!important;height:100%!important;z-index:0!important}
+.lv-hero-visual img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;filter:saturate(.58) contrast(.92) brightness(.98)!important}
+.lv-hero-visual:after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(233,227,217,.93) 0%,rgba(233,227,217,.6) 30%,rgba(233,227,217,.1) 55%,rgba(21,35,27,.06) 100%)!important}
+.lv-hero-aside{position:absolute!important;right:4vw!important;top:20%!important;z-index:3!important;display:flex!important;flex-direction:column!important;gap:14px!important;font-size:9px!important;letter-spacing:.28em!important}
+.lv-slide-index{margin-top:auto!important}
+
+.lv-categories{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 0;background:var(--lv-paper)}
+.lv-category-card{position:relative;height:240px;overflow:hidden;text-decoration:none;background:#ddd7cd}
+.lv-category-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.45) brightness(.9);transition:transform .7s ease}
+.lv-category-women img{object-position:68% 35%;transform:scale(1.15)}
+.lv-category-accessories img{object-position:87% 45%;transform:scale(1.35)}
+.lv-category-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,240,231,.78),transparent 65%)}
+.lv-category-card span{position:absolute;left:4vw;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:16px}
+.lv-category-card strong{font-family:var(--lv-serif);font-size:37px;font-weight:400}
+.lv-category-card small{font-size:9px;letter-spacing:.22em}
+.lv-category-card:hover img{transform:scale(1.05)}
+.lv-category-women:hover img{transform:scale(1.2)} .lv-category-accessories:hover img{transform:scale(1.4)}
+
+.lv-products{padding:70px 4vw 90px!important}.lv-products-head{display:grid!important;grid-template-columns:260px 1fr auto!important;align-items:end!important;gap:35px!important;margin-bottom:36px!important}.lv-products-head>div{grid-column:1}.lv-products-head h2{font-size:54px!important;line-height:.92!important;margin-top:15px!important}.lv-products-head .lv-text-link{grid-column:3!important}.home-product-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important}.home-product-image{height:auto!important;aspect-ratio:1/1.08!important}.home-product-info h3{font-family:var(--lv-serif)!important;font-weight:400!important;font-size:16px!important}.home-product-info strong{font-family:var(--lv-serif)!important;font-weight:400!important}
+.lv-story{grid-template-columns:1.1fr 1fr!important;background:var(--lv-ink)!important}.lv-story-image{min-height:430px!important}.lv-story-copy{padding:70px 7vw!important}.lv-story-copy h2{font-size:62px!important}.lv-story-note{right:3vw!important}
+
+/* global benefits + newsletter + footer */
+.sw-benefits{background:var(--lv-paper)!important;border-top:1px solid var(--lv-line)!important;border-bottom:0!important;padding:35px 4vw!important;grid-template-columns:repeat(4,1fr)!important}
+.sw-benefit{border-right:1px solid var(--lv-line)!important;justify-content:center!important}.sw-benefit:last-child{border-right:0!important}.sw-benefit strong{font-family:var(--lv-serif)!important;font-weight:400!important;letter-spacing:.1em!important}.sw-benefit span{font-family:var(--lv-serif)!important;font-style:italic!important;color:var(--lv-soft)!important}
+.lv-newsletter{text-align:center;padding:48px 20px 65px;background:var(--lv-paper);border-top:1px solid var(--lv-line)}.lv-newsletter h2{font-family:var(--lv-serif);font-size:36px;font-weight:400;margin:10px 0}.lv-newsletter>p:not(.lv-eyebrow){font-family:var(--lv-serif);color:var(--lv-soft);margin-bottom:22px}.lv-newsletter-form{max-width:520px;margin:auto;display:grid;grid-template-columns:1fr 165px;border:1px solid rgba(23,36,28,.35)}.lv-newsletter-form input{padding:15px 16px!important;border:0!important}.lv-newsletter-form button{border:0;background:var(--lv-ink);color:white;font-size:9px;letter-spacing:.18em}
+.site-footer{background:var(--lv-ink)!important;color:#f7f2e8!important;padding:55px 4vw 28px!important}.footer-grid{max-width:none!important;grid-template-columns:1.5fr repeat(3,1fr)!important}.footer-brand-line img{display:none!important}.footer-brand-line strong{font-family:var(--lv-serif)!important;font-size:30px!important;font-weight:400!important}.footer-column strong{font-family:var(--lv-serif)!important;font-weight:400!important}.footer-column a,.footer-brand p,.footer-bottom{color:rgba(247,242,232,.75)!important;font-family:var(--lv-serif)!important}
+
+/* SHOP — soft editorial list */
+.shop-hero{padding:74px 4vw 42px!important}.shop-hero h1{font-size:clamp(64px,9vw,126px)!important}.shop-tools{margin-top:42px!important;padding:0!important;background:transparent!important;border:0!important;display:grid!important;grid-template-columns:minmax(280px,1fr) 260px!important;gap:32px!important}.shop-search{display:flex!important;align-items:end!important}.shop-search input{flex:1!important;font-family:var(--lv-serif)!important;font-size:18px!important}.shop-search button{background:none!important;border:0!important;font-size:9px!important;letter-spacing:.16em!important;padding:0 0 13px 15px!important}.shop-sort label{font-size:8px!important;letter-spacing:.18em!important}.shop-sort select{width:100%!important;font-family:var(--lv-serif)!important}.shop-categories{padding:20px 4vw!important;border-bottom:1px solid var(--lv-line)!important;display:flex!important;gap:24px!important}.shop-categories a{font-size:9px!important;letter-spacing:.18em!important;text-decoration:none!important;border:0!important;padding:0!important;background:none!important}.shop-categories a.active{border-bottom:1px solid var(--lv-ink)!important}.shop-meta{padding:20px 4vw 0!important;font-size:9px!important;letter-spacing:.16em!important;color:var(--lv-soft)!important}.shop-grid{padding-top:24px!important}.product-card{position:relative!important}.product-details,.product-info{border-top:0!important}.product-card .price{font-family:var(--lv-serif)!important}
+
+/* AUTH — login/register centered luxury panels */
+.auth,.verify-page{min-height:72vh!important;padding:90px 20px 110px!important;background:linear-gradient(180deg,var(--lv-ivory),var(--lv-paper))!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.auth>h1,.verify-card h1{font-family:var(--lv-serif)!important;font-size:clamp(54px,7vw,88px)!important;font-weight:400!important;letter-spacing:-.04em!important;line-height:.92!important;margin:18px 0 18px!important}.auth>form{width:min(100%,460px)!important;margin:24px auto 0!important;text-align:left!important}.auth label{font-size:9px!important;letter-spacing:.16em!important;text-transform:uppercase!important}.auth input{width:100%!important;padding:13px 0!important;margin:4px 0 20px!important;font-family:var(--lv-serif)!important;font-size:17px!important}.auth .btn.full{width:100%!important;min-height:52px!important;margin-top:8px!important}.auth p,.auth a,.verify-copy{font-family:var(--lv-serif)!important}.auth .form-errors{width:min(100%,460px)!important;text-align:left!important}
+.verify-card{width:min(100%,520px)!important;background:transparent!important;border:0!important;box-shadow:none!important;text-align:center!important}.verify-form{margin-top:30px!important}.verify-submit,.verify-resend-button{border-radius:0!important;background:var(--lv-ink)!important;color:white!important;letter-spacing:.16em!important}
+
+/* WISHLIST */
+.sw-wishlist-page{background:var(--lv-paper)!important;padding:70px 4vw 110px!important}.sw-wishlist-shell{max-width:1500px!important;margin:auto!important}.sw-wishlist-top{padding-bottom:38px!important;border-bottom:1px solid var(--lv-line)!important}.sw-wishlist-top h1{font-family:var(--lv-serif)!important;font-size:clamp(58px,8vw,110px)!important;font-weight:400!important;line-height:.82!important;letter-spacing:-.045em!important}.sw-wishlist-count strong{font-family:var(--lv-serif)!important;font-size:54px!important;font-weight:400!important}.sw-wishlist-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:36px 18px!important;margin-top:34px!important}.sw-wishlist-card{border:0!important;background:transparent!important;box-shadow:none!important}.sw-wishlist-visual{background:#efede6!important;aspect-ratio:4/5!important}.sw-wishlist-visual img{width:100%!important;height:100%!important;object-fit:contain!important}.sw-wishlist-card-body{padding:14px 0!important}.sw-wishlist-name{font-family:var(--lv-serif)!important;font-size:19px!important;font-weight:400!important}.sw-wishlist-price{font-family:var(--lv-serif)!important;font-weight:400!important}.sw-wishlist-heart{border-radius:50%!important;background:rgba(250,248,242,.9)!important;color:var(--lv-ink)!important}.sw-wishlist-remove{font-size:9px!important;letter-spacing:.13em!important}
+
+/* ACCOUNT CENTER */
+.account-page{background:var(--lv-paper)!important;padding:70px 4vw 110px!important}.account-shell{max-width:1450px!important;margin:auto!important}.account-hero{padding-bottom:40px!important;border-bottom:1px solid var(--lv-line)!important}.account-hero h1{font-family:var(--lv-serif)!important;font-size:clamp(58px,8vw,108px)!important;font-weight:400!important;letter-spacing:-.045em!important;line-height:.88!important}.account-layout{grid-template-columns:300px 1fr!important;gap:6vw!important;margin-top:45px!important}.account-profile-card,.account-support-card,.account-order-card{background:transparent!important;border:1px solid var(--lv-line)!important;border-radius:0!important;box-shadow:none!important}.account-avatar{background:var(--lv-ink)!important;color:white!important;border-radius:50%!important;font-family:var(--lv-serif)!important}.account-nav-link{border-bottom:1px solid var(--lv-line)!important;border-radius:0!important;font-family:var(--lv-serif)!important}.account-nav-link.is-active{background:var(--lv-ink)!important;color:white!important}.account-section-head h2{font-family:var(--lv-serif)!important;font-size:48px!important;font-weight:400!important}.account-order-number,.account-order-name{font-family:var(--lv-serif)!important}.account-logout{border-radius:0!important}
+
+/* CHECKOUT / CART harmonisation */
+.checkout-page{background:var(--lv-paper)!important;padding:70px 4vw 110px!important}.checkout-header h1{font-family:var(--lv-serif)!important;font-size:clamp(54px,7vw,92px)!important;font-weight:400!important;letter-spacing:-.04em!important}.checkout-layout{max-width:1400px!important;margin:auto!important;grid-template-columns:1.2fr .8fr!important;gap:6vw!important}.checkout-form-wrap{background:transparent!important;border:0!important;padding:0!important}.checkout-section-title h2{font-family:var(--lv-serif)!important;font-weight:400!important;font-size:28px!important}.checkout-summary{background:var(--lv-ivory)!important;border:0!important;border-radius:0!important;padding:34px!important;position:sticky!important;top:110px!important}.checkout-summary-item{border-bottom:1px solid var(--lv-line)!important}.checkout-summary-product img{background:#ece9e1!important;border-radius:0!important}.checkout-security-note{border-top:1px solid var(--lv-line)!important}.cart-update-btn,.cart-remove-btn,.continue-shopping,.checkout-back{font-size:9px!important;letter-spacing:.14em!important}
+
+/* Success */
+.sw-success-page{background:linear-gradient(180deg,var(--lv-ivory),var(--lv-paper))!important;padding:90px 20px 120px!important}.sw-success-card{max-width:900px!important;background:transparent!important;border:0!important;box-shadow:none!important}.sw-success-heading h1{font-family:var(--lv-serif)!important;font-size:clamp(62px,9vw,118px)!important;font-weight:400!important;letter-spacing:-.05em!important}.sw-success-order-grid,.sw-success-status{border-color:var(--lv-line)!important}
+
+@media(max-width:980px){
+ .sw-navbar{grid-template-columns:auto 1fr auto!important}.sw-main-menu{display:none!important}.sw-logo{grid-column:2!important}.lv-hero{display:block!important;min-height:760px!important}.lv-hero-copy{min-height:760px!important;width:70%!important;background:linear-gradient(90deg,rgba(235,229,218,.92),rgba(235,229,218,.42),transparent)!important}.lv-categories{grid-template-columns:1fr!important}.lv-category-card{height:280px}.home-product-grid,.sw-wishlist-grid,.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.lv-products-head{grid-template-columns:1fr!important}.lv-products-head .lv-text-link{grid-column:1!important}.account-layout,.checkout-layout{grid-template-columns:1fr!important}.account-sidebar{position:static!important}.checkout-summary{position:static!important}.sw-benefits{grid-template-columns:repeat(2,1fr)!important}.sw-benefit:nth-child(2){border-right:0!important}
+}
+@media(max-width:620px){
+ .sw-navbar{padding:0 18px!important}.sw-logo span{font-size:25px!important}.sw-header-tools .sw-icon-btn:first-child{display:none!important}.lv-hero{min-height:660px!important}.lv-hero-copy{min-height:660px!important;width:100%!important;padding:65px 24px 35px!important;background:linear-gradient(90deg,rgba(235,229,218,.9),rgba(235,229,218,.45),rgba(235,229,218,.05))!important}.lv-hero-copy h1{font-size:64px!important}.lv-hero-aside{display:none!important}.lv-category-card{height:220px}.lv-category-card strong{font-size:31px}.home-product-grid,.sw-wishlist-grid,.shop-grid{grid-template-columns:1fr!important}.shop-tools{grid-template-columns:1fr!important}.shop-categories{overflow-x:auto!important;white-space:nowrap!important}.sw-benefits{grid-template-columns:1fr!important}.sw-benefit{border-right:0!important;border-bottom:1px solid var(--lv-line)!important;padding:18px 0!important}.lv-newsletter-form{grid-template-columns:1fr!important}.lv-newsletter-form button{min-height:48px}.footer-grid{grid-template-columns:1fr 1fr!important;gap:38px!important}.account-page,.sw-wishlist-page,.checkout-page,.cart-page{padding-left:20px!important;padding-right:20px!important}.account-layout{gap:35px!important}.account-hero h1,.sw-wishlist-top h1{font-size:58px!important}
 }
 
+/* ==========================================================
+   LE VAURÉ — COLLECTION PAGE / FINAL EDITORIAL PASS
+========================================================== */
+.lv-shop-page{background:var(--lv-paper);padding-bottom:120px}
+.lv-shop-masthead{max-width:1520px;margin:0 auto;padding:92px 5vw 66px;display:grid;grid-template-columns:1.6fr .6fr;gap:8vw;align-items:end;border-bottom:1px solid var(--lv-line)}
+.lv-shop-title h1{margin:16px 0 24px;font-family:var(--lv-serif);font-size:clamp(72px,10vw,150px);font-weight:400;line-height:.78;letter-spacing:-.055em}
+.lv-shop-title>p:last-child{max-width:520px;margin:0;font-family:var(--lv-serif);font-size:19px;line-height:1.55;color:var(--lv-soft)}
+.lv-shop-quote{justify-self:end;min-width:220px;padding-left:28px;border-left:1px solid var(--lv-line)}
+.lv-shop-quote>span{font-size:8px;letter-spacing:.22em}.lv-shop-quote p{margin:30px 0 0;font-family:var(--lv-serif);font-size:24px;font-style:italic;line-height:1.25}
+.lv-shop-campaign{max-width:1520px;margin:0 auto;display:grid;grid-template-columns:1.55fr .65fr;min-height:390px;background:var(--lv-ink);color:var(--lv-white)}
+.lv-shop-campaign-image{overflow:hidden}.lv-shop-campaign-image img{width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center 44%;filter:saturate(.72) contrast(.93) brightness(.76)}
+.lv-shop-campaign-copy{padding:55px 4vw;display:flex;flex-direction:column;justify-content:flex-end}.lv-shop-campaign-copy h2{margin:16px 0 18px;font-family:var(--lv-serif);font-size:clamp(36px,4vw,60px);font-weight:400;line-height:.96;letter-spacing:-.03em}.lv-shop-campaign-copy>p:last-child{margin:0;color:rgba(255,255,255,.67);font-family:var(--lv-serif);font-style:italic;font-size:17px}
+.lv-shop-controls{max-width:1520px;margin:0 auto;padding:34px 5vw 24px;display:grid;grid-template-columns:1fr minmax(430px,.75fr);gap:5vw;align-items:end;border-bottom:1px solid var(--lv-line)}
+.lv-shop-categories{display:flex;gap:27px;overflow:auto;scrollbar-width:none}.lv-shop-categories::-webkit-scrollbar{display:none}.lv-shop-categories a{position:relative;flex:0 0 auto;padding-bottom:10px;color:inherit;text-decoration:none;font-size:9px;font-weight:700;letter-spacing:.17em}.lv-shop-categories a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .2s}.lv-shop-categories a:hover:after,.lv-shop-categories a.active:after{width:100%}
+.lv-shop-tools{display:grid;grid-template-columns:1fr 190px;gap:22px;align-items:end}.lv-shop-search{display:flex;border-bottom:1px solid var(--lv-ink)}.lv-shop-search input{min-width:0;flex:1;border:0!important;background:transparent!important;padding:10px 0!important;outline:none;font-family:var(--lv-serif)!important;font-size:16px!important}.lv-shop-search button{width:40px;border:0;background:transparent;font-size:20px;cursor:pointer}.lv-shop-sort>span{display:block;margin-bottom:5px;font-size:8px;font-weight:700;letter-spacing:.16em}.lv-shop-sort select{width:100%;border:0!important;border-bottom:1px solid var(--lv-ink)!important;border-radius:0!important;background:transparent!important;padding:8px 22px 8px 0!important;font-family:var(--lv-serif)!important;outline:0}
+.lv-shop-meta{max-width:1520px;margin:0 auto;padding:28px 5vw 15px;display:flex;justify-content:space-between;color:var(--lv-soft);font-size:8px;font-weight:700;letter-spacing:.19em}
+.lv-shop-grid{max-width:1520px!important;margin:0 auto!important;padding:12px 5vw 0!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:54px 18px!important}
+.lv-shop-grid .product-card{background:transparent!important;border:0!important;box-shadow:none!important;min-width:0!important}.lv-shop-grid .sw-card-visual-wrap{position:relative;background:#ece9e1!important;aspect-ratio:4/5;overflow:hidden}.lv-shop-grid .product-visual{display:block;width:100%;height:100%;background:#ece9e1!important}.lv-shop-grid .product-visual img{width:100%;height:100%;object-fit:contain!important;mix-blend-mode:multiply;transition:transform .45s ease}.lv-shop-grid .product-card:hover .product-visual img{transform:scale(1.018)}
+.lv-shop-grid .product-view{position:absolute;left:18px;bottom:16px;opacity:0;transform:translateY(5px);font-size:8px;font-weight:700;letter-spacing:.16em;transition:.2s}.lv-shop-grid .product-card:hover .product-view{opacity:1;transform:none}.lv-shop-grid .sw-card-wishlist-btn{position:absolute!important;top:14px!important;right:14px!important;width:36px!important;height:36px!important;border:0!important;border-radius:50%!important;background:rgba(250,248,242,.92)!important;color:var(--lv-ink)!important;display:grid!important;place-items:center!important;text-decoration:none!important;z-index:4}.lv-shop-grid .product-info{display:grid!important;grid-template-columns:1fr 42px!important;gap:10px!important;align-items:stretch!important;padding:13px 0 0!important;background:transparent!important}.lv-shop-grid .product-details{display:block!important;text-decoration:none!important;padding:0!important}.lv-shop-grid .product-details small{display:block;margin-bottom:7px;color:var(--lv-soft);font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.lv-shop-grid .product-details h3{margin:0 0 4px;font-family:var(--lv-serif)!important;font-size:18px!important;font-weight:400!important;line-height:1.15}.lv-shop-grid .product-details strong{font-family:var(--lv-serif)!important;font-size:13px!important;font-weight:400!important}.lv-shop-grid .quick-add-form{display:grid!important;place-items:center!important;border-left:1px solid var(--lv-line)!important;text-decoration:none!important}.lv-shop-grid .quick-add{width:100%!important;height:100%!important;min-height:55px!important;border:0!important;background:transparent!important;color:var(--lv-ink)!important;font-size:16px!important;cursor:pointer}.lv-shop-grid .product-status{position:absolute;left:14px;top:14px;padding:8px 10px;background:var(--lv-ink);color:white;font-size:7px;letter-spacing:.15em}.lv-shop-empty{grid-column:1/-1;padding:100px 0;text-align:center}.lv-shop-empty h2{margin:15px 0;font-family:var(--lv-serif);font-size:54px;font-weight:400}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Keep locale menu readable in every script */
+.language-menu button,.language-btn{font-family:Arial,"Noto Sans",sans-serif!important;font-variant:normal!important;text-transform:none!important}
+html[lang="hy"] body,html[lang="ru"] body{font-family:Arial,"Noto Sans",sans-serif}.sw-main-menu a,.sw-topbar,.lv-eyebrow,.lv-text-link,.lv-btn,.footer-column strong{font-family:Arial,"Noto Sans",sans-serif}
+
+@media(max-width:980px){.lv-shop-masthead{grid-template-columns:1fr}.lv-shop-quote{justify-self:start}.lv-shop-campaign{grid-template-columns:1fr}.lv-shop-campaign-image{height:430px}.lv-shop-controls{grid-template-columns:1fr}.lv-shop-tools{max-width:620px}.lv-shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){.lv-shop-masthead{padding:65px 20px 44px}.lv-shop-title h1{font-size:66px}.lv-shop-campaign-image{height:300px}.lv-shop-campaign-copy{padding:38px 22px}.lv-shop-controls{padding:28px 20px 18px}.lv-shop-tools{grid-template-columns:1fr}.lv-shop-meta{padding:22px 20px 12px}.lv-shop-grid{padding:10px 20px 0!important;grid-template-columns:1fr!important;gap:42px!important}.lv-shop-grid .sw-card-visual-wrap{aspect-ratio:4/4.8}}
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   LE VAURÉ — always-visible language selector
+   ========================================================= */
+.lv-language-selector{position:relative;margin-left:2px;font-family:Arial,"Noto Sans",sans-serif}
+.lv-language-selector summary{list-style:none;display:flex;align-items:center;gap:5px;min-width:44px;height:40px;justify-content:center;cursor:pointer;font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--lv-ink,#17241c);user-select:none}
+.lv-language-selector summary::-webkit-details-marker{display:none}
+.lv-language-chevron{font-size:12px;line-height:1;transform:translateY(-1px)}
+.lv-language-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:9999;width:190px;background:#f7f2e8;border:1px solid rgba(23,36,28,.22);box-shadow:0 16px 40px rgba(23,36,28,.12);padding:7px}
+.lv-language-menu form{display:grid;gap:2px}
+.lv-language-menu button{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;background:transparent;padding:11px 10px;color:#17241c;cursor:pointer;font:500 12px/1.2 Arial,"Noto Sans",sans-serif;text-align:left}
+.lv-language-menu button span{font-size:9px;letter-spacing:.14em;opacity:.55}
+.lv-language-menu button:hover,.lv-language-menu button.active{background:#17241c;color:#f7f2e8}
+@media(max-width:700px){.lv-language-selector{display:block!important}.sw-header-tools{gap:2px!important}.lv-language-menu{position:fixed;right:14px;top:66px}}
 
-@media (max-width: 600px) {
-
-    .lv-two-categories {
-        grid-template-columns: 1fr !important;
-
-        gap: 8px;
-    }
-
-    .lv-two-categories .lv-category-card {
-        height: 300px;
-    }
-
-    .lv-two-categories .lv-category-card > span {
-        left: 22px !important;
-        bottom: 22px !important;
-    }
-
-    .lv-two-categories .lv-category-card strong {
-        font-size: 32px;
-    }
-}
-
-/* HERO IMAGE — SHOW FULL IMAGE */
-
-.lv-hero-visual img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    transform: none !important;
-}
-
-/* HERO — NO ZOOM / NO CROP */
-
-.lv-hero-visual {
-    background: #f2f0e9 !important;
-}
-
-.lv-hero-visual img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    transform: none !important;
-    scale: 1 !important;
-
-    filter: none !important;
-    opacity: 1 !important;
-}
-
-.lv-hero:hover .lv-hero-visual img {
-    transform: none !important;
-    scale: 1 !important;
-}
-
-/* =========================================
-   HOME HERO — FULL IMAGE / NO CROP
-========================================= */
+/* ==========================================================
+   LE VAURÉ — FINAL HOME HERO FIX
+   Full original image / no cream optical overlay / no filter
+========================================================== */
 
 .lv-hero {
     position: relative !important;
+    overflow: hidden !important;
 
     width: 100% !important;
-    height: auto !important;
     min-height: 0 !important;
+    height: auto !important;
 
-    aspect-ratio: 1720 / 646;
+    /* Match the current home-hero.jpg proportions */
+    aspect-ratio: 1720 / 646 !important;
 
-    overflow: hidden !important;
+    background: transparent !important;
 }
 
+/* Text remains above the photograph, but no translucent panel behind it */
+.lv-hero-copy {
+    position: relative !important;
+    z-index: 2 !important;
+
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Photograph occupies the full hero */
 .lv-hero-visual {
     position: absolute !important;
     inset: 0 !important;
+    z-index: 0 !important;
 
     width: 100% !important;
     height: 100% !important;
 
     overflow: hidden !important;
+    background: transparent !important;
 }
 
+/* Remove every old cream/white gradient layer */
+.lv-hero::before,
+.lv-hero::after,
+.lv-hero-visual::before,
+.lv-hero-visual::after {
+    content: none !important;
+    display: none !important;
+
+    background: none !important;
+    background-image: none !important;
+
+    opacity: 0 !important;
+}
+
+/* Show home-hero.jpg with its real colors and without zoom/crop */
 .lv-hero-visual img {
     display: block !important;
 
@@ -829,35 +459,241 @@
     transform: none !important;
     scale: 1 !important;
 
-    max-width: none !important;
-
     filter: none !important;
-}
-
-/* =========================================
-   HERO — REMOVE WHITE / CREAM OVERLAY
-========================================= */
-
-.lv-hero::before,
-.lv-hero::after,
-.lv-hero-visual::before,
-.lv-hero-visual::after {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    opacity: 0 !important;
-}
-
-/* Show original image colors */
-.lv-hero-visual img {
     opacity: 1 !important;
-    filter: none !important;
     mix-blend-mode: normal !important;
+
+    background: transparent !important;
 }
 
-/* Keep text above image */
-.lv-hero-copy,
+/* Keep the right-side editorial labels visible */
 .lv-hero-aside {
-    position: relative !important;
-    z-index: 10 !important;
+    position: absolute !important;
+    right: 4vw !important;
+    top: 20% !important;
+    z-index: 3 !important;
+}
+
+/* Prevent any hover rule from zooming the hero image */
+.lv-hero:hover .lv-hero-visual img,
+.lv-hero-visual:hover img {
+    transform: none !important;
+    scale: 1 !important;
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+    .lv-hero {
+        min-height: 0 !important;
+        height: auto !important;
+        aspect-ratio: 1720 / 646 !important;
+    }
+
+    .lv-hero-copy {
+        width: 70% !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        background-image: none !important;
+    }
+
+    .lv-hero-visual {
+        height: 100% !important;
+    }
+}
+
+/* Mobile
+   Keep the image uncropped. The hero becomes taller only if your copy needs room. */
+@media (max-width: 620px) {
+    .lv-hero {
+        min-height: 520px !important;
+        height: 520px !important;
+        aspect-ratio: auto !important;
+    }
+
+    .lv-hero-copy {
+        width: 100% !important;
+        min-height: 520px !important;
+
+        background: transparent !important;
+        background-image: none !important;
+    }
+
+    .lv-hero-visual img {
+        object-fit: contain !important;
+        object-position: center center !important;
+    }
+}
+
+
+/* =========================================================
+   LE VAURÉ — FINAL MOBILE OVERRIDES
+   Keep this block LAST in levaure.css
+========================================================= */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, svg, video {
+    max-width: 100%;
+}
+
+@media (max-width: 980px) {
+    .sw-navbar {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        gap: 10px !important;
+        width: 100% !important;
+        min-height: 64px !important;
+        padding: 0 18px !important;
+    }
+
+    .sw-logo {
+        grid-column: 1 !important;
+        justify-self: start !important;
+        min-width: 0 !important;
+    }
+
+    .sw-logo span {
+        font-size: 24px !important;
+        white-space: nowrap !important;
+    }
+
+    .sw-main-menu {
+        display: none !important;
+    }
+
+    .sw-header-tools {
+        grid-column: 2 !important;
+        justify-self: end !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 3px !important;
+        min-width: 0 !important;
+    }
+
+    .sw-icon-btn {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        padding: 7px !important;
+    }
+
+    .sw-icon-btn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .lv-language-selector {
+        max-width: 58px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 34px 20px !important;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .sw-navbar {
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        padding: 0 12px !important;
+    }
+
+    .sw-logo span {
+        font-size: 21px !important;
+    }
+
+    .sw-header-tools {
+        gap: 1px !important;
+    }
+
+    .sw-icon-btn {
+        width: 31px !important;
+        height: 31px !important;
+        min-width: 31px !important;
+        padding: 6px !important;
+    }
+
+    .lv-language-selector summary {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+
+    .sw-benefits {
+        grid-template-columns: 1fr !important;
+        padding: 22px 18px !important;
+    }
+
+    .sw-benefit {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-right: 0 !important;
+    }
+
+    .lv-newsletter {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .lv-newsletter-form {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    .lv-newsletter-form input,
+    .lv-newsletter-form button {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .footer-brand {
+        grid-column: auto !important;
+    }
+
+    .footer-bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+    }
+
+    .sw-cart-drawer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    .sw-cookie-banner {
+        left: 10px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        width: auto !important;
+        max-width: none !important;
+    }
+
+    .sw-cookie-modal-overlay {
+        padding: 10px !important;
+    }
+
+    .sw-cookie-modal {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: calc(100vh - 20px) !important;
+        overflow-y: auto !important;
+    }
 }
