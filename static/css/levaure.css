@@ -523,3 +523,383 @@ html[lang="hy"] body,html[lang="ru"] body{font-family:Arial,"Noto Sans",sans-ser
         object-position: center center !important;
     }
 }
+
+/* =========================================================
+   LE VAURÉ — FINAL MOBILE FIX
+   Paste this at the VERY END of static/css/levaure.css
+========================================================= */
+
+@media (max-width: 620px) {
+
+    /* ---------- HEADER ---------- */
+    .sw-header {
+        display: block !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: #faf8f2 !important;
+    }
+
+    .sw-navbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 62px !important;
+        padding: 0 14px !important;
+        gap: 10px !important;
+    }
+
+    .sw-logo {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: auto !important;
+    }
+
+    .sw-logo img {
+        display: none !important;
+    }
+
+    .sw-logo span {
+        display: block !important;
+        font-size: 22px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .sw-main-menu {
+        display: none !important;
+    }
+
+    .sw-header-tools {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex: 0 0 auto !important;
+        gap: 2px !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: auto !important;
+    }
+
+    .sw-icon-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        padding: 6px !important;
+    }
+
+    .sw-header-tools .sw-icon-btn:first-child {
+        display: none !important;
+    }
+
+    .sw-icon-btn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .lv-language-selector {
+        display: block !important;
+        max-width: 54px !important;
+    }
+
+    /* ---------- HERO: NO OVERLAP / NO HUGE EMPTY SPACE ---------- */
+    .lv-hero {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        overflow: hidden !important;
+        background: #f4f0e8 !important;
+        border-bottom: 0 !important;
+    }
+
+    .lv-hero-copy {
+        position: relative !important;
+        order: 1 !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 46px 22px 30px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        background: #f4f0e8 !important;
+    }
+
+    .lv-hero-copy .lv-eyebrow {
+        margin: 0 0 20px !important;
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+        letter-spacing: .24em !important;
+    }
+
+    .lv-hero-copy h1 {
+        margin: 0 0 14px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: clamp(46px, 15.5vw, 62px) !important;
+        line-height: .92 !important;
+        letter-spacing: -.045em !important;
+        white-space: nowrap !important;
+    }
+
+    .lv-tagline {
+        margin: 0 !important;
+        font-size: 18px !important;
+        line-height: 1.35 !important;
+    }
+
+    .lv-actions {
+        width: 100% !important;
+        margin-top: 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 18px !important;
+    }
+
+    .lv-actions .lv-btn {
+        min-height: 50px !important;
+        padding: 0 24px !important;
+    }
+
+    .lv-actions .lv-text-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        line-height: 1.4 !important;
+    }
+
+    .lv-slide-index {
+        display: none !important;
+    }
+
+    .lv-hero-visual {
+        position: relative !important;
+        order: 2 !important;
+        inset: auto !important;
+        z-index: 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: 16 / 10 !important;
+        overflow: hidden !important;
+        background: #d8d2c8 !important;
+    }
+
+    .lv-hero-visual::before,
+    .lv-hero-visual::after,
+    .lv-hero::before,
+    .lv-hero::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .lv-hero-visual img {
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        transform: none !important;
+        scale: 1 !important;
+        filter: none !important;
+        opacity: 1 !important;
+    }
+
+    .lv-hero-aside {
+        display: none !important;
+    }
+
+    /* ---------- CATEGORY CARDS ---------- */
+    .lv-two-categories {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 8px 0 !important;
+        margin: 0 !important;
+    }
+
+    .lv-two-categories .lv-category-card {
+        width: 100% !important;
+        height: 330px !important;
+    }
+
+    .lv-two-categories .lv-category-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .lv-two-categories .lv-category-card > span {
+        left: 22px !important;
+        bottom: 22px !important;
+    }
+
+    /* ---------- PRODUCTS ---------- */
+    .lv-products {
+        padding: 52px 14px 68px !important;
+    }
+
+    .lv-products-head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 18px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .lv-products-head .lv-text-link {
+        grid-column: auto !important;
+    }
+
+    .lv-products-head h2 {
+        font-size: clamp(40px, 13vw, 54px) !important;
+    }
+
+    .home-product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px 8px !important;
+        width: 100% !important;
+    }
+
+    .home-product-card {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    .home-product-image {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4 / 5 !important;
+    }
+
+    .home-product-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+    }
+
+    .home-product-info {
+        display: block !important;
+        padding-top: 10px !important;
+    }
+
+    .home-product-info h3 {
+        margin: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .home-product-info strong {
+        display: block !important;
+        margin-top: 6px !important;
+        font-size: 12px !important;
+    }
+
+    /* ---------- STORY ---------- */
+    .lv-story {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: calc(100% - 20px) !important;
+        min-height: 0 !important;
+        margin: 42px auto !important;
+    }
+
+    .lv-story-image {
+        width: 100% !important;
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+
+    .lv-story-image img {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        object-fit: cover !important;
+    }
+
+    .lv-story-copy {
+        padding: 42px 20px 48px !important;
+    }
+
+    .lv-story-copy h2 {
+        font-size: clamp(40px, 13vw, 56px) !important;
+        line-height: .94 !important;
+    }
+
+    /* ---------- BENEFITS / NEWSLETTER / FOOTER ---------- */
+    .sw-benefits {
+        grid-template-columns: 1fr !important;
+        padding: 22px 18px !important;
+    }
+
+    .sw-benefit {
+        border-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .lv-newsletter {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .lv-newsletter-form {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    .lv-newsletter-form input,
+    .lv-newsletter-form button {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .footer-brand {
+        grid-column: auto !important;
+    }
+
+    .footer-bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .sw-logo span {
+        font-size: 19px !important;
+    }
+
+    .lv-hero-copy h1 {
+        font-size: 45px !important;
+    }
+
+    .home-product-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
