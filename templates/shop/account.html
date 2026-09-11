@@ -1,0 +1,313 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "My Account" %} — LE VAURÉ
+{% endblock %}
+
+{% block content %}
+
+<section class="account-page">
+
+    <div class="account-shell">
+
+        <div class="account-hero">
+
+            <div>
+                <p class="account-kicker">
+                    {% trans "LE VAURÉ / MEMBER AREA" %}
+                </p>
+
+                <h1>
+                    {% trans "MY" %}<br>
+                    {% trans "ACCOUNT" %}
+                </h1>
+            </div>
+
+            <div class="account-member-badge">
+                <span>{% trans "MEMBER" %}</span>
+                <strong>{{ user.username|upper }}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="account-layout">
+
+            <!-- =========================================
+                 LEFT / PROFILE
+            ========================================== -->
+
+            <aside class="account-sidebar">
+
+                <div class="account-profile-card">
+
+                    <div class="account-profile-top">
+
+                        <div class="account-avatar">
+                            {{ user.username|first|upper }}
+                        </div>
+
+                        <div>
+                            <span class="account-label">
+                                {% trans "LE VAURÉ MEMBER" %}
+                            </span>
+
+                            <h2>
+                                {{ user.username }}
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-profile-details">
+
+                        <div class="account-detail-row">
+                            <span>{% trans "EMAIL" %}</span>
+
+                            <strong>
+                                {{ user.email|default:"—" }}
+                            </strong>
+                        </div>
+
+                        <div class="account-detail-row">
+                            <span>{% trans "USERNAME" %}</span>
+
+                            <strong>
+                                {{ user.username }}
+                            </strong>
+                        </div>
+
+                        <div class="account-detail-row">
+                            <span>{% trans "MEMBER SINCE" %}</span>
+
+                            <strong>
+                                {{ user.date_joined|date:"d M Y"|upper }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <nav class="account-nav">
+
+                    <a href="#orders" class="account-nav-link is-active">
+                        <span>01</span>
+                        <strong>{% trans "ORDER HISTORY" %}</strong>
+                        <span>→</span>
+                    </a>
+
+                    <a href="{% url 'shop' %}" class="account-nav-link">
+                        <span>02</span>
+                        <strong>{% trans "CONTINUE SHOPPING" %}</strong>
+                        <span>→</span>
+                    </a>
+
+                    <a href="{% url 'cart' %}" class="account-nav-link">
+                        <span>03</span>
+                        <strong>{% trans "SHOPPING BAG" %}</strong>
+                        <span>→</span>
+                    </a>
+
+                </nav>
+
+
+                <div class="account-support-card">
+
+                    <span class="account-label">
+                        {% trans "NEED HELP?" %}
+                    </span>
+
+                    <p>
+                        {% trans "Questions about your account or an order? Contact LE VAURÉ support." %}
+                    </p>
+
+                    <a href="mailto:support@levaure.store">
+                        {% trans "CONTACT SUPPORT" %} →
+                    </a>
+
+                </div>
+
+                <form
+                    method="post"
+                    action="{% url 'logout' %}"
+                    class="account-logout-form"
+                >
+
+                    {% csrf_token %}
+
+                    <button
+                        type="submit"
+                        class="account-logout"
+                    >
+                        {% trans "LOG OUT" %}
+                    </button>
+
+                </form>
+
+            </aside>
+
+
+            <!-- =========================================
+                 RIGHT / ORDERS
+            ========================================== -->
+
+            <main class="account-content" id="orders">
+
+                <div class="account-section-head">
+
+                    <div>
+                        <span class="account-label">
+                            {% trans "PURCHASES" %}
+                        </span>
+
+                        <h2>
+                            {% trans "ORDER HISTORY" %}
+                        </h2>
+                    </div>
+
+                    <div class="account-order-count">
+                        {{ orders|length|stringformat:"02d" }}
+                    </div>
+
+                </div>
+
+
+                {% if orders %}
+
+                    <div class="account-orders">
+
+                        {% for order in orders %}
+
+                            <article class="account-order-card">
+
+                                <div class="account-order-top">
+
+                                    <div>
+                                        <span class="account-label">
+                                            {% trans "ORDER" %}
+                                        </span>
+
+                                        <strong class="account-order-number">
+                                            #LV-{{ order.id }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="account-order-status">
+                                        <span class="account-status-dot"></span>
+                                        <span>{% trans "ORDER RECEIVED" %}</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="account-order-grid">
+
+                                    <div class="account-order-info">
+                                        <span>
+                                            {% trans "TOTAL" %}
+                                        </span>
+
+                                        <strong>
+                                            ${{ order.total }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="account-order-info">
+                                        <span>
+                                            {% trans "EMAIL" %}
+                                        </span>
+
+                                        <strong>
+                                            {{ order.email }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="account-order-info">
+                                        <span>
+                                            {% trans "SHIPPING TO" %}
+                                        </span>
+
+                                        <strong>
+                                            {{ order.address }}
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="account-order-footer">
+
+                                    <div class="account-order-name">
+                                        <span>
+                                            {% trans "CUSTOMER" %}
+                                        </span>
+
+                                        <strong>
+                                            {{ order.full_name }}
+                                        </strong>
+                                    </div>
+
+                                    <span class="account-order-mark">
+                                        LE VAURÉ
+                                    </span>
+
+                                </div>
+
+                            </article>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% else %}
+
+                    <div class="account-empty-orders">
+
+                        <div class="account-empty-number">
+                            00
+                        </div>
+
+                        <h3>
+                            {% trans "NO ORDERS YET." %}
+                        </h3>
+
+                        <p>
+                            {% trans "Your LE VAURÉ orders will appear here." %}
+                            after your first purchase.
+                        </p>
+
+                        <a href="{% url 'shop' %}" class="account-shop-button">
+                            <span>{% trans "EXPLORE THE SHOP" %}</span>
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                {% endif %}
+
+            </main>
+
+        </div>
+
+
+        <div class="account-footer-strip">
+
+            <span>
+                LE VAURÉ
+            </span>
+
+            <span>
+                MOVE YOUR OWN WAY.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

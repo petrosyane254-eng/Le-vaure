@@ -1,0 +1,660 @@
+{% extends "shop/base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ product.name }} | LE VAURÉ{% endblock %}
+
+{% block meta_description %}Shop {{ product.name }}{% if product.category %} from the {{ product.category.name }} collection{% endif %} at LE VAURÉ. {{ product.description|striptags|truncatewords:20 }}{% endblock %}
+
+{% block canonical %}
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+{% block extra_head %}
+
+<!-- Open Graph -->
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="LE VAURÉ">
+<meta property="og:title" content="{{ product.name }} | LE VAURÉ">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+{% if product.description %}
+<meta
+    property="og:description"
+    content="{{ product.description|striptags|truncatewords:30 }}"
+>
+{% endif %}
+
+{% if product.image %}
+<meta
+    property="og:image"
+    content="{{ request.scheme }}://{{ request.get_host }}{{ product.image.url }}"
+>
+{% endif %}
+
+<!-- Product structured data for Google -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ product.name|escapejs }}",
+    "description": "{{ product.description|striptags|truncatewords:40|escapejs }}",
+    {% if product.image %}
+    "image": [
+        "{{ request.scheme }}://{{ request.get_host }}{{ product.image.url }}"
+    ],
+    {% endif %}
+    "brand": {
+        "@type": "Brand",
+        "name": "LE VAURÉ"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "{{ request.build_absolute_uri }}",
+        "priceCurrency": "USD",
+        "price": "{{ product.price }}",
+        "availability": "{% if product.stock > 0 %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
+    }
+}
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="pd-old-page">
+
+    <div class="pd-old-layout">
+
+        <!-- LEFT / PRODUCT GALLERY -->
+        <div class="pd-old-gallery">
+
+            <div class="pd-main-gallery-wrap">
+
+                <button
+                    type="button"
+                    class="pd-gallery-arrow pd-gallery-arrow-left"
+                    id="galleryPrev"
+                    aria-label="Previous image"
+                >
+                    ←
+                </button>
+
+                {% if product.image %}
+                    <img
+                        id="mainProductImage"
+                        src="{{ product.image.url }}"
+                        alt="{{ product.name }}"
+                        class="pd-old-main-image"
+                    >
+                {% elif images %}
+                    <img
+                        id="mainProductImage"
+                        src="{{ images.0.image.url }}"
+                        alt="{{ product.name }}"
+                        class="pd-old-main-image"
+                    >
+                {% else %}
+                    <img
+                        id="mainProductImage"
+                        src="{% static 'images/logo.png' %}"
+                        alt="{{ product.name }}"
+                        class="pd-old-main-image"
+                    >
+                {% endif %}
+
+                <button
+                    type="button"
+                    class="pd-gallery-arrow pd-gallery-arrow-right"
+                    id="galleryNext"
+                    aria-label="Next image"
+                >
+                    →
+                </button>
+
+            </div>
+
+            <div class="pd-product-thumbnails">
+
+                {% if product.image %}
+                    <button
+                        type="button"
+                        class="pd-product-thumb is-active"
+                        data-image="{{ product.image.url }}"
+                        aria-label="View {{ product.name }} main image"
+                    >
+                        <img
+                            src="{{ product.image.url }}"
+                            alt="{{ product.name }}"
+                        >
+                    </button>
+                {% endif %}
+
+                {% for image in images %}
+                    <button
+                        type="button"
+                        class="pd-product-thumb {% if not product.image and forloop.first %}is-active{% endif %}"
+                        data-image="{{ image.image.url }}"
+                        aria-label="View {{ product.name }} image"
+                    >
+                        <img
+                            src="{{ image.image.url }}"
+                            alt="{{ product.name }}"
+                            loading="lazy"
+                        >
+                    </button>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT / PRODUCT INFORMATION -->
+        <aside class="pd-old-info">
+
+            <div class="pd-old-category">
+                {% if product.category %}
+                    {{ product.category.name }}
+                {% else %}
+                    LE VAURÉ
+                {% endif %}
+            </div>
+
+            <h1 class="pd-old-title">
+                {{ product.name }}
+            </h1>
+
+            {% if product.description %}
+                <div class="pd-old-description">
+                    {{ product.description|striptags|truncatewords:50 }}
+                </div>
+            {% endif %}
+
+            <div class="pd-old-price">
+                ${{ product.price|floatformat:2 }}
+            </div>
+
+            <div class="pd-old-section pd-old-availability">
+
+                <span class="pd-old-label">
+                    AVAILABILITY
+                </span>
+
+                <div class="pd-old-stock-row">
+
+                    {% if product.stock > 0 %}
+                        <div class="pd-old-stock-left">
+                            <span class="pd-old-stock-dot"></span>
+                            <strong>{% trans "IN STOCK" %}</strong>
+                        </div>
+
+                        <span class="pd-old-stock-count">
+                            {{ product.stock }} AVAILABLE
+                        </span>
+                    {% else %}
+                        <div class="pd-old-stock-left">
+                            <span class="pd-old-stock-dot is-sold"></span>
+                            <strong>{% trans "SOLD OUT" %}</strong>
+                        </div>
+
+                        <span class="pd-old-stock-count">
+                            0 AVAILABLE
+                        </span>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% if product.stock > 0 %}
+
+                <form
+                    method="post"
+                    action="{% url 'add_cart' product.pk %}"
+                    class="pd-old-buy-form"
+                >
+                    {% csrf_token %}
+
+                    <span class="pd-old-label">
+                        QUANTITY
+                    </span>
+
+                    <div class="pd-old-buy-row">
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            max="{{ product.stock }}"
+                            aria-label="Quantity"
+                        >
+
+                        <button
+                            type="submit"
+                            class="pd-old-add-cart"
+                        >
+                            <span>{% trans "ADD TO CART" %}</span>
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            {% else %}
+
+                <div class="pd-old-buy-form">
+
+                    <span class="pd-old-label">
+                        QUANTITY
+                    </span>
+
+                    <button
+                        type="button"
+                        class="pd-old-add-cart is-disabled"
+                        disabled
+                    >
+                        SOLD OUT
+                    </button>
+
+                </div>
+
+            {% endif %}
+
+            <div class="pd-old-secondary-row">
+
+                {% if user.is_authenticated %}
+                    <form
+                        method="post"
+                        action="{% url 'toggle_wishlist' product.pk %}"
+                        class="pd-old-wishlist-form"
+                    >
+                        {% csrf_token %}
+
+                        <input
+                            type="hidden"
+                            name="next"
+                            value="{{ request.path }}"
+                        >
+
+                        <button
+                            type="submit"
+                            class="pd-old-secondary-btn {% if is_wishlisted %}is-active{% endif %}"
+                        >
+                            <span class="pd-old-heart">
+                                {% if is_wishlisted %}♥{% else %}♡{% endif %}
+                            </span>
+
+                            <span>
+                                {% if is_wishlisted %}
+                                    REMOVE FROM WISHLIST
+                                {% else %}
+                                    ADD TO WISHLIST
+                                {% endif %}
+                            </span>
+                        </button>
+                    </form>
+                {% else %}
+                    <a
+                        href="{% url 'login' %}?next={{ request.path|urlencode }}"
+                        class="pd-old-secondary-btn"
+                    >
+                        <span class="pd-old-heart">♡</span>
+                        <span>{% trans "LOGIN TO SAVE" %}</span>
+                    </a>
+                {% endif %}
+
+                {% if product.stock > 0 %}
+                    <form
+                        method="post"
+                        action="{% url 'add_cart' product.pk %}"
+                    >
+                        {% csrf_token %}
+
+                        <input
+                            type="hidden"
+                            name="quantity"
+                            value="1"
+                        >
+
+                        <button
+                            type="submit"
+                            class="pd-old-secondary-btn pd-old-buy-now"
+                        >
+                            <span>{% trans "BUY NOW" %}</span>
+                            <span>→</span>
+                        </button>
+                    </form>
+                {% else %}
+                    <button
+                        type="button"
+                        class="pd-old-secondary-btn is-disabled"
+                        disabled
+                    >
+                        <span>{% trans "SOLD OUT" %}</span>
+                    </button>
+                {% endif %}
+
+            </div>
+
+            <div class="pd-old-quality">
+
+                <div class="pd-old-quality-icon">
+                    ▣
+                </div>
+
+                <div>
+                    <strong>
+                        LE VAURÉ QUALITY
+                    </strong>
+
+                    <p>
+                        Designed for everyday movement with clean materials
+                        and functional construction.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pd-old-accordions">
+
+                <details>
+                    <summary>
+                        <span>{% trans "PRODUCT DETAILS" %}</span>
+                        <span class="pd-old-plus">+</span>
+                    </summary>
+
+                    <div class="pd-old-accordion-content">
+                        {% if product.description %}
+                            {{ product.description|safe }}
+                        {% else %}
+                            LE VAURÉ product.
+                        {% endif %}
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span>SHIPPING &amp; RETURNS</span>
+                        <span class="pd-old-plus">+</span>
+                    </summary>
+
+                    <div class="pd-old-accordion-content">
+                        Shipping is calculated at checkout.
+                        Return information is available in our
+                        Shipping &amp; Returns policy.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span>{% trans "ORDER SUPPORT" %}</span>
+                        <span class="pd-old-plus">+</span>
+                    </summary>
+
+                    <div class="pd-old-accordion-content">
+                        Need help with your order?
+                        Contact LE VAURÉ support and include
+                        your order details.
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="pd-old-feature-strip">
+
+                <div>
+                    <span>01</span>
+                    <strong>{% trans "SECURE" %}</strong>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <strong>{% trans "QUALITY" %}</strong>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <strong>{% trans "SUPPORT" %}</strong>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<script>
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const mainImage =
+            document.getElementById(
+                "mainProductImage"
+            );
+
+        /* ================================================= */
+        /* IMAGE GALLERY                                     */
+        /* ================================================= */
+
+        const galleryThumbnails =
+            Array.from(
+                document.querySelectorAll(
+                    ".pd-product-thumb"
+                )
+            );
+
+        const prevButton =
+            document.getElementById(
+                "galleryPrev"
+            );
+
+        const nextButton =
+            document.getElementById(
+                "galleryNext"
+            );
+
+        let currentImageIndex = 0;
+        let touchStartX = null;
+
+        galleryThumbnails.forEach(
+            function (item, index) {
+                if (
+                    item.classList.contains(
+                        "is-active"
+                    )
+                ) {
+                    currentImageIndex = index;
+                }
+            }
+        );
+
+        function showGalleryImage(index) {
+
+            if (
+                !mainImage
+                ||
+                galleryThumbnails.length === 0
+            ) {
+                return;
+            }
+
+            if (index < 0) {
+                index =
+                    galleryThumbnails.length - 1;
+            }
+
+            if (
+                index >=
+                galleryThumbnails.length
+            ) {
+                index = 0;
+            }
+
+            currentImageIndex = index;
+
+            const thumbnail =
+                galleryThumbnails[
+                    currentImageIndex
+                ];
+
+            const imageUrl =
+                thumbnail.dataset.image;
+
+            if (!imageUrl) {
+                return;
+            }
+
+            galleryThumbnails.forEach(
+                function (item) {
+                    item.classList.remove(
+                        "is-active"
+                    );
+                }
+            );
+
+            thumbnail.classList.add(
+                "is-active"
+            );
+
+            thumbnail.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
+            mainImage.classList.add(
+                "is-changing"
+            );
+
+            const preloadImage =
+                new Image();
+
+            preloadImage.src =
+                imageUrl;
+
+            preloadImage.onload =
+                function () {
+
+                    mainImage.src =
+                        imageUrl;
+
+                    requestAnimationFrame(
+                        function () {
+                            mainImage.classList.remove(
+                                "is-changing"
+                            );
+                        }
+                    );
+
+                };
+
+            preloadImage.onerror =
+                function () {
+                    mainImage.classList.remove(
+                        "is-changing"
+                    );
+                };
+        }
+
+        galleryThumbnails.forEach(
+            function (thumbnail, index) {
+
+                thumbnail.addEventListener(
+                    "click",
+                    function () {
+                        showGalleryImage(
+                            index
+                        );
+                    }
+                );
+
+            }
+        );
+
+        if (prevButton) {
+            prevButton.addEventListener(
+                "click",
+                function () {
+                    showGalleryImage(
+                        currentImageIndex - 1
+                    );
+                }
+            );
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener(
+                "click",
+                function () {
+                    showGalleryImage(
+                        currentImageIndex + 1
+                    );
+                }
+            );
+        }
+
+        if (mainImage) {
+
+            mainImage.addEventListener(
+                "touchstart",
+                function (event) {
+                    touchStartX =
+                        event.changedTouches[0]
+                            .clientX;
+                },
+                {
+                    passive: true
+                }
+            );
+
+            mainImage.addEventListener(
+                "touchend",
+                function (event) {
+
+                    if (
+                        touchStartX === null
+                    ) {
+                        return;
+                    }
+
+                    const touchEndX =
+                        event.changedTouches[0]
+                            .clientX;
+
+                    const distance =
+                        touchEndX -
+                        touchStartX;
+
+                    if (
+                        Math.abs(distance) >= 45
+                    ) {
+                        if (distance < 0) {
+                            showGalleryImage(
+                                currentImageIndex + 1
+                            );
+                        } else {
+                            showGalleryImage(
+                                currentImageIndex - 1
+                            );
+                        }
+                    }
+
+                    touchStartX = null;
+                },
+                {
+                    passive: true
+                }
+            );
+
+        }
+
+    }
+);
+</script>
+
+{% endblock %}

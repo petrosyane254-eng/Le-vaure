@@ -1,0 +1,47 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %} - LE VAURÉ{% endblock %}
+
+{% block content %}
+
+<section class="auth">
+  <div>
+    <p class="eyebrow">{% trans "LE VAURÉ · ACCOUNT ACCESS" %}</p>
+    <h1>{% trans "LOGIN" %}</h1>
+    <p class="verify-copy">{% trans "Sign in to your LE VAURÉ account." %}</p>
+
+    {% if form.errors %}
+      <div class="form-errors">
+        {{ form.non_field_errors }}
+        {{ form.username.errors }}
+        {{ form.password.errors }}
+      </div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      <p>
+        <label for="{{ form.username.id_for_label }}">{% trans "USERNAME" %}</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+      </p>
+
+      <p>
+        <label for="{{ form.password.id_for_label }}">{% trans "PASSWORD" %}</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+      </p>
+
+      <button type="submit" class="btn full">{% trans "LOGIN" %} -></button>
+    </form>
+
+    <p>
+      {% trans "New to LE VAURÉ?" %}
+      <a href="{% url 'register' %}">{% trans "Create an account" %}</a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}

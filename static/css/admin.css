@@ -1,0 +1,239 @@
+/* =========================================================
+   SOUTHWARD + UNFOLD ADMIN
+   Safe custom styles
+   ========================================================= */
+
+
+/* =========================================================
+   ORDER STATUS BADGES
+   ========================================================= */
+
+.sw-order-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* NEW */
+
+.sw-order-new {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+
+/* PAID */
+
+.sw-order-paid {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* PROCESSING */
+
+.sw-order-processing {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+
+/* SHIPPED */
+
+.sw-order-shipped {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+
+/* COMPLETED */
+
+.sw-order-completed {
+    background: #d1fae5;
+    color: #047857;
+}
+
+
+/* CANCELLED */
+
+.sw-order-cancelled {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   STOCK BADGES
+   ========================================================= */
+
+.sw-stock {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* GOOD STOCK */
+
+.sw-stock-good {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* LOW STOCK */
+
+.sw-stock-low {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+
+/* OUT OF STOCK */
+
+.sw-stock-out {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   ORDER DETAIL
+   ========================================================= */
+
+.sw-order-number-detail {
+    display: inline-block;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+}
+
+
+.sw-order-total {
+    display: inline-block;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE PREVIEW
+   ========================================================= */
+
+.sw-product-preview img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 420px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW INSIDE ADMIN TABLE
+   ========================================================= */
+
+.field-image_preview img,
+.field-large_image_preview img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   DARK MODE SUPPORT
+   ========================================================= */
+
+.dark .sw-order-new {
+    background: rgba(255, 255, 255, 0.08);
+    color: #d1d5db;
+}
+
+
+.dark .sw-order-paid {
+    background: rgba(59, 130, 246, 0.16);
+    color: #93c5fd;
+}
+
+
+.dark .sw-order-processing {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fcd34d;
+}
+
+
+.dark .sw-order-shipped {
+    background: rgba(139, 92, 246, 0.16);
+    color: #c4b5fd;
+}
+
+
+.dark .sw-order-completed {
+    background: rgba(16, 185, 129, 0.16);
+    color: #6ee7b7;
+}
+
+
+.dark .sw-order-cancelled {
+    background: rgba(239, 68, 68, 0.16);
+    color: #fca5a5;
+}
+
+
+.dark .sw-stock-good {
+    background: rgba(34, 197, 94, 0.16);
+    color: #86efac;
+}
+
+
+.dark .sw-stock-low {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fcd34d;
+}
+
+
+.dark .sw-stock-out {
+    background: rgba(239, 68, 68, 0.16);
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .sw-order-status,
+    .sw-stock {
+        font-size: 10px;
+        padding: 4px 7px;
+    }
+
+}

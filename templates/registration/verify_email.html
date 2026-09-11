@@ -1,0 +1,68 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Verify Email" %} - LE VAURÉ{% endblock %}
+
+{% block content %}
+<section class="verify-page">
+  <div class="verify-card">
+    <div class="verify-top">
+      <p class="verify-kicker">{% trans "LE VAURÉ / EMAIL SECURITY" %}</p>
+      <h1>{% trans "VERIFY" %}<br>{% trans "YOUR EMAIL" %}</h1>
+      <p class="verify-description">
+        {% trans "We sent a 6-digit verification code to" %}
+        <strong>{{ email }}</strong>.
+        {% trans "Enter the code below to activate your LE VAURÉ account." %}
+      </p>
+    </div>
+
+    <form method="post" action="{% url 'verify_email' %}" class="verify-form">
+      {% csrf_token %}
+      <div class="verify-field">
+        <label for="verification-code">{% trans "VERIFICATION CODE" %}</label>
+        <input
+          id="verification-code"
+          type="text"
+          name="code"
+          inputmode="numeric"
+          pattern="[0-9]{6}"
+          maxlength="6"
+          autocomplete="one-time-code"
+          placeholder="000000"
+          required
+          autofocus
+        >
+      </div>
+
+      <button type="submit" class="verify-submit">
+        <span>{% trans "VERIFY EMAIL" %}</span>
+        <span>-></span>
+      </button>
+    </form>
+
+    <div class="verify-resend">
+      <div class="verify-divider"></div>
+
+      <p>{% trans "Didn't receive the code?" %}</p>
+
+      <form method="post" action="{% url 'resend_verification' %}">
+        {% csrf_token %}
+        <button type="submit" class="verify-resend-button">{% trans "RESEND CODE" %}</button>
+      </form>
+    </div>
+
+    <div class="verify-security">
+      <div class="verify-security-number">01</div>
+      <div>
+        <span>{% trans "SECURE VERIFICATION" %}</span>
+        <p>{% trans "Your verification code expires automatically for security. If it expires, request a new code." %}</p>
+      </div>
+    </div>
+
+    <div class="verify-footer">
+      <strong>{% trans "LE VAURÉ" %}</strong>
+      <span>{% trans "MOVE YOUR OWN WAY." %}</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Register" %} - LE VAURÉ{% endblock %}
+
+{% block content %}
+<section class="auth">
+  <div>
+    <p class="eyebrow">{% trans "LE VAURÉ · CREATE ACCOUNT" %}</p>
+    <h1>{% trans "REGISTER" %}</h1>
+    <p class="verify-copy">{% trans "Create your LE VAURÉ account to continue." %}</p>
+
+    {% if form.errors %}
+      <div class="form-errors">
+        {{ form.non_field_errors }}
+        {{ form.username.errors }}
+        {{ form.email.errors }}
+        {{ form.password1.errors }}
+        {{ form.password2.errors }}
+      </div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <p>
+        <label for="{{ form.username.id_for_label }}">{% trans "USERNAME" %}</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+      </p>
+      <p>
+        <label for="{{ form.email.id_for_label }}">{% trans "EMAIL ADDRESS" %}</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+      </p>
+      <p>
+        <label for="{{ form.password1.id_for_label }}">{% trans "PASSWORD" %}</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+      </p>
+      <p>
+        <label for="{{ form.password2.id_for_label }}">{% trans "CONFIRM PASSWORD" %}</label>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+      </p>
+      <button type="submit" class="btn full">{% trans "CREATE ACCOUNT" %} -></button>
+    </form>
+
+    <p>
+      {% trans "Already have a LE VAURÉ account?" %}
+      <a href="{% url 'login' %}">{% trans "Login" %}</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

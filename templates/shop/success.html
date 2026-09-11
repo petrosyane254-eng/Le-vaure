@@ -1,0 +1,105 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Order Confirmed" %} — LE VAURÉ
+{% endblock %}
+
+{% block content %}
+
+<section class="sw-success-page">
+
+    <div class="sw-success-card">
+
+        <div class="sw-success-top">
+            <p class="sw-success-kicker">
+                LE VAURÉ · {% trans "ORDER CONFIRMED" %}
+            </p>
+
+            <p class="sw-success-subkicker">
+                {% trans "THANK YOU FOR SHOPPING WITH US" %}
+            </p>
+        </div>
+
+
+        <div class="sw-success-heading">
+            <h1>
+                {% trans "ORDER" %}<br>
+                {% trans "CONFIRMED." %}
+            </h1>
+        </div>
+
+
+        <div class="sw-success-message">
+            <p>
+                {% trans "Your order has been received successfully. A confirmation email has been sent to" %}
+                <strong>{{ order.email }}</strong>.
+            </p>
+        </div>
+
+
+        <div class="sw-success-order-grid">
+
+            <div class="sw-success-order-cell">
+                <span>{% trans "ORDER NUMBER" %}</span>
+                <strong>#LV-{{ order.id }}</strong>
+            </div>
+
+            <div class="sw-success-order-cell">
+                <span>{% trans "ORDER TOTAL" %}</span>
+                <strong>${{ order.total }}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="sw-success-status">
+
+            <div class="sw-success-status-number">
+                01
+            </div>
+
+            <div class="sw-success-status-content">
+                <span class="sw-success-status-label">
+                    {% trans "ORDER RECEIVED" %}
+                </span>
+
+                <p>
+                    {% trans "We’re preparing your order now. Keep your order number for reference." %}
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="sw-success-actions">
+
+            <a
+                href="{% url 'shop' %}"
+                class="sw-success-primary"
+            >
+                <span>{% trans "CONTINUE SHOPPING" %}</span>
+                <span>→</span>
+            </a>
+
+            <a
+                href="{% url 'account' %}"
+                class="sw-success-secondary"
+            >
+                <span>{% trans "VIEW MY ACCOUNT" %}</span>
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="sw-success-footer">
+            <span>LE VAURÉ</span>
+            <span>{% trans "MOVE YOUR OWN WAY." %}</span>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

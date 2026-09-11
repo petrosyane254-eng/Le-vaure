@@ -1,0 +1,687 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LE VAURE\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A BRIGHTER"
+msgstr "UN PLUS BEAU"
+
+msgid "A HIGHER PERSPECTIVE"
+msgstr "UNE PERSPECTIVE PLUS HAUTE"
+
+msgid "A higher place."
+msgstr "Un lieu plus élevé."
+
+msgid "ACCOUNT"
+msgstr "COMPTE"
+
+msgid "ADD TO CART"
+msgstr "AJOUTER AU PANIER"
+
+msgid "ALL"
+msgstr "TOUT"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "Accessories"
+msgstr "Accessoires"
+
+msgid "Account"
+msgstr "Compte"
+
+msgid "BUY NOW"
+msgstr "ACHETER MAINTENANT"
+
+msgid "CHECKOUT"
+msgstr "PAIEMENT"
+
+msgid "CLOTHES"
+msgstr "VÊTEMENTS"
+
+msgid "CONFIRM PASSWORD"
+msgstr "CONFIRMER LE MOT DE PASSE"
+
+msgid "CONTACT INFORMATION"
+msgstr "COORDONNÉES"
+
+msgid "CONTINUE SHOPPING"
+msgstr "CONTINUER MES ACHATS"
+
+msgid "CREATE ACCOUNT"
+msgstr "CRÉER UN COMPTE"
+
+msgid "CUSTOMER SUPPORT"
+msgstr "SERVICE CLIENT"
+
+msgid "Caps"
+msgstr "Casquettes"
+
+msgid "Cart"
+msgstr "Panier"
+
+msgid "Collections"
+msgstr "Collections"
+
+msgid "Create an account"
+msgstr "Créer un compte"
+
+msgid "DISCOVER THE COLLECTION"
+msgstr "DÉCOUVRIR LA COLLECTION"
+
+msgid "EASY RETURNS"
+msgstr "RETOURS FACILES"
+
+msgid "EMAIL"
+msgstr "E-MAIL"
+
+msgid "EMAIL ADDRESS"
+msgstr "ADRESSE E-MAIL"
+
+msgid "EXPLORE"
+msgstr "DÉCOUVRIR"
+
+msgid "EXPLORE COLLECTION"
+msgstr "DÉCOUVRIR LA COLLECTION"
+
+msgid "EXPLORE SHOP"
+msgstr "DÉCOUVRIR LA BOUTIQUE"
+
+msgid "EXPLORE THE SHOP"
+msgstr "DÉCOUVRIR LA BOUTIQUE"
+
+msgid "Explore the latest LE VAURÉ collection."
+msgstr "Découvrez la dernière collection LE VAURÉ."
+
+msgid "FAST SHIPPING"
+msgstr "EXPÉDITION RAPIDE"
+
+msgid "FREE SHIPPING ON SELECTED ORDERS"
+msgstr "LIVRAISON OFFERTE SUR UNE SÉLECTION DE COMMANDES"
+
+msgid "Featured"
+msgstr "Sélection"
+
+msgid "HELP"
+msgstr "AIDE"
+
+msgid "Hoodies"
+msgstr "Sweats à capuche"
+
+msgid "IN STOCK"
+msgstr "EN STOCK"
+
+msgid "INSPIRED BY HERITAGE"
+msgstr "INSPIRÉ PAR L’HÉRITAGE"
+
+msgid "IS EMPTY"
+msgstr "EST VIDE"
+
+msgid "Journal"
+msgstr "Journal"
+
+msgid "Journal & Updates"
+msgstr "Journal & Actualités"
+
+msgid "LE VAURÉ / COLLECTION"
+msgstr "LE VAURÉ / COLLECTION"
+
+msgid "LOGIN"
+msgstr "CONNEXION"
+
+msgid "LOGIN TO SAVE"
+msgstr "SE CONNECTER POUR ENREGISTRER"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Location"
+msgstr "Localisation"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "MEMBER"
+msgstr "MEMBRE"
+
+msgid "MEMBER SINCE"
+msgstr "MEMBRE DEPUIS"
+
+msgid "Made to move beyond seasons."
+msgstr "Pensé pour dépasser les saisons."
+
+msgid "Men"
+msgstr "Homme"
+
+msgid "More than clothes."
+msgstr "Plus que des vêtements."
+
+msgid "NO PRODUCTS FOUND"
+msgstr "AUCUN PRODUIT TROUVÉ"
+
+msgid "NOTHING SAVED YET"
+msgstr "AUCUN ARTICLE ENREGISTRÉ"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "OPTIONAL"
+msgstr "FACULTATIF"
+
+msgid "ORDER HISTORY"
+msgstr "HISTORIQUE DES COMMANDES"
+
+msgid "ORDER RECEIVED"
+msgstr "COMMANDE REÇUE"
+
+msgid "ORDER SUPPORT"
+msgstr "AIDE COMMANDE"
+
+msgid "OUR STORY"
+msgstr "NOTRE HISTOIRE"
+
+msgid "PASSWORD"
+msgstr "MOT DE PASSE"
+
+msgid "PEOPLE"
+msgstr "PERSONNES"
+
+msgid "PLACE ORDER"
+msgstr "PASSER LA COMMANDE"
+
+msgid "PLACES"
+msgstr "LIEUX"
+
+msgid "PRODUCT DETAILS"
+msgstr "DÉTAILS DU PRODUIT"
+
+msgid "Price: High to Low"
+msgstr "Prix : décroissant"
+
+msgid "Price: Low to High"
+msgstr "Prix : croissant"
+
+msgid "QUALITY"
+msgstr "QUALITÉ"
+
+msgid "QUANTITY"
+msgstr "QUANTITÉ"
+
+msgid "REGISTER"
+msgstr "S’INSCRIRE"
+
+msgid "REMOVE"
+msgstr "RETIRER"
+
+msgid "REMOVE FROM WISHLIST"
+msgstr "RETIRER DES FAVORIS"
+
+msgid "SAVED ITEMS"
+msgstr "ARTICLES ENREGISTRÉS"
+
+msgid "SECURE CHECKOUT"
+msgstr "PAIEMENT SÉCURISÉ"
+
+msgid "SHIPPING"
+msgstr "LIVRAISON"
+
+msgid "SHIPPING & RETURNS"
+msgstr "LIVRAISON & RETOURS"
+
+msgid "SHIPPING ADDRESS"
+msgstr "ADRESSE DE LIVRAISON"
+
+msgid "SHOP NOW"
+msgstr "ACHETER"
+
+msgid "SHOPPING BAG"
+msgstr "PANIER"
+
+msgid "SOLD OUT"
+msgstr "ÉPUISÉ"
+
+msgid "SORT BY"
+msgstr "TRIER PAR"
+
+msgid "STAY IN TOUCH"
+msgstr "RESTEZ INFORMÉ"
+
+msgid "SUBSCRIBE →"
+msgstr "S’INSCRIRE →"
+
+msgid "SUBTOTAL"
+msgstr "SOUS-TOTAL"
+
+msgid "SUPPORT"
+msgstr "ASSISTANCE"
+
+msgid "Search"
+msgstr "Recherche"
+
+msgid "Search products..."
+msgstr "Rechercher des produits..."
+
+msgid "Shop"
+msgstr "Boutique"
+
+msgid "Shop categories"
+msgstr "Catégories"
+
+msgid "T-Shirts"
+msgstr "T-shirts"
+
+msgid "THE COLLECTION"
+msgstr "LA COLLECTION"
+
+msgid "THE ESSENTIALS"
+msgstr "LES ESSENTIELS"
+
+msgid "TOMORROW"
+msgstr "DEMAIN"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "Timeless"
+msgstr "Intemporel"
+
+msgid "UPDATE"
+msgstr "METTRE À JOUR"
+
+msgid "USERNAME"
+msgstr "NOM D’UTILISATEUR"
+
+msgid "VIEW"
+msgstr "VOIR"
+
+msgid "VIEW ALL PRODUCTS"
+msgstr "VOIR TOUS LES PRODUITS"
+
+msgid "VIEW CART"
+msgstr "VOIR LE PANIER"
+
+msgid "VIEW PRODUCT"
+msgstr "VOIR LE PRODUIT"
+
+msgid "VISIT SHOP"
+msgstr "VISITER LA BOUTIQUE"
+
+msgid "We're here to help"
+msgstr "Nous sommes là pour vous aider"
+
+msgid "Wishlist"
+msgstr "Favoris"
+
+msgid "Women"
+msgstr "Femme"
+
+msgid "YOUR BAG"
+msgstr "VOTRE PANIER"
+
+msgid "YOUR CART"
+msgstr "VOTRE PANIER"
+
+msgid "YOUR WISHLIST"
+msgstr "VOS FAVORIS"
+
+msgid "Your email address"
+msgstr "Votre e-mail"
+
+msgid "by Design"
+msgstr "par design"
+
+msgid "A brand for those who see more — in places, in people, and in what comes next."
+msgstr "Une marque pour celles et ceux qui voient plus loin — dans les lieux, les personnes et ce qui vient ensuite."
+
+msgid "ACCEPT ALL"
+msgstr "TOUT ACCEPTER"
+
+msgid "ADDED TO YOUR CART"
+msgstr "AJOUTÉ À VOTRE PANIER"
+
+msgid "ALL RIGHTS RESERVED."
+msgstr "TOUS DROITS RÉSERVÉS."
+
+msgid "ALWAYS ACTIVE"
+msgstr "TOUJOURS ACTIF"
+
+msgid "ANALYTICS"
+msgstr "ANALYTIQUE"
+
+msgid "Access password"
+msgstr "Mot de passe d’accès"
+
+msgid "Already have a LE VAURÉ account?"
+msgstr "Vous avez déjà un compte LE VAURÉ ?"
+
+msgid "Be the first to know about new collections, stories, and exclusive releases."
+msgstr "Soyez les premiers informés des nouvelles collections, histoires et sorties exclusives."
+
+msgid "CALCULATED AT CHECKOUT"
+msgstr "CALCULÉ À LA CAISSE"
+
+msgid "CHECKOUT →"
+msgstr "PASSER À LA CAISSE →"
+
+msgid "CONFIRMED."
+msgstr "CONFIRMÉE."
+
+msgid "CONTACT SUPPORT"
+msgstr "CONTACTER LE SUPPORT"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "COOKIE POLICY ↗"
+msgstr "POLITIQUE DES COOKIES ↗"
+
+msgid "COOKIE SETTINGS"
+msgstr "PARAMÈTRES DES COOKIES"
+
+msgid "CUSTOMER"
+msgstr "CLIENT"
+
+msgid "Cart, account and security functions"
+msgstr "Fonctions du panier, du compte et de sécurité"
+
+msgid "Close cart"
+msgstr "Fermer le panier"
+
+msgid "Close cookie settings"
+msgstr "Fermer les paramètres des cookies"
+
+msgid "Close privacy message"
+msgstr "Fermer le message de confidentialité"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Create your LE VAURÉ account to continue."
+msgstr "Créez votre compte LE VAURÉ pour continuer."
+
+msgid "Decrease quantity"
+msgstr "Diminuer la quantité"
+
+msgid "Didn't receive the code?"
+msgstr "Vous n’avez pas reçu le code ?"
+
+msgid "EACH"
+msgstr "L’UNITÉ"
+
+msgid "ENTER THE STORE"
+msgstr "ENTRER DANS LA BOUTIQUE"
+
+msgid "ESSENTIAL"
+msgstr "ESSENTIEL"
+
+msgid "ESSENTIAL COOKIES"
+msgstr "COOKIES ESSENTIELS"
+
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+msgid "Enter the address where your order should arrive."
+msgstr "Saisissez l’adresse de livraison de votre commande."
+
+msgid "Enter the code below to activate your LE VAURÉ account."
+msgstr "Saisissez le code ci-dessous pour activer votre compte LE VAURÉ."
+
+msgid "Explore the LE VAURÉ collection and add something to your cart."
+msgstr "Explorez la collection LE VAURÉ et ajoutez un article à votre panier."
+
+msgid "IS EMPTY."
+msgstr "EST VIDE."
+
+msgid "IS TAKING SHAPE."
+msgstr "PREND FORME."
+
+msgid "Impressum"
+msgstr "Mentions légales"
+
+msgid "Increase quantity"
+msgstr "Augmenter la quantité"
+
+msgid "LE VAURÉ"
+msgstr "LE VAURÉ"
+
+msgid "LE VAURÉ / EMAIL SECURITY"
+msgstr "LE VAURÉ / EMAIL SECURITY"
+
+msgid "LE VAURÉ / MEMBER AREA"
+msgstr "LE VAURÉ / MEMBER AREA"
+
+msgid "LE VAURÉ / PRINTIFY"
+msgstr "LE VAURÉ / PRINTIFY"
+
+msgid "LE VAURÉ / SAVED"
+msgstr "LE VAURÉ / SAVED"
+
+msgid "LE VAURÉ / SECURE CHECKOUT"
+msgstr "LE VAURÉ / SECURE CHECKOUT"
+
+msgid "LE VAURÉ / YOUR BAG"
+msgstr "LE VAURÉ / YOUR BAG"
+
+msgid "LE VAURÉ MEMBER"
+msgstr "LE VAURÉ MEMBER"
+
+msgid "LE VAURÉ · ACCOUNT ACCESS"
+msgstr "LE VAURÉ · ACCOUNT ACCESS"
+
+msgid "LE VAURÉ · CREATE ACCOUNT"
+msgstr "LE VAURÉ · CREATE ACCOUNT"
+
+msgid "LOG OUT"
+msgstr "SE DÉCONNECTER"
+
+msgid "Login to save"
+msgstr "Connectez-vous pour enregistrer"
+
+msgid "Login to use wishlist"
+msgstr "Connectez-vous pour utiliser la liste de souhaits"
+
+msgid "MARKETING"
+msgstr "MARKETING"
+
+msgid "MOVE YOUR OWN WAY"
+msgstr "SUIVEZ VOTRE PROPRE VOIE"
+
+msgid "MOVE YOUR OWN WAY."
+msgstr "SUIVEZ VOTRE PROPRE VOIE."
+
+msgid "MY"
+msgstr "MON"
+
+msgid "Main navigation"
+msgstr "Navigation principale"
+
+msgid "More than clothes. A higher place."
+msgstr "Plus que des vêtements. Un lieu plus élevé."
+
+msgid "My Account"
+msgstr "Mon compte"
+
+msgid "My account"
+msgstr "Mon compte"
+
+msgid "NEED HELP?"
+msgstr "BESOIN D’AIDE ?"
+
+msgid "NO ORDERS YET."
+msgstr "AUCUNE COMMANDE POUR LE MOMENT."
+
+msgid "New arrivals"
+msgstr "Nouveautés"
+
+msgid "New to LE VAURÉ?"
+msgstr "Nouveau chez LE VAURÉ ?"
+
+msgid "ORDER"
+msgstr "COMMANDE"
+
+msgid "ORDER CONFIRMED"
+msgstr "COMMANDE CONFIRMÉE"
+
+msgid "ORDER NUMBER"
+msgstr "NUMÉRO DE COMMANDE"
+
+msgid "ORDER SUMMARY"
+msgstr "RÉCAPITULATIF"
+
+msgid "ORDER TOTAL"
+msgstr "TOTAL DE LA COMMANDE"
+
+msgid "Order Confirmed"
+msgstr "Commande confirmée"
+
+msgid "PRIVACY POLICY ↗"
+msgstr "POLITIQUE DE CONFIDENTIALITÉ ↗"
+
+msgid "PRIVATE ACCESS · A HIGHER PERSPECTIVE"
+msgstr "ACCÈS PRIVÉ · UNE PERSPECTIVE PLUS ÉLEVÉE"
+
+msgid "PRODUCT"
+msgstr "PRODUIT"
+
+msgid "PURCHASES"
+msgstr "ACHATS"
+
+msgid "Privacy"
+msgstr "Confidentialité"
+
+msgid "Private Access"
+msgstr "Accès privé"
+
+msgid "Protected order process"
+msgstr "Processus de commande protégé"
+
+msgid "Questions about your account or an order? Contact LE VAURÉ support."
+msgstr "Des questions sur votre compte ou une commande ? Contactez le support LE VAURÉ."
+
+msgid "REJECT OPTIONAL"
+msgstr "REFUSER LES OPTIONNELS"
+
+msgid "RESEND CODE"
+msgstr "RENVOYER LE CODE"
+
+msgid "ROOTED IN HERITAGE. BUILT FOR TOMORROW."
+msgstr "ENRACINÉ DANS L’HÉRITAGE. CONÇU POUR DEMAIN."
+
+msgid "Register"
+msgstr "S’inscrire"
+
+msgid "Reliable delivery"
+msgstr "Livraison fiable"
+
+msgid "SAVE CHOICES"
+msgstr "ENREGISTRER LES CHOIX"
+
+msgid "SECURE"
+msgstr "SÉCURISÉ"
+
+msgid "SECURE VERIFICATION"
+msgstr "VÉRIFICATION SÉCURISÉE"
+
+msgid "SETTINGS."
+msgstr "PARAMÈTRES."
+
+msgid "SHIPPING TO"
+msgstr "LIVRAISON À"
+
+msgid "SHOP"
+msgstr "BOUTIQUE"
+
+msgid "SHOP COLLECTION"
+msgstr "VOIR LA COLLECTION"
+
+msgid "Save the pieces you want to come back to. Saved products stay connected to your LE VAURÉ account until you remove them."
+msgstr "Enregistrez les pièces que vous souhaitez retrouver. Elles restent liées à votre compte LE VAURÉ jusqu’à ce que vous les supprimiez."
+
+msgid "Shipping & returns"
+msgstr "Livraison & retours"
+
+msgid "Shipping calculated at checkout"
+msgstr "Livraison calculée à la caisse"
+
+msgid "Shop LE VAURÉ timeless fashion and elevated everyday essentials online. Refined design, secure checkout and reliable shipping."
+msgstr "Achetez en ligne la mode intemporelle et les essentiels premium LE VAURÉ. Design raffiné, paiement sécurisé et livraison fiable."
+
+msgid "Shopping bag"
+msgstr "Panier"
+
+msgid "Sign in to your LE VAURÉ account."
+msgstr "Connectez-vous à votre compte LE VAURÉ."
+
+msgid "Simple return process"
+msgstr "Processus de retour simple"
+
+msgid "TERMS ↗"
+msgstr "CONDITIONS ↗"
+
+msgid "THANK YOU FOR SHOPPING WITH US"
+msgstr "MERCI POUR VOTRE ACHAT"
+
+msgid "THE FIRST COLLECTION"
+msgstr "LA PREMIÈRE COLLECTION"
+
+msgid "TOTAL BEFORE SHIPPING"
+msgstr "TOTAL AVANT LIVRAISON"
+
+msgid "Terms"
+msgstr "Conditions"
+
+msgid "Timeless Essentials"
+msgstr "Essentiels intemporels"
+
+msgid "Timeless essentials, considered silhouettes and pieces made for a higher perspective."
+msgstr "Des essentiels intemporels, des silhouettes réfléchies et des pièces conçues avec une perspective plus élevée."
+
+msgid "Try another search or browse all products."
+msgstr "Essayez une autre recherche ou parcourez tous les produits."
+
+msgid "VERIFICATION CODE"
+msgstr "CODE DE VÉRIFICATION"
+
+msgid "VERIFY"
+msgstr "VÉRIFIER"
+
+msgid "VERIFY EMAIL"
+msgstr "VÉRIFIER L’E-MAIL"
+
+msgid "VIEW MY ACCOUNT"
+msgstr "VOIR MON COMPTE"
+
+msgid "Verify Email"
+msgstr "Vérifier l’e-mail"
+
+msgid "WISHLIST"
+msgstr "LISTE DE SOUHAITS"
+
+msgid "We sent a 6-digit verification code to"
+msgstr "Nous avons envoyé un code de vérification à 6 chiffres à"
+
+msgid "We’re preparing your order now. Keep your order number for reference."
+msgstr "Nous préparons votre commande. Conservez votre numéro de commande comme référence."
+
+msgid "Where we can contact you about your order."
+msgstr "Les coordonnées auxquelles nous pouvons vous joindre au sujet de votre commande."
+
+msgid "YOUR CHOICE."
+msgstr "VOTRE CHOIX."
+
+msgid "YOUR EMAIL"
+msgstr "VOTRE E-MAIL"
+
+msgid "YOUR PRIVACY."
+msgstr "VOTRE CONFIDENTIALITÉ."
+
+msgid "Your LE VAURÉ orders will appear here."
+msgstr "Vos commandes LE VAURÉ apparaîtront ici."
+
+msgid "Your order has been received successfully. A confirmation email has been sent to"
+msgstr "Votre commande a bien été reçue. Un e-mail de confirmation a été envoyé à"
+
+msgid "Your verification code expires automatically for security. If it expires, request a new code."
+msgstr "Pour des raisons de sécurité, votre code de vérification expire automatiquement. S’il expire, demandez-en un nouveau."

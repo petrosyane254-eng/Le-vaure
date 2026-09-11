@@ -1,0 +1,142 @@
+/* ==========================================
+   SOUTHWARD + UNFOLD SAFE CUSTOM CSS
+   ========================================== */
+
+
+/* ORDER STATUS */
+
+.sw-order-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sw-order-new {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.sw-order-paid {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.sw-order-processing {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.sw-order-shipped {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.sw-order-completed {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.sw-order-cancelled {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* STOCK */
+
+.sw-stock {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sw-stock-good {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.sw-stock-low {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.sw-stock-out {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ORDER DETAIL */
+
+.sw-order-number-detail {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.sw-order-total {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* IMAGE PREVIEW */
+
+.field-image_preview img,
+.field-large_image_preview img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* DARK MODE */
+
+.dark .sw-order-paid {
+    background: rgba(59, 130, 246, 0.16);
+    color: #93c5fd;
+}
+
+.dark .sw-order-processing {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fcd34d;
+}
+
+.dark .sw-order-shipped {
+    background: rgba(139, 92, 246, 0.16);
+    color: #c4b5fd;
+}
+
+.dark .sw-order-completed {
+    background: rgba(16, 185, 129, 0.16);
+    color: #6ee7b7;
+}
+
+.dark .sw-order-cancelled {
+    background: rgba(239, 68, 68, 0.16);
+    color: #fca5a5;
+}
+
+.dark .sw-stock-good {
+    background: rgba(34, 197, 94, 0.16);
+    color: #86efac;
+}
+
+.dark .sw-stock-low {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fcd34d;
+}
+
+.dark .sw-stock-out {
+    background: rgba(239, 68, 68, 0.16);
+    color: #fca5a5;
+}

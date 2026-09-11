@@ -1,0 +1,691 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LE VAURE\n"
+"Language: hy\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A BRIGHTER"
+msgstr "ԱՎԵԼԻ ԼՈՒՍԱՎՈՐ"
+
+msgid "A HIGHER PERSPECTIVE"
+msgstr "ԱՎԵԼԻ ԲԱՐՁՐ ՏԵՍԱՆԿՅՈՒՆ"
+
+msgid "A higher place."
+msgstr "Ավելի բարձր տեղ։"
+
+msgid "ACCEPT ALL"
+msgstr "ԸՆԴՈՒՆԵԼ ԲՈԼՈՐԸ"
+
+msgid "ACCOUNT"
+msgstr "ՀԱՇԻՎ"
+
+msgid "ADD TO CART"
+msgstr "ԱՎԵԼԱՑՆԵԼ ԶԱՄԲՅՈՒՂ"
+
+msgid "ALL"
+msgstr "ԲՈԼՈՐԸ"
+
+msgid "About"
+msgstr "Մեր մասին"
+
+msgid "Accessories"
+msgstr "Աքսեսուարներ"
+
+msgid "Account"
+msgstr "Հաշիվ"
+
+msgid "Already have a LE VAURÉ account?"
+msgstr "Արդեն ունե՞ք LE VAURÉ հաշիվ։"
+
+msgid "BUY NOW"
+msgstr "ԳՆԵԼ ՀԻՄԱ"
+
+msgid "Be the first to know about new collections, stories, and exclusive releases."
+msgstr "Առաջինը տեղեկացեք նոր հավաքածուների, պատմությունների և բացառիկ թողարկումների մասին։"
+
+msgid "CALCULATED AT CHECKOUT"
+msgstr "ՀԱՇՎԱՐԿՎՈՒՄ Է ՎՃԱՐՄԱՆ ԺԱՄԱՆԱԿ"
+
+msgid "CHECKOUT"
+msgstr "ՎՃԱՐՈՒՄ"
+
+msgid "CHECKOUT →"
+msgstr "ՎՃԱՐԵԼ →"
+
+msgid "CLOTHES"
+msgstr "ՀԱԳՈՒՍՏ"
+
+msgid "CONFIRM PASSWORD"
+msgstr "ՀԱՍՏԱՏԵԼ ԳԱՂՏՆԱԲԱՌԸ"
+
+msgid "CONTACT INFORMATION"
+msgstr "ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ"
+
+msgid "CONTINUE SHOPPING"
+msgstr "ՇԱՐՈՒՆԱԿԵԼ ԳՆՈՒՄՆԵՐԸ"
+
+msgid "COOKIE SETTINGS"
+msgstr "ՔՈՒՔԻՆԵՐԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ"
+
+msgid "CREATE ACCOUNT"
+msgstr "ՍՏԵՂԾԵԼ ՀԱՇԻՎ"
+
+msgid "CUSTOMER SUPPORT"
+msgstr "ՀԱՃԱԽՈՐԴՆԵՐԻ ԱՋԱԿՑՈՒԹՅՈՒՆ"
+
+msgid "Caps"
+msgstr "Գլխարկներ"
+
+msgid "Cart"
+msgstr "Զամբյուղ"
+
+msgid "Collections"
+msgstr "Հավաքածուներ"
+
+msgid "Create an account"
+msgstr "Ստեղծել հաշիվ"
+
+msgid "Create your LE VAURÉ account to continue."
+msgstr "Շարունակելու համար ստեղծեք ձեր LE VAURÉ հաշիվը։"
+
+msgid "DISCOVER THE COLLECTION"
+msgstr "ԲԱՑԱՀԱՅՏԵԼ ՀԱՎԱՔԱԾՈՒՆ"
+
+msgid "EASY RETURNS"
+msgstr "ՀԵՇՏ ՎԵՐԱԴԱՐՁ"
+
+msgid "EMAIL"
+msgstr "ԷԼ․ ՓՈՍՏ"
+
+msgid "EMAIL ADDRESS"
+msgstr "ԷԼ․ ՓՈՍՏԻ ՀԱՍՑԵ"
+
+msgid "EXPLORE"
+msgstr "ԲԱՑԱՀԱՅՏԵԼ"
+
+msgid "EXPLORE COLLECTION"
+msgstr "ԴԻՏԵԼ ՀԱՎԱՔԱԾՈՒՆ"
+
+msgid "EXPLORE SHOP"
+msgstr "ԴԻՏԵԼ ԽԱՆՈՒԹԸ"
+
+msgid "EXPLORE THE SHOP"
+msgstr "ԴԻՏԵԼ ԽԱՆՈՒԹԸ"
+
+msgid "Email address"
+msgstr "Էլ․ փոստի հասցե"
+
+msgid "Enter the address where your order should arrive."
+msgstr "Մուտքագրեք հասցեն, որտեղ պետք է առաքվի ձեր պատվերը։"
+
+msgid "Explore the latest LE VAURÉ collection."
+msgstr "Բացահայտեք LE VAURÉ-ի նորագույն հավաքածուն։"
+
+msgid "FAST SHIPPING"
+msgstr "ԱՐԱԳ ԱՌԱՔՈՒՄ"
+
+msgid "FREE SHIPPING ON SELECTED ORDERS"
+msgstr "ԱՆՎՃԱՐ ԱՌԱՔՈՒՄ ԸՆՏՐՎԱԾ ՊԱՏՎԵՐՆԵՐԻ ՀԱՄԱՐ"
+
+msgid "Featured"
+msgstr "Առաջարկվող"
+
+msgid "HELP"
+msgstr "ՕԳՆՈՒԹՅՈՒՆ"
+
+msgid "Hoodies"
+msgstr "Հուդիներ"
+
+msgid "IN STOCK"
+msgstr "ԱՌԿԱ Է"
+
+msgid "INSPIRED BY HERITAGE"
+msgstr "ՈԳԵՇՆՉՎԱԾ ԺԱՌԱՆԳՈՒԹՅԱՄԲ"
+
+msgid "IS EMPTY"
+msgstr "ԴԱՏԱՐԿ Է"
+
+msgid "IS TAKING SHAPE."
+msgstr "ՁԵՎԱՎՈՐՎՈՒՄ Է։"
+
+msgid "Journal"
+msgstr "Ամսագիր"
+
+msgid "Journal & Updates"
+msgstr "Ամսագիր և նորություններ"
+
+msgid "LE VAURÉ / COLLECTION"
+msgstr "LE VAURÉ / ՀԱՎԱՔԱԾՈՒ"
+
+msgid "LE VAURÉ / SECURE CHECKOUT"
+msgstr "LE VAURÉ / ԱՆՎՏԱՆԳ ՎՃԱՐՈՒՄ"
+
+msgid "LOGIN"
+msgstr "ՄՈՒՏՔ"
+
+msgid "LOGIN TO SAVE"
+msgstr "ՄՈՒՏՔ ԳՈՐԾԵԼ՝ ՊԱՀՊԱՆԵԼՈՒ ՀԱՄԱՐ"
+
+msgid "Language"
+msgstr "Լեզու"
+
+msgid "Location"
+msgstr "Գտնվելու վայր"
+
+msgid "Login"
+msgstr "Մուտք"
+
+msgid "MEMBER"
+msgstr "ԱՆԴԱՄ"
+
+msgid "MEMBER SINCE"
+msgstr "ԱՆԴԱՄ՝ ՍԿՍԱԾ"
+
+msgid "Made to move beyond seasons."
+msgstr "Ստեղծված է սեզոններից վեր լինելու համար։"
+
+msgid "Main navigation"
+msgstr "Հիմնական ընտրացանկ"
+
+msgid "Men"
+msgstr "Տղամարդիկ"
+
+msgid "More than clothes."
+msgstr "Ավելին, քան հագուստ։"
+
+msgid "My account"
+msgstr "Իմ հաշիվը"
+
+msgid "NO PRODUCTS FOUND"
+msgstr "ԱՊՐԱՆՔՆԵՐ ՉԳՏՆՎԵՑԻՆ"
+
+msgid "NOTHING SAVED YET"
+msgstr "ԴԵՌ ՈՉԻՆՉ ՉԻ ՊԱՀՊԱՆՎԵԼ"
+
+msgid "Name"
+msgstr "Անուն"
+
+msgid "New to LE VAURÉ?"
+msgstr "Նո՞ր եք LE VAURÉ-ում։"
+
+msgid "OPTIONAL"
+msgstr "ԸՆՏՐՈՎԻ"
+
+msgid "ORDER HISTORY"
+msgstr "ՊԱՏՎԵՐՆԵՐԻ ՊԱՏՄՈՒԹՅՈՒՆ"
+
+msgid "ORDER RECEIVED"
+msgstr "ՊԱՏՎԵՐԸ ՍՏԱՑՎԱԾ Է"
+
+msgid "ORDER SUPPORT"
+msgstr "ՊԱՏՎԵՐԻ ԱՋԱԿՑՈՒԹՅՈՒՆ"
+
+msgid "OUR STORY"
+msgstr "ՄԵՐ ՊԱՏՄՈՒԹՅՈՒՆԸ"
+
+msgid "PASSWORD"
+msgstr "ԳԱՂՏՆԱԲԱՌ"
+
+msgid "PEOPLE"
+msgstr "ՄԱՐԴԻԿ"
+
+msgid "PLACE ORDER"
+msgstr "ՀԱՍՏԱՏԵԼ ՊԱՏՎԵՐԸ"
+
+msgid "PLACES"
+msgstr "ՎԱՅՐԵՐ"
+
+msgid "PRODUCT DETAILS"
+msgstr "ԱՊՐԱՆՔԻ ՄԱՆՐԱՄԱՍՆԵՐ"
+
+msgid "Price: High to Low"
+msgstr "Գին՝ բարձրից ցածր"
+
+msgid "Price: Low to High"
+msgstr "Գին՝ ցածրից բարձր"
+
+msgid "Privacy"
+msgstr "Գաղտնիություն"
+
+msgid "Protected order process"
+msgstr "Պաշտպանված պատվերի գործընթաց"
+
+msgid "QUALITY"
+msgstr "ՈՐԱԿ"
+
+msgid "QUANTITY"
+msgstr "ՔԱՆԱԿ"
+
+msgid "REGISTER"
+msgstr "ԳՐԱՆՑՎԵԼ"
+
+msgid "REJECT OPTIONAL"
+msgstr "ՄԵՐԺԵԼ ԸՆՏՐՈՎԻՆԵՐԸ"
+
+msgid "REMOVE"
+msgstr "ՀԵՌԱՑՆԵԼ"
+
+msgid "REMOVE FROM WISHLIST"
+msgstr "ՀԵՌԱՑՆԵԼ ՑԱՆԿԱԼԻ ԱՊՐԱՆՔՆԵՐԻՑ"
+
+msgid "Reliable delivery"
+msgstr "Հուսալի առաքում"
+
+msgid "SAVE CHOICES"
+msgstr "ՊԱՀՊԱՆԵԼ ԸՆՏՐՈՒԹՅՈՒՆՆԵՐԸ"
+
+msgid "SAVED ITEMS"
+msgstr "ՊԱՀՊԱՆՎԱԾ ԱՊՐԱՆՔՆԵՐ"
+
+msgid "SECURE"
+msgstr "ԱՆՎՏԱՆԳ"
+
+msgid "SECURE CHECKOUT"
+msgstr "ԱՆՎՏԱՆԳ ՎՃԱՐՈՒՄ"
+
+msgid "SHIPPING"
+msgstr "ԱՌԱՔՈՒՄ"
+
+msgid "SHIPPING & RETURNS"
+msgstr "ԱՌԱՔՈՒՄ ԵՎ ՎԵՐԱԴԱՐՁ"
+
+msgid "SHIPPING ADDRESS"
+msgstr "ԱՌԱՔՄԱՆ ՀԱՍՑԵ"
+
+msgid "SHOP NOW"
+msgstr "ԳՆԵԼ ՀԻՄԱ"
+
+msgid "SHOPPING BAG"
+msgstr "ԳՆՈՒՄՆԵՐԻ ԶԱՄԲՅՈՒՂ"
+
+msgid "SOLD OUT"
+msgstr "ՎԱՃԱՌՎԱԾ Է"
+
+msgid "SORT BY"
+msgstr "ԴԱՍԱՎՈՐԵԼ ԸՍՏ"
+
+msgid "STAY IN TOUCH"
+msgstr "ՄՆԱՑԵՔ ԿԱՊԻ ՄԵՋ"
+
+msgid "SUBSCRIBE →"
+msgstr "ԲԱԺԱՆՈՐԴԱԳՐՎԵԼ →"
+
+msgid "SUBTOTAL"
+msgstr "ՄԻՋԱՆԿՅԱԼ ԳՈՒՄԱՐ"
+
+msgid "SUPPORT"
+msgstr "ԱՋԱԿՑՈՒԹՅՈՒՆ"
+
+msgid "Search"
+msgstr "Որոնում"
+
+msgid "Search products..."
+msgstr "Որոնել ապրանքներ..."
+
+msgid "Shipping & returns"
+msgstr "Առաքում և վերադարձ"
+
+msgid "Shop"
+msgstr "Խանութ"
+
+msgid "Shop categories"
+msgstr "Խանութի կատեգորիաներ"
+
+msgid "Shopping bag"
+msgstr "Գնումների զամբյուղ"
+
+msgid "Sign in to your LE VAURÉ account."
+msgstr "Մուտք գործեք ձեր LE VAURÉ հաշիվ։"
+
+msgid "Simple return process"
+msgstr "Պարզ վերադարձի գործընթաց"
+
+msgid "T-Shirts"
+msgstr "Շապիկներ"
+
+msgid "THE COLLECTION"
+msgstr "ՀԱՎԱՔԱԾՈՒՆ"
+
+msgid "THE ESSENTIALS"
+msgstr "ՀԻՄՆԱԿԱՆ ԸՆՏՐԱՆԻ"
+
+msgid "THE FIRST COLLECTION"
+msgstr "ԱՌԱՋԻՆ ՀԱՎԱՔԱԾՈՒՆ"
+
+msgid "TOMORROW"
+msgstr "ՎԱՂԸ"
+
+msgid "TOTAL"
+msgstr "ԸՆԴԱՄԵՆԸ"
+
+msgid "TOTAL BEFORE SHIPPING"
+msgstr "ԸՆԴԱՄԵՆԸ՝ ՄԻՆՉԵՎ ԱՌԱՔՈՒՄԸ"
+
+msgid "Terms"
+msgstr "Պայմաններ"
+
+msgid "Timeless"
+msgstr "Ժամանակից դուրս"
+
+msgid "Timeless essentials, considered silhouettes and pieces made for a higher perspective."
+msgstr "Ժամանակից դուրս հիմնական իրեր, մտածված ուրվագծեր և մոդելներ՝ ավելի բարձր տեսանկյունի համար։"
+
+msgid "Try another search or browse all products."
+msgstr "Փորձեք այլ որոնում կամ դիտեք բոլոր ապրանքները։"
+
+msgid "UPDATE"
+msgstr "ԹԱՐՄԱՑՆԵԼ"
+
+msgid "USERNAME"
+msgstr "ՕԳՏԱՆՈՒՆ"
+
+msgid "VIEW"
+msgstr "ԴԻՏԵԼ"
+
+msgid "VIEW ALL PRODUCTS"
+msgstr "ԴԻՏԵԼ ԲՈԼՈՐ ԱՊՐԱՆՔՆԵՐԸ"
+
+msgid "VIEW CART"
+msgstr "ԴԻՏԵԼ ԶԱՄԲՅՈՒՂԸ"
+
+msgid "VIEW PRODUCT"
+msgstr "ԴԻՏԵԼ ԱՊՐԱՆՔԸ"
+
+msgid "VISIT SHOP"
+msgstr "ԱՅՑԵԼԵԼ ԽԱՆՈՒԹ"
+
+msgid "WEAR"
+msgstr "ԿՐԻՐ"
+
+msgid "We're here to help"
+msgstr "Մենք այստեղ ենք՝ օգնելու համար"
+
+msgid "Where we can contact you about your order."
+msgstr "Նշեք, թե որտեղ կարող ենք կապվել ձեզ հետ պատվերի վերաբերյալ։"
+
+msgid "Wishlist"
+msgstr "Ցանկալի ապրանքներ"
+
+msgid "Women"
+msgstr "Կանայք"
+
+msgid "YOUR BAG"
+msgstr "ՁԵՐ ԶԱՄԲՅՈՒՂԸ"
+
+msgid "YOUR CART"
+msgstr "ՁԵՐ ԶԱՄԲՅՈՒՂԸ"
+
+msgid "YOUR CHOICE."
+msgstr "ՁԵՐ ԸՆՏՐՈՒԹՅՈՒՆԸ։"
+
+msgid "YOUR PRIVACY."
+msgstr "ՁԵՐ ԳԱՂՏՆԻՈՒԹՅՈՒՆԸ։"
+
+msgid "YOUR WISHLIST"
+msgstr "ՁԵՐ ՑԱՆԿԱԼԻ ԱՊՐԱՆՔՆԵՐԸ"
+
+msgid "Your email address"
+msgstr "Ձեր էլ․ փոստի հասցեն"
+
+msgid "by Design"
+msgstr "դիզայնով"
+
+msgid "A brand for those who see more — in places, in people, and in what comes next."
+msgstr "Բրենդ նրանց համար, ովքեր ավելին են տեսնում՝ վայրերում, մարդկանց մեջ և այն ամենում, ինչ դեռ առջևում է։"
+
+msgid "ADDED TO YOUR CART"
+msgstr "ԱՎԵԼԱՑՎԵԼ Է ԶԱՄԲՅՈՒՂՈՒՄ"
+
+msgid "ALL RIGHTS RESERVED."
+msgstr "ԲՈԼՈՐ ԻՐԱՎՈՒՆՔՆԵՐԸ ՊԱՇՏՊԱՆՎԱԾ ԵՆ։"
+
+msgid "ALWAYS ACTIVE"
+msgstr "ՄԻՇՏ ԱԿՏԻՎ"
+
+msgid "ANALYTICS"
+msgstr "ՎԵՐԼՈՒԾՈՒԹՅՈՒՆ"
+
+msgid "Access password"
+msgstr "Մուտքի գաղտնաբառ"
+
+msgid "CONFIRMED."
+msgstr "ՀԱՍՏԱՏՎԱԾ Է։"
+
+msgid "CONTACT SUPPORT"
+msgstr "ԿԱՊՎԵԼ ԱՋԱԿՑՈՒԹՅԱՆ ՀԵՏ"
+
+msgid "COOKIE"
+msgstr "ՔՈՒՔԻ"
+
+msgid "COOKIE POLICY ↗"
+msgstr "ՔՈՒՔԻՆԵՐԻ ՔԱՂԱՔԱԿԱՆՈՒԹՅՈՒՆ ↗"
+
+msgid "CUSTOMER"
+msgstr "ՀԱՃԱԽՈՐԴ"
+
+msgid "Cart, account and security functions"
+msgstr "Զամբյուղի, հաշվի և անվտանգության գործառույթներ"
+
+msgid "Close cart"
+msgstr "Փակել զամբյուղը"
+
+msgid "Close cookie settings"
+msgstr "Փակել քուքիների կարգավորումները"
+
+msgid "Close privacy message"
+msgstr "Փակել գաղտնիության հաղորդագրությունը"
+
+msgid "Cookies"
+msgstr "Քուքիներ"
+
+msgid "Decrease quantity"
+msgstr "Նվազեցնել քանակը"
+
+msgid "Didn't receive the code?"
+msgstr "Չե՞ք ստացել կոդը։"
+
+msgid "EACH"
+msgstr "ՅՈՒՐԱՔԱՆՉՅՈՒՐԸ"
+
+msgid "ENTER THE STORE"
+msgstr "ՄՈՒՏՔ ԳՈՐԾԵԼ ԽԱՆՈՒԹ"
+
+msgid "ESSENTIAL"
+msgstr "ԱՆՀՐԱԺԵՇՏ"
+
+msgid "ESSENTIAL COOKIES"
+msgstr "ԱՆՀՐԱԺԵՇՏ ՔՈՒՔԻՆԵՐ"
+
+msgid "Enter the code below to activate your LE VAURÉ account."
+msgstr "Մուտքագրեք ստորև նշված կոդը՝ ձեր LE VAURÉ հաշիվն ակտիվացնելու համար։"
+
+msgid "Explore the LE VAURÉ collection and add something to your cart."
+msgstr "Բացահայտեք LE VAURÉ հավաքածուն և որևէ ապրանք ավելացրեք զամբյուղ։"
+
+msgid "IS EMPTY."
+msgstr "ԴԱՏԱՐԿ Է։"
+
+msgid "Impressum"
+msgstr "Իրավական տվյալներ"
+
+msgid "Increase quantity"
+msgstr "Ավելացնել քանակը"
+
+msgid "LE VAURÉ"
+msgstr "LE VAURÉ"
+
+msgid "LE VAURÉ / EMAIL SECURITY"
+msgstr "LE VAURÉ / ԷԼ․ ՓՈՍՏԻ ԱՆՎՏԱՆԳՈՒԹՅՈՒՆ"
+
+msgid "LE VAURÉ / MEMBER AREA"
+msgstr "LE VAURÉ / ԱՆԴԱՄԻ ԲԱԺԻՆ"
+
+msgid "LE VAURÉ / PRINTIFY"
+msgstr "LE VAURÉ / PRINTIFY"
+
+msgid "LE VAURÉ / SAVED"
+msgstr "LE VAURÉ / ՊԱՀՊԱՆՎԱԾ"
+
+msgid "LE VAURÉ / YOUR BAG"
+msgstr "LE VAURÉ / ՁԵՐ ԶԱՄԲՅՈՒՂԸ"
+
+msgid "LE VAURÉ MEMBER"
+msgstr "LE VAURÉ ԱՆԴԱՄ"
+
+msgid "LE VAURÉ · ACCOUNT ACCESS"
+msgstr "LE VAURÉ · ՀԱՇՎԻ ՄՈՒՏՔ"
+
+msgid "LE VAURÉ · CREATE ACCOUNT"
+msgstr "LE VAURÉ · ՍՏԵՂԾԵԼ ՀԱՇԻՎ"
+
+msgid "LOG OUT"
+msgstr "ԴՈՒՐՍ ԳԱԼ"
+
+msgid "Login to save"
+msgstr "Մուտք գործեք՝ պահպանելու համար"
+
+msgid "Login to use wishlist"
+msgstr "Մուտք գործեք՝ ցանկալի ապրանքներից օգտվելու համար"
+
+msgid "MARKETING"
+msgstr "ՄԱՐՔԵԹԻՆԳ"
+
+msgid "MOVE YOUR OWN WAY"
+msgstr "ՇԱՐԺՎԻՐ ՔՈ ՃԱՆԱՊԱՐՀՈՎ"
+
+msgid "MOVE YOUR OWN WAY."
+msgstr "ՇԱՐԺՎԻՐ ՔՈ ՃԱՆԱՊԱՐՀՈՎ։"
+
+msgid "MY"
+msgstr "ԻՄ"
+
+msgid "More than clothes. A higher place."
+msgstr "Ավելին, քան հագուստ։ Ավելի բարձր տեղ։"
+
+msgid "My Account"
+msgstr "Իմ հաշիվը"
+
+msgid "NEED HELP?"
+msgstr "ՕԳՆՈՒԹՅՈՒՆ Է ՊԵՏՔ՞"
+
+msgid "NO ORDERS YET."
+msgstr "ԴԵՌ ՊԱՏՎԵՐՆԵՐ ՉԿԱՆ։"
+
+msgid "New arrivals"
+msgstr "Նորույթներ"
+
+msgid "ORDER"
+msgstr "ՊԱՏՎԵՐ"
+
+msgid "ORDER CONFIRMED"
+msgstr "ՊԱՏՎԵՐԸ ՀԱՍՏԱՏՎԱԾ Է"
+
+msgid "ORDER NUMBER"
+msgstr "ՊԱՏՎԵՐԻ ՀԱՄԱՐԸ"
+
+msgid "ORDER SUMMARY"
+msgstr "ՊԱՏՎԵՐԻ ԱՄՓՈՓՈՒՄ"
+
+msgid "ORDER TOTAL"
+msgstr "ՊԱՏՎԵՐԻ ԸՆԴՀԱՆՈՒՐ ԳՈՒՄԱՐ"
+
+msgid "Order Confirmed"
+msgstr "Պատվերը հաստատված է"
+
+msgid "PRIVACY POLICY ↗"
+msgstr "ԳԱՂՏՆԻՈՒԹՅԱՆ ՔԱՂԱՔԱԿԱՆՈՒԹՅՈՒՆ ↗"
+
+msgid "PRIVATE ACCESS · A HIGHER PERSPECTIVE"
+msgstr "ՄԱՍՆԱՎՈՐ ՄՈՒՏՔ · ԱՎԵԼԻ ԲԱՐՁՐ ՏԵՍԱՆԿՅՈՒՆ"
+
+msgid "PRODUCT"
+msgstr "ԱՊՐԱՆՔ"
+
+msgid "PURCHASES"
+msgstr "ԳՆՈՒՄՆԵՐ"
+
+msgid "Private Access"
+msgstr "Մասնավոր մուտք"
+
+msgid "Questions about your account or an order? Contact LE VAURÉ support."
+msgstr "Հարցեր ունե՞ք ձեր հաշվի կամ պատվերի մասին։ Կապվեք LE VAURÉ աջակցության հետ։"
+
+msgid "RESEND CODE"
+msgstr "ԿՐԿԻՆ ՈՒՂԱՐԿԵԼ ԿՈԴԸ"
+
+msgid "ROOTED IN HERITAGE. BUILT FOR TOMORROW."
+msgstr "ԱՐՄԱՏՆԵՐՈՎ ԺԱՌԱՆԳՈՒԹՅԱՆ ՄԵՋ։ ՍՏԵՂԾՎԱԾ ՎԱՂՎԱ ՀԱՄԱՐ։"
+
+msgid "Register"
+msgstr "Գրանցվել"
+
+msgid "SECURE VERIFICATION"
+msgstr "ԱՆՎՏԱՆԳ ՀԱՍՏԱՏՈՒՄ"
+
+msgid "SETTINGS."
+msgstr "ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ։"
+
+msgid "SHIPPING TO"
+msgstr "ԱՌԱՔՈՒՄ ԴԵՊԻ"
+
+msgid "SHOP"
+msgstr "ԽԱՆՈՒԹ"
+
+msgid "SHOP COLLECTION"
+msgstr "ԴԻՏԵԼ ՀԱՎԱՔԱԾՈՒՆ"
+
+msgid "Save the pieces you want to come back to. Saved products stay connected to your LE VAURÉ account until you remove them."
+msgstr "Պահպանեք այն ապրանքները, որոնց ցանկանում եք հետագայում վերադառնալ։ Դրանք կմնան կապված ձեր LE VAURÉ հաշվին, մինչև դուք հեռացնեք դրանք։"
+
+msgid "Shipping calculated at checkout"
+msgstr "Առաքման արժեքը հաշվարկվում է վճարման ժամանակ"
+
+msgid "Shop LE VAURÉ timeless fashion and elevated everyday essentials online. Refined design, secure checkout and reliable shipping."
+msgstr "Գնեք LE VAURÉ-ի ժամանակից դուրս նորաձևությունն ու բարձրակարգ ամենօրյա իրերը առցանց։ Նրբաճաշակ դիզայն, անվտանգ վճարում և հուսալի առաքում։"
+
+msgid "TERMS ↗"
+msgstr "ՊԱՅՄԱՆՆԵՐ ↗"
+
+msgid "THANK YOU FOR SHOPPING WITH US"
+msgstr "ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ ՄԵԶ ՄՈՏ ԳՆՈՒՄՆԵՐ ԿԱՏԱՐԵԼՈՒ ՀԱՄԱՐ"
+
+msgid "Timeless Essentials"
+msgstr "Ժամանակից դուրս հիմնական իրեր"
+
+msgid "VERIFICATION CODE"
+msgstr "ՀԱՍՏԱՏՄԱՆ ԿՈԴ"
+
+msgid "VERIFY"
+msgstr "ՀԱՍՏԱՏԵԼ"
+
+msgid "VERIFY EMAIL"
+msgstr "ՀԱՍՏԱՏԵԼ ԷԼ․ ՓՈՍՏԸ"
+
+msgid "VIEW MY ACCOUNT"
+msgstr "ԴԻՏԵԼ ԻՄ ՀԱՇԻՎԸ"
+
+msgid "Verify Email"
+msgstr "Հաստատել էլ․ փոստը"
+
+msgid "WISHLIST"
+msgstr "ՑԱՆԿԱԼԻ ԱՊՐԱՆՔՆԵՐ"
+
+msgid "We sent a 6-digit verification code to"
+msgstr "Մենք 6-նիշ հաստատման կոդ ուղարկեցինք"
+
+msgid "We’re preparing your order now. Keep your order number for reference."
+msgstr "Մենք այժմ պատրաստում ենք ձեր պատվերը։ Պահպանեք պատվերի համարը՝ հետագայում օգտագործելու համար։"
+
+msgid "YOUR EMAIL"
+msgstr "ՁԵՐ ԷԼ․ ՓՈՍՏԸ"
+
+msgid "Your LE VAURÉ orders will appear here."
+msgstr "Ձեր LE VAURÉ պատվերները կհայտնվեն այստեղ։"
+
+msgid "Your order has been received successfully. A confirmation email has been sent to"
+msgstr "Ձեր պատվերը հաջողությամբ ստացվել է։ Հաստատման նամակ է ուղարկվել"
+
+msgid "Your verification code expires automatically for security. If it expires, request a new code."
+msgstr "Անվտանգության նպատակով հաստատման կոդն ավտոմատ ժամկետանց է դառնում։ Եթե ժամկետը լրանա, խնդրեք նոր կոդ։"
+

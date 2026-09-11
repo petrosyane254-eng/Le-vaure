@@ -1,0 +1,421 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block title %}Checkout — LE VAURÉ{% endblock %}
+
+{% block content %}
+
+<section class="checkout-page">
+
+    <div class="checkout-header">
+        <p class="eyebrow">{% trans "LE VAURÉ / SECURE CHECKOUT" %}</p>
+        <h1>{% trans "CHECKOUT" %}</h1>
+
+        <p class="checkout-header-copy">
+            Complete your delivery information below.
+            Review your order before placing it.
+        </p>
+    </div>
+
+
+    <div class="checkout-layout">
+
+        <!-- =================================================
+             LEFT — CHECKOUT FORM
+             ================================================= -->
+
+        <div class="checkout-form-wrap">
+
+            <form
+                method="post"
+                class="checkout-form"
+                id="checkout-form"
+            >
+
+                {% csrf_token %}
+
+
+                <!-- CONTACT -->
+
+                <div class="checkout-section-title">
+                    <span>01</span>
+
+                    <div>
+                        <h2>{% trans "CONTACT INFORMATION" %}</h2>
+                        <p>{% trans "Where we can contact you about your order." %}</p>
+                    </div>
+                </div>
+
+
+                <div class="checkout-fields two-columns">
+
+                    <div class="checkout-field">
+                        <label for="full_name">
+                            FULL NAME
+                        </label>
+
+                        <input
+                            id="full_name"
+                            name="full_name"
+                            type="text"
+                            placeholder="John Smith"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="checkout-field">
+                        <label for="email">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="john@example.com"
+                            autocomplete="email"
+                            {% if user.is_authenticated and user.email %}
+                                value="{{ user.email }}"
+                            {% endif %}
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-field">
+                    <label for="phone">
+                        PHONE NUMBER
+                        <span>{% trans "OPTIONAL" %}</span>
+                    </label>
+
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+374 00 000 000"
+                        autocomplete="tel"
+                    >
+                </div>
+
+
+
+                <!-- SHIPPING -->
+
+                <div class="checkout-section-title checkout-section-space">
+                    <span>02</span>
+
+                    <div>
+                        <h2>{% trans "SHIPPING ADDRESS" %}</h2>
+                        <p>{% trans "Enter the address where your order should arrive." %}</p>
+                    </div>
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="country">
+                        COUNTRY / REGION
+                    </label>
+
+                    <select
+                        id="country"
+                        name="country"
+                        autocomplete="country-name"
+                        required
+                    >
+                        <option value="">
+                            Select country
+                        </option>
+
+                        <option value="AM">
+                            Armenia
+                        </option>
+
+                        <option value="DE">
+                            Germany
+                        </option>
+
+                        <option value="FR">
+                            France
+                        </option>
+
+                        <option value="GB">
+                            United Kingdom
+                        </option>
+
+                        <option value="US">
+                            United States
+                        </option>
+
+                        <option value="RU">
+                            Russia
+                        </option>
+
+                        <option value="GE">
+                            Georgia
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="region">
+                        STATE / REGION
+                        <span>{% trans "OPTIONAL" %}</span>
+                    </label>
+
+                    <input
+                        id="region"
+                        name="region"
+                        type="text"
+                        placeholder="State, province, or region"
+                        autocomplete="address-level1"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="street">
+                        STREET ADDRESS
+                    </label>
+
+                    <input
+                        id="street"
+                        name="street"
+                        type="text"
+                        placeholder="Street name and house number"
+                        autocomplete="address-line1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="apartment">
+                        APARTMENT / UNIT
+                        <span>{% trans "OPTIONAL" %}</span>
+                    </label>
+
+                    <input
+                        id="apartment"
+                        name="apartment"
+                        type="text"
+                        placeholder="Apartment, suite, floor, etc."
+                        autocomplete="address-line2"
+                    >
+
+                </div>
+
+
+                <div class="checkout-fields two-columns">
+
+                    <div class="checkout-field">
+
+                        <label for="city">
+                            CITY
+                        </label>
+
+                        <input
+                            id="city"
+                            name="city"
+                            type="text"
+                            placeholder="Yerevan"
+                            autocomplete="address-level2"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="checkout-field">
+
+                        <label for="postal_code">
+                            POSTAL CODE
+                        </label>
+
+                        <input
+                            id="postal_code"
+                            name="postal_code"
+                            type="text"
+                            placeholder="0010"
+                            autocomplete="postal-code"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DELIVERY NOTES -->
+
+                <div class="checkout-field">
+
+                    <label for="delivery_notes">
+                        DELIVERY NOTES
+                        <span>{% trans "OPTIONAL" %}</span>
+                    </label>
+
+                    <textarea
+                        id="delivery_notes"
+                        name="delivery_notes"
+                        rows="4"
+                        placeholder="Entrance, floor, delivery instructions, or anything else we should know..."
+                    ></textarea>
+
+                </div>
+<button
+                    type="submit"
+                    class="checkout-submit"
+                >
+                    <span>{% trans "PLACE ORDER" %}</span>
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT — ORDER SUMMARY
+             ================================================= -->
+
+        <aside class="checkout-summary">
+
+            <p class="eyebrow">
+                ORDER SUMMARY
+            </p>
+
+
+            <div class="checkout-summary-items">
+
+                {% for item in items %}
+
+                    <div class="checkout-summary-item">
+
+                        <div class="checkout-summary-product">
+
+                            <strong>
+                                {{ item.title }}
+                            </strong>
+
+                            {% if item.variant_title %}
+                                <span>{{ item.variant_title }}</span>
+                            {% endif %}
+
+                            <span>
+                                QTY {{ item.quantity }}
+                            </span>
+
+                        </div>
+
+
+                        <b>
+                            €{{ item.subtotal|floatformat:2 }}
+                        </b>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <div class="checkout-summary-line">
+
+                <span>{% trans "SUBTOTAL" %}</span>
+
+                <strong>
+                    €{{ total|floatformat:2 }}
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-summary-line">
+
+                <span>{% trans "SHIPPING" %}</span>
+
+                <span>
+                    CALCULATED LATER
+                </span>
+
+            </div>
+
+
+            <div class="checkout-summary-total">
+
+                <span>{% trans "TOTAL" %}</span>
+
+                <strong>
+                    €{{ total|floatformat:2 }}
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-security-note">
+
+                <div class="checkout-lock-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <rect
+                            x="5"
+                            y="10"
+                            width="14"
+                            height="11"
+                            rx="1"
+                        ></rect>
+
+                        <path
+                            d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10"
+                        ></path>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        SECURE CHECKOUT
+                    </span>
+
+                    <p>
+                        Your order information is processed securely.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="{% url 'cart' %}"
+                class="checkout-back"
+            >
+                ← BACK TO CART
+            </a>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+
+
+{% endblock %}

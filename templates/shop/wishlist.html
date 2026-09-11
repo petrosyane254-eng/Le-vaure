@@ -1,0 +1,263 @@
+{% extends "shop/base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Wishlist" %} - LE VAURÉ{% endblock %}
+
+{% block content %}
+
+<section class="sw-wishlist-page">
+
+    <div class="sw-wishlist-shell">
+
+        <header class="sw-wishlist-top">
+
+            <div>
+
+                <div class="sw-wishlist-brand">
+                    <img
+                        src="{% static 'images/lv-monogram.png' %}"
+                        alt="LE VAURÉ"
+                    >
+                </div>
+
+                <span class="sw-wishlist-kicker">
+                    {% trans "LE VAURÉ / SAVED" %}
+                </span>
+
+                <h1>
+                    {% trans "MY" %}<br>
+                    {% trans "WISHLIST" %}
+                </h1>
+
+            </div>
+
+            <div class="sw-wishlist-count">
+                <span>{% trans "SAVED ITEMS" %}</span>
+                <strong>{{ wishlist_items|length|stringformat:"02d" }}</strong>
+            </div>
+
+        </header>
+
+
+        {% if wishlist_items %}
+
+            <div class="sw-wishlist-grid">
+
+                {% for item in wishlist_items %}
+
+                    <article class="sw-wishlist-card">
+
+                        <div class="sw-wishlist-visual">
+
+                            <a href="{% url 'product' item.product.slug %}">
+
+                                {% if item.product.image %}
+                                    <img
+                                        src="{{ item.product.image.url }}"
+                                        alt="{{ item.product.name }}"
+                                    >
+                                {% else %}
+                                    <img
+                                        src="{% static 'images/logo.png' %}"
+                                        alt="{{ item.product.name }}"
+                                    >
+                                {% endif %}
+
+                            </a>
+
+
+                            <form
+                                method="post"
+                                action="{% url 'toggle_wishlist' item.product.pk %}"
+                                class="sw-wishlist-heart-form"
+                            >
+
+                                {% csrf_token %}
+
+                                <input
+                                    type="hidden"
+                                    name="next"
+                                    value="{% url 'wishlist' %}"
+                                >
+
+                                <button
+                                    type="submit"
+                                    class="sw-wishlist-heart is-active"
+                                    aria-label="{% blocktrans with name=item.product.name %}Remove {{ name }} from wishlist{% endblocktrans %}"
+                                >
+                                    ♥
+                                </button>
+
+                            </form>
+
+                        </div>
+
+
+                        <div class="sw-wishlist-card-body">
+
+                            <div class="sw-wishlist-product-head">
+
+                                <div>
+
+                                    <span class="sw-wishlist-category">
+
+                                        {% if item.product.category %}
+                                            {{ item.product.category.name|upper }}
+                                        {% else %}
+                                            LE VAURÉ
+                                        {% endif %}
+
+                                    </span>
+
+                                    <a
+                                        href="{% url 'product' item.product.slug %}"
+                                        class="sw-wishlist-name"
+                                    >
+                                        {{ item.product.name }}
+                                    </a>
+
+                                </div>
+
+
+                                <strong class="sw-wishlist-price">
+                                    €{{ item.product.price }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="sw-wishlist-stock">
+
+                                {% if item.product.stock > 0 %}
+
+                                    <span class="sw-wishlist-stock-dot"></span>
+                                    <span>{% trans "IN STOCK" %}</span>
+
+                                {% else %}
+
+                                    <span class="sw-wishlist-stock-dot is-sold"></span>
+                                    <span>{% trans "SOLD OUT" %}</span>
+
+                                {% endif %}
+
+                            </div>
+
+
+                            {% if item.product.stock > 0 %}
+
+                                <form
+                                    method="post"
+                                    action="{% url 'add_cart' item.product.pk %}"
+                                    class="sw-wishlist-cart-form"
+                                >
+
+                                    {% csrf_token %}
+
+                                    <input
+                                        type="hidden"
+                                        name="quantity"
+                                        value="1"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        class="sw-wishlist-add-cart"
+                                    >
+                                        <span>{% trans "ADD TO CART" %}</span>
+                                        <span>→</span>
+                                    </button>
+
+                                </form>
+
+                            {% else %}
+
+                                <button
+                                    type="button"
+                                    class="sw-wishlist-add-cart is-disabled"
+                                    disabled
+                                >
+                                    {% trans "SOLD OUT" %}
+                                </button>
+
+                            {% endif %}
+
+
+                            <form
+                                method="post"
+                                action="{% url 'toggle_wishlist' item.product.pk %}"
+                                class="sw-wishlist-remove-form"
+                            >
+
+                                {% csrf_token %}
+
+                                <input
+                                    type="hidden"
+                                    name="next"
+                                    value="{% url 'wishlist' %}"
+                                >
+
+                                <button
+                                    type="submit"
+                                    class="sw-wishlist-remove"
+                                >
+                                    {% trans "REMOVE FROM WISHLIST" %}
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+
+        {% else %}
+
+            <div class="sw-wishlist-empty">
+
+                <span class="sw-wishlist-empty-kicker">
+                    {% trans "NOTHING SAVED YET" %}
+                </span>
+
+                <h2>
+                    {% trans "YOUR WISHLIST" %}<br>
+                    {% trans "IS EMPTY" %}
+                </h2>
+
+                <p>
+                    {% trans "Save the pieces you want to come back to. Saved products stay connected to your LE VAURÉ account until you remove them." %}
+                </p>
+
+                <a
+                    href="{% url 'shop' %}"
+                    class="sw-wishlist-shop-btn"
+                >
+                    <span>{% trans "EXPLORE SHOP" %}</span>
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <div class="sw-wishlist-bottom">
+
+            <a href="{% url 'shop' %}">
+                {% trans "CONTINUE SHOPPING" %} →
+            </a>
+
+            <span>
+                LE VAURÉ / {% trans "MOVE YOUR OWN WAY" %}
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

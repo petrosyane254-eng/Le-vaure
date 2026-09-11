@@ -1,0 +1,76 @@
+{% extends "shop/base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Shop" %} — LE VAURÉ{% endblock %}
+
+{% block content %}
+<section class="lv-shop-page">
+  <header class="lv-shop-masthead">
+    <div class="lv-shop-title">
+      <p class="lv-eyebrow">{% trans "LE VAURÉ / COLLECTION" %}</p>
+      <h1>{% trans "THE COLLECTION" %}</h1>
+      <p>{% trans "Timeless essentials, considered silhouettes and pieces made for a higher perspective." %}</p>
+    </div>
+    <div class="lv-shop-quote">
+      <span>01 / 03</span>
+      <p>{% trans "More than clothes." %}<br>{% trans "A higher place." %}</p>
+    </div>
+  </header>
+
+  <div class="lv-shop-campaign">
+    <div class="lv-shop-campaign-image">
+      <img src="{% static 'images/le-vaure-hero.png' %}" alt="LE VAURÉ collection">
+    </div>
+    <div class="lv-shop-campaign-copy">
+      <p class="lv-eyebrow">{% trans "A HIGHER PERSPECTIVE" %}</p>
+      <h2>{% trans "Made to move beyond seasons." %}</h2>
+      <p>{% trans "Explore the latest LE VAURÉ collection." %}</p>
+    </div>
+  </div>
+
+  <div class="lv-shop-controls">
+    <nav class="lv-shop-categories" aria-label="{% trans 'Shop categories' %}">
+      <a href="{% url 'shop' %}{% if q %}?q={{ q|urlencode }}&sort={{ sort }}{% endif %}" class="{% if selected_category == 'all' or not selected_category %}active{% endif %}">{% trans "ALL" %}</a>
+      {% for category in categories %}
+        <a href="?category={{ category.slug }}{% if q %}&q={{ q|urlencode }}{% endif %}&sort={{ sort }}" class="{% if selected_category == category.slug %}active{% endif %}">{% trans category.name %}</a>
+      {% endfor %}
+    </nav>
+
+    <form method="get" class="lv-shop-tools">
+      {% if selected_category and selected_category != "all" %}<input type="hidden" name="category" value="{{ selected_category }}">{% endif %}
+      <label class="lv-shop-search">
+        <span class="sr-only">{% trans "Search" %}</span>
+        <input type="search" name="q" value="{{ q }}" placeholder="{% trans 'Search products...' %}" autocomplete="off">
+        <button type="submit" aria-label="{% trans 'Search' %}">⌕</button>
+      </label>
+      <label class="lv-shop-sort">
+        <span>{% trans "SORT BY" %}</span>
+        <select name="sort" onchange="this.form.submit()">
+          <option value="featured" {% if sort == "featured" %}selected{% endif %}>{% trans "Featured" %}</option>
+          <option value="price_low" {% if sort == "price_low" %}selected{% endif %}>{% trans "Price: Low to High" %}</option>
+          <option value="price_high" {% if sort == "price_high" %}selected{% endif %}>{% trans "Price: High to Low" %}</option>
+          <option value="name" {% if sort == "name" %}selected{% endif %}>{% trans "Name" %}</option>
+        </select>
+      </label>
+    </form>
+  </div>
+
+  <div class="lv-shop-meta">
+    <span>{{ products|length }} {% blocktrans count count=products|length %}PRODUCT{% plural %}PRODUCTS{% endblocktrans %}</span>
+    {% if q %}<span>{% blocktrans with query=q %}SEARCH: "{{ query }}"{% endblocktrans %}</span>{% endif %}
+  </div>
+
+  <div class="grid lv-shop-grid">
+    {% for product in products %}
+      {% include "shop/card.html" %}
+    {% empty %}
+      <div class="lv-shop-empty">
+        <p class="lv-eyebrow">LE VAURÉ</p>
+        <h2>{% trans "NO PRODUCTS FOUND" %}</h2>
+        <p>{% trans "Try another search or browse all products." %}</p>
+        <a href="{% url 'shop' %}" class="lv-btn lv-btn-dark">{% trans "VIEW ALL PRODUCTS" %} <span>→</span></a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

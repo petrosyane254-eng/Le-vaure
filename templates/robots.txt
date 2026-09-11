@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /wishlist/
+Disallow: /login/
+Disallow: /logout/
+Disallow: /register/
+Disallow: /verify-email/
+Disallow: /resend-verification/
+Disallow: /site-access/
+Disallow: /stripe/
+
+Sitemap: https://levaure.store/sitemap.xml

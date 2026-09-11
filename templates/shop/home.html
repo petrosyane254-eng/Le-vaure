@@ -1,0 +1,974 @@
+{% extends "shop/base.html" %}
+{% load i18n static %}
+
+{% block title %}LE VAURÉ | Official Store{% endblock %}
+
+{% block meta_description %}LE VAURÉ official store. Timeless essentials shaped by heritage, place and a higher perspective.{% endblock %}
+
+{% block canonical %}
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/levaure.css' %}">
+
+
+<style>
+
+/* =========================================================
+   HERO IMAGE FIX
+========================================================= */
+
+.lv-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.lv-hero-visual {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.lv-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.lv-hero-copy,
+.lv-hero-aside {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LE VAURÉ — MEN / WOMEN TWO CARDS
+========================================================= */
+
+.lv-two-categories {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    width: 100%;
+
+    gap: 8px;
+
+    padding: 8px 0;
+    margin: 0;
+
+    overflow: hidden;
+}
+
+.lv-two-categories .lv-category-card {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 360px;
+
+    overflow: hidden;
+
+    background: transparent !important;
+
+    text-decoration: none;
+}
+
+
+/* REMOVE OLD OVERLAYS */
+
+.lv-two-categories .lv-category-card::before,
+.lv-two-categories .lv-category-card::after {
+    display: none !important;
+    content: none !important;
+
+    background: transparent !important;
+}
+
+
+/* IMAGE */
+
+.lv-two-categories .lv-category-card img {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    filter: none !important;
+    mix-blend-mode: normal !important;
+
+    background: transparent !important;
+
+    transition: transform .45s ease;
+}
+
+
+/* TEXT */
+
+.lv-two-categories .lv-category-card > span {
+    position: absolute !important;
+
+    left: 34px !important;
+    bottom: 28px !important;
+
+    right: auto !important;
+    top: auto !important;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: transparent !important;
+}
+
+
+/* MEN / WOMEN TITLE */
+
+.lv-two-categories .lv-category-card strong {
+    display: block;
+
+    margin: 0 0 8px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 38px;
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -.03em;
+
+    color: #102017;
+}
+
+
+/* EXPLORE */
+
+.lv-two-categories .lv-category-card small {
+    display: block;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    color: #102017;
+}
+
+
+/* HOVER */
+
+.lv-two-categories .lv-category-card:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   LE VAURÉ — HERITAGE / STORY
+========================================================= */
+
+.lv-story {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+
+    min-height: 760px;
+
+    margin: 110px auto;
+
+    width: min(92%, 1500px);
+
+    background: #111712;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(17, 23, 18, .15);
+}
+
+
+/* STORY IMAGE */
+
+.lv-story-image {
+    position: relative;
+
+    min-height: 760px;
+
+    overflow: hidden;
+}
+
+.lv-story-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 10, 8, .10) 0%,
+            rgba(7, 10, 8, .02) 55%,
+            rgba(7, 10, 8, .55) 100%
+        );
+
+    pointer-events: none;
+}
+
+.lv-story-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 760px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    filter:
+        grayscale(100%)
+        contrast(.92)
+        brightness(.82);
+
+    transform: scale(1.02);
+}
+
+
+/* STORY TEXT */
+
+.lv-story-copy {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 84px 64px 70px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #111712;
+
+    color: #f5f1e8;
+}
+
+.lv-story-number {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 44px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    color: rgba(245, 241, 232, .58);
+}
+
+.lv-story-number::after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background: rgba(245, 241, 232, .35);
+}
+
+.lv-story .lv-eyebrow {
+    margin: 0 0 22px;
+
+    color: rgba(245, 241, 232, .65);
+
+    font-size: 10px;
+
+    letter-spacing: .3em;
+}
+
+.lv-story-copy h2 {
+    margin: 0;
+
+    max-width: 520px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(54px, 5vw, 88px);
+
+    line-height: .92;
+
+    font-weight: 400;
+
+    letter-spacing: -.045em;
+
+    color: #f6f2e9;
+}
+
+.lv-story-divider {
+    width: 100%;
+    height: 1px;
+
+    background: rgba(245, 241, 232, .18);
+
+    margin: 42px 0 34px;
+}
+
+.lv-story-copy > p:not(.lv-eyebrow) {
+    max-width: 430px;
+
+    margin: 0 0 40px;
+
+    color: rgba(245, 241, 232, .70);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.lv-story-copy .lv-text-link {
+    width: fit-content;
+
+    color: #f6f2e9;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    padding-bottom: 7px;
+
+    border-bottom:
+        1px solid rgba(245, 241, 232, .5);
+
+    transition: .25s ease;
+}
+
+.lv-story-copy .lv-text-link:hover {
+    opacity: .65;
+
+    padding-right: 8px;
+}
+
+
+/* STORY SIDE TEXT */
+
+.lv-story-note {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 40px;
+    bottom: 36px;
+
+    color: rgba(255, 255, 255, .9);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .28em;
+
+    line-height: 1.8;
+
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+.lv-story-place {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 34px;
+    left: 38px;
+
+    color: rgba(255, 255, 255, .72);
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+.lv-story-coordinates {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 42px;
+    bottom: 34px;
+
+    color: rgba(255, 255, 255, .66);
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    letter-spacing: .18em;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .lv-two-categories .lv-category-card {
+        height: 320px;
+    }
+
+
+    .lv-story {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        margin: 70px auto;
+    }
+
+    .lv-story-image {
+        min-height: 520px;
+    }
+
+    .lv-story-image img {
+        min-height: 520px;
+    }
+
+    .lv-story-copy {
+        padding: 58px 34px 60px;
+    }
+
+    .lv-story-copy h2 {
+        font-size: clamp(46px, 12vw, 72px);
+    }
+
+    .lv-story-note {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .lv-two-categories {
+        grid-template-columns: 1fr !important;
+
+        gap: 8px;
+    }
+
+    .lv-two-categories .lv-category-card {
+        height: 300px;
+    }
+
+    .lv-two-categories .lv-category-card > span {
+        left: 22px !important;
+        bottom: 22px !important;
+    }
+
+    .lv-two-categories .lv-category-card strong {
+        font-size: 32px;
+    }
+
+
+    .lv-story {
+        width: calc(100% - 24px);
+
+        margin: 50px auto;
+    }
+
+    .lv-story-image {
+        min-height: 390px;
+    }
+
+    .lv-story-image img {
+        min-height: 390px;
+    }
+
+    .lv-story-copy {
+        padding: 46px 24px 52px;
+    }
+
+    .lv-story-number {
+        margin-bottom: 30px;
+    }
+
+    .lv-story-divider {
+        margin: 30px 0 26px;
+    }
+
+    .lv-story-place,
+    .lv-story-coordinates {
+        font-size: 7px;
+    }
+
+}
+
+</style>
+
+
+
+<!-- =====================================================
+     LE VAURÉ — HERO
+===================================================== -->
+
+<section class="lv-hero">
+
+    <div class="lv-hero-copy">
+
+        <p class="lv-eyebrow">
+            {% trans "A HIGHER PERSPECTIVE" %}
+        </p>
+
+        <h1>
+            LE VAURÉ
+        </h1>
+
+        <p class="lv-tagline">
+            {% trans "More than clothes." %}
+            <br>
+            {% trans "A higher place." %}
+        </p>
+
+
+        <div class="lv-actions">
+
+            <a
+                href="{% url 'shop' %}"
+                class="lv-btn lv-btn-dark"
+            >
+                {% trans "SHOP NOW" %}
+                <span>→</span>
+            </a>
+
+            <a
+                href="#essentials"
+                class="lv-text-link"
+            >
+                {% trans "DISCOVER THE COLLECTION" %}
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <span class="lv-slide-index">
+            01 / 03
+        </span>
+
+    </div>
+
+
+    <!-- HERO IMAGE -->
+
+    <div class="lv-hero-visual">
+
+        <img
+            src="{% static 'images/home-hero.jpg' %}?v=30"
+            alt="LE VAURÉ Collection"
+        >
+
+    </div>
+
+
+    <div
+        class="lv-hero-aside"
+        aria-hidden="true"
+    >
+
+        <span>{% trans "CLOTHES" %}</span>
+        <span>{% trans "PEOPLE" %}</span>
+        <span>{% trans "PLACES" %}</span>
+        <span>{% trans "A BRIGHTER" %}</span>
+        <span>{% trans "TOMORROW" %}</span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LE VAURÉ — CLOTHES / ACCESSORIES
+===================================================== -->
+
+<section
+    class="lv-two-categories"
+    aria-label="Shop categories"
+>
+
+    <!-- CLOTHES -->
+
+    <a
+        href="{% url 'shop' %}?category=clothes"
+        class="lv-category-card"
+    >
+
+        <img
+            src="{% static 'images/men.jpg' %}?v=40"
+            alt="LE VAURÉ Clothes collection"
+            loading="lazy"
+        >
+
+        <span>
+
+            <strong>
+                {% trans "Clothes" %}
+            </strong>
+
+            <small>
+                {% trans "EXPLORE" %} →
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <!-- ACCESSORIES -->
+
+    <a
+        href="{% url 'shop' %}?category=accessories"
+        class="lv-category-card"
+    >
+
+        <img
+            src="{% static 'images/accessories.jpg' %}?v=40"
+            alt="LE VAURÉ Accessories collection"
+            loading="lazy"
+        >
+
+        <span>
+
+            <strong>
+                {% trans "Accessories" %}
+            </strong>
+
+            <small>
+                {% trans "EXPLORE" %} →
+            </small>
+
+        </span>
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     LE VAURÉ — PRODUCTS
+===================================================== -->
+
+<section
+    class="lv-products"
+    id="essentials"
+>
+
+    <div class="lv-products-head">
+
+        <div>
+
+            <p class="lv-eyebrow">
+                {% trans "THE ESSENTIALS" %}
+            </p>
+
+            <h2>
+                {% trans "Timeless" %}
+                <br>
+                {% trans "by Design" %}
+            </h2>
+
+        </div>
+
+
+        <a
+            href="{% url 'shop' %}"
+            class="lv-text-link"
+        >
+            {% trans "EXPLORE COLLECTION" %}
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+    {% if products %}
+
+        <div class="home-product-grid">
+
+            {% for product in products %}
+
+                <article class="home-product-card">
+
+
+                    <div class="home-product-image">
+
+                        <a href="{{ product.url }}">
+
+                            {% if product.image %}
+
+                                <img
+                                    src="{{ product.image }}"
+                                    alt="{{ product.name }}"
+                                    loading="lazy"
+                                >
+
+                            {% else %}
+
+                                <img
+                                    src="{% static 'images/home-hero.jpg' %}?v=30"
+                                    alt="{{ product.name }}"
+                                    loading="lazy"
+                                >
+
+                            {% endif %}
+
+                        </a>
+
+
+                        {% if product.source == "local" %}
+
+                            {% if product.stock > 0 %}
+
+                                <form
+                                    method="post"
+                                    action="{% url 'add_cart' product.pk %}"
+                                    class="home-quick-add"
+                                >
+
+                                    {% csrf_token %}
+
+                                    <input
+                                        type="hidden"
+                                        name="quantity"
+                                        value="1"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        aria-label="Add {{ product.name }} to cart"
+                                        title="Add to cart"
+                                    >
+                                        +
+                                    </button>
+
+                                </form>
+
+                            {% else %}
+
+                                <span class="home-soldout">
+                                    {% trans "SOLD OUT" %}
+                                </span>
+
+                            {% endif %}
+
+
+                        {% else %}
+
+                            <a
+                                href="{{ product.url }}"
+                                class="home-printify-view"
+                            >
+                                {% trans "VIEW" %}
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="home-product-info">
+
+                        <div>
+
+                            <small>
+                                {% trans product.category %}
+                            </small>
+
+                            <h3>
+                                <a href="{{ product.url }}">
+                                    {{ product.name }}
+                                </a>
+                            </h3>
+
+                        </div>
+
+                        <strong>
+                            €{{ product.price }}
+                        </strong>
+
+                    </div>
+
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+
+    {% else %}
+
+
+        <div class="lv-empty">
+
+            <p class="lv-eyebrow">
+                LE VAURÉ / EST. 2026
+            </p>
+
+            <h3>
+                {% trans "THE FIRST COLLECTION" %}
+                <br>
+                {% trans "IS TAKING SHAPE." %}
+            </h3>
+
+            <a
+                href="{% url 'shop' %}"
+                class="lv-btn lv-btn-dark"
+            >
+                {% trans "VISIT SHOP" %}
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+    {% endif %}
+
+</section>
+
+
+
+<!-- =====================================================
+     LE VAURÉ — HERITAGE / MANIFESTO
+===================================================== -->
+
+<section
+    class="lv-story"
+    id="lv-story"
+>
+
+
+    <div class="lv-story-image">
+
+        <img
+            src="{% static 'images/heritage-armenia.jpg' %}?v=30"
+            alt="LE VAURÉ heritage and Armenian landscape"
+            loading="lazy"
+        >
+
+
+        <div class="lv-story-place">
+            ARMENIA
+            <br>
+            HERITAGE / PLACE
+        </div>
+
+
+        <div class="lv-story-coordinates">
+            40.1812° N
+            <br>
+            44.5136° E
+        </div>
+
+    </div>
+
+
+    <div class="lv-story-copy">
+
+        <div class="lv-story-number">
+            00 / ORIGIN
+        </div>
+
+        <p class="lv-eyebrow">
+            {% trans "INSPIRED BY HERITAGE" %}
+        </p>
+
+        <h2>
+            {% trans "MORE THAN CLOTHES." %}
+            <br>
+            {% trans "A HIGHER PLACE." %}
+        </h2>
+
+        <div class="lv-story-divider"></div>
+
+        <p>
+            {% trans "A brand for those who see more — in places, in people, and in what comes next." %}
+        </p>
+
+        <a
+            href="{% url 'shop' %}"
+            class="lv-text-link"
+        >
+            {% trans "DISCOVER OUR STORY" %}
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+    <div class="lv-story-note">
+        LE VAURÉ
+        <br>
+        EST. MMXXVI
+    </div>
+
+</section>
+
+
+{% endblock %}

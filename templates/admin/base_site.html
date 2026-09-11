@@ -1,0 +1,51 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if subtitle %}{{ subtitle }} | {% endif %}
+    LE VAURÉ ADMIN
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+
+<div class="sw-admin-brand">
+    <a href="{% url 'admin:index' %}" class="sw-admin-brand-link">
+
+        <span class="sw-admin-logo">
+            S
+        </span>
+
+        <span class="sw-admin-brand-copy">
+            <strong>LE VAURÉ</strong>
+            <small>STORE ADMINISTRATION</small>
+        </span>
+
+    </a>
+</div>
+
+{% endblock %}
+
+{% block nav-global %}
+
+<div class="sw-admin-global">
+
+    <a href="{% url 'admin:shop_order_changelist' %}">
+        ORDERS
+    </a>
+
+    <a href="{% url 'admin:shop_product_changelist' %}">
+        PRODUCTS
+    </a>
+
+    <a href="/" target="_blank" class="sw-view-store">
+        VIEW STORE ↗
+    </a>
+
+</div>
+
+{% endblock %}

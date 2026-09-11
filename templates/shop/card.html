@@ -1,0 +1,231 @@
+{% load i18n static %}
+
+<article class="product-card">
+
+    <div class="sw-card-visual-wrap">
+
+        {# ============================= #}
+        {# PRODUCT IMAGE / MAIN LINK     #}
+        {# ============================= #}
+
+        {% if product.source == "local" %}
+
+            <a
+                class="product-visual"
+                href="{{ product.url }}"
+            >
+
+        {% else %}
+
+            <a
+                class="product-visual"
+                href="{% url 'printify_product' product.id %}"
+            >
+
+        {% endif %}
+
+                {% if product.image %}
+
+                    <img
+                        src="{{ product.image }}"
+                        alt="{{ product.name }}"
+                        loading="lazy"
+                    >
+
+                {% else %}
+
+                    <img
+                        src="{% static 'images/le-vaure-hero.png' %}"
+                        alt="{{ product.name }}"
+                        loading="lazy"
+                    >
+
+                {% endif %}
+
+                <span class="product-view">
+                    {% trans "VIEW PRODUCT" %} →
+                </span>
+
+            </a>
+
+
+        {# ============================= #}
+        {# WISHLIST                     #}
+        {# ============================= #}
+
+        {% if user.is_authenticated %}
+
+            {% if product.source == "local" %}
+
+                <form
+                    method="post"
+                    action="{% url 'toggle_wishlist' product.id %}"
+                    class="sw-card-wishlist-form"
+                >
+                    {% csrf_token %}
+
+                    <input
+                        type="hidden"
+                        name="next"
+                        value="{{ request.get_full_path }}"
+                    >
+
+                    <button
+                        type="submit"
+                        class="sw-card-wishlist-btn {% if product.id in wishlist_product_ids %}is-active{% endif %}"
+                        aria-label="{% trans 'Wishlist' %}"
+                        title="{% trans 'Wishlist' %}"
+                    >
+                        {% if product.id in wishlist_product_ids %}
+                            ♥
+                        {% else %}
+                            ♡
+                        {% endif %}
+                    </button>
+
+                </form>
+
+            {% else %}
+
+                <div class="sw-card-wishlist-form">
+
+                    <button
+                        type="button"
+                        class="sw-card-wishlist-btn"
+                        aria-label="{% trans 'Wishlist' %}"
+                        title="{% trans 'Wishlist' %}"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+            {% endif %}
+
+        {% else %}
+
+            <a
+                href="{% url 'login' %}?next={{ request.path|urlencode }}"
+                class="sw-card-wishlist-btn"
+                aria-label="Login to save {{ product.name }}"
+                title="{% trans 'Login to save' %}"
+            >
+                ♡
+            </a>
+
+        {% endif %}
+
+    </div>
+
+
+    <div class="product-info">
+
+        {# ============================= #}
+        {# PRODUCT NAME / PRICE LINK     #}
+        {# ============================= #}
+
+        {% if product.source == "local" %}
+
+            <a
+                class="product-details"
+                href="{{ product.url }}"
+            >
+
+        {% else %}
+
+            <a
+                class="product-details"
+                href="{% url 'printify_product' product.id %}"
+            >
+
+        {% endif %}
+
+                <small>
+                    {% if product.category %}
+                        {% trans product.category %}
+                    {% else %}
+                        LE VAURÉ
+                    {% endif %}
+                </small>
+
+                <h3>
+                    {{ product.name }}
+                </h3>
+
+                <strong>
+                    €{{ product.price|floatformat:2 }}
+                </strong>
+
+            </a>
+
+
+        {# ============================= #}
+        {# QUICK ADD                    #}
+        {# ============================= #}
+
+        {% if product.source == "local" %}
+
+            <form
+                method="post"
+                action="{% url 'add_cart' product.id %}"
+                class="quick-add-form"
+            >
+                {% csrf_token %}
+
+                <input
+                    type="hidden"
+                    name="quantity"
+                    value="1"
+                >
+
+                <button
+                    type="submit"
+                    class="quick-add"
+                    aria-label="Add {{ product.name }} to cart"
+                    {% if product.stock <= 0 %}disabled{% endif %}
+                >
+
+                    {% if product.stock > 0 %}
+                        <span>＋</span>
+                    {% else %}
+                        <span>×</span>
+                    {% endif %}
+
+                </button>
+
+            </form>
+
+        {% else %}
+
+            {# Printify + opens product page to select size/color #}
+
+            <a
+                href="{% url 'printify_product' product.id %}"
+                class="quick-add-form"
+            >
+                <span
+                    class="quick-add"
+                    aria-label="View {{ product.name }}"
+                >
+                    <span>＋</span>
+                </span>
+            </a>
+
+        {% endif %}
+
+    </div>
+
+
+    {# ============================= #}
+    {# {% trans "SOLD OUT" %}                     #}
+    {# ============================= #}
+
+    {% if product.source == "local" and product.stock <= 0 %}
+
+        <div class="product-status">
+            {% trans "SOLD OUT" %}
+        </div>
+
+    {% endif %}
+
+</article>

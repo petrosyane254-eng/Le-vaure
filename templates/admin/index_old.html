@@ -1,0 +1,500 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% load admin_dashboard %}
+
+{% southward_admin_stats as stats %}
+{% southward_recent_orders as recent_orders %}
+{% southward_low_stock_products as low_stock_products %}
+
+{% block content %}
+
+<div class="sw-dashboard">
+
+    <!-- HEADER -->
+    <section class="sw-dashboard-header">
+
+        <div>
+            <span class="sw-eyebrow">
+                LE VAURÉ / CONTROL CENTER
+            </span>
+
+            <h1>
+                STORE OVERVIEW
+            </h1>
+
+            <p>
+                Manage orders, inventory, customers and store operations.
+            </p>
+        </div>
+
+        <div class="sw-dashboard-actions">
+
+            <a
+                href="{% url 'admin:shop_product_add' %}"
+                class="sw-btn sw-btn-dark"
+            >
+                + ADD PRODUCT
+            </a>
+
+            <a
+                href="{% url 'admin:shop_order_changelist' %}"
+                class="sw-btn sw-btn-light"
+            >
+                VIEW ORDERS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- KPI -->
+    <section class="sw-dashboard-kpis">
+
+        <a href="{% url 'admin:shop_order_changelist' %}" class="sw-kpi">
+
+            <div class="sw-kpi-head">
+                <span>ORDERS TODAY</span>
+                <span>01</span>
+            </div>
+
+            <strong>
+                {{ stats.orders_today|default:"0" }}
+            </strong>
+
+            <small>
+                Orders received today
+            </small>
+
+        </a>
+
+
+        <a href="{% url 'admin:shop_order_changelist' %}" class="sw-kpi">
+
+            <div class="sw-kpi-head">
+                <span>TODAY REVENUE</span>
+                <span>02</span>
+            </div>
+
+            <strong>
+                ${{ stats.today_revenue|default:"0"|floatformat:2 }}
+            </strong>
+
+            <small>
+                Excluding cancelled orders
+            </small>
+
+        </a>
+
+
+        <a href="{% url 'admin:shop_order_changelist' %}" class="sw-kpi">
+
+            <div class="sw-kpi-head">
+                <span>OPEN ORDERS</span>
+                <span>03</span>
+            </div>
+
+            <strong>
+                {{ stats.pending_orders|default:"0" }}
+            </strong>
+
+            <small>
+                Waiting for fulfillment
+            </small>
+
+        </a>
+
+
+        <a href="{% url 'admin:shop_product_changelist' %}" class="sw-kpi">
+
+            <div class="sw-kpi-head">
+                <span>STOCK ALERTS</span>
+                <span>04</span>
+            </div>
+
+            <strong>
+                {{ stats.low_stock|default:"0" }}
+            </strong>
+
+            <small>
+                Products running low
+            </small>
+
+        </a>
+
+    </section>
+
+
+    <!-- PRODUCT SECTIONS -->
+    <section class="sw-dashboard-product-sections">
+
+        {% for section in product_sections %}
+
+            <a href="{% url section.url %}" class="sw-product-section">
+                <span class="sw-product-section-label">
+                    {{ section.title }}
+                </span>
+
+                <strong>
+                    {{ section.count|default:"0" }}
+                </strong>
+
+                <p>
+                    {{ section.description }}
+                </p>
+            </a>
+
+        {% endfor %}
+
+    </section>
+
+
+    <!-- MAIN -->
+    <section class="sw-dashboard-grid">
+
+        <!-- RECENT ORDERS -->
+        <div class="sw-panel sw-orders-panel">
+
+            <div class="sw-panel-header">
+
+                <div>
+                    <span>OPERATIONS</span>
+                    <h2>RECENT ORDERS</h2>
+                </div>
+
+                <a href="{% url 'admin:shop_order_changelist' %}">
+                    VIEW ALL →
+                </a>
+
+            </div>
+
+
+            <div class="sw-table-scroll">
+
+                <table class="sw-dashboard-table">
+
+                    <thead>
+                        <tr>
+                            <th>ORDER</th>
+                            <th>CUSTOMER</th>
+                            <th>STATUS</th>
+                            <th>TOTAL</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    {% for order in recent_orders %}
+
+                        <tr>
+
+                            <td>
+                                <a
+                                    href="{% url 'admin:shop_order_change' order.pk %}"
+                                    class="sw-order-number"
+                                >
+                                    SW-{{ order.pk|stringformat:"06d" }}
+                                </a>
+                            </td>
+
+                            <td>
+                                <strong>
+                                    {{ order.full_name }}
+                                </strong>
+
+                                <small>
+                                    {{ order.email }}
+                                </small>
+                            </td>
+
+                            <td>
+                                <span class="sw-status sw-status-{{ order.status }}">
+                                    {{ order.get_status_display|upper }}
+                                </span>
+                            </td>
+
+                            <td>
+                                <strong>
+                                    ${{ order.total }}
+                                </strong>
+                            </td>
+
+                            <td>
+                                {{ order.created_at|date:"M d, H:i" }}
+                            </td>
+
+                        </tr>
+
+                    {% empty %}
+
+                        <tr>
+                            <td colspan="5" class="sw-empty">
+                                NO ORDERS YET
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <div class="sw-panel">
+
+            <div class="sw-panel-header">
+
+                <div>
+                    <span>TOOLS</span>
+                    <h2>QUICK ACTIONS</h2>
+                </div>
+
+            </div>
+
+
+            <div class="sw-quick-list">
+
+                <a href="{% url 'admin:shop_product_add' %}">
+                    <span class="sw-quick-icon">+</span>
+
+                    <div>
+                        <strong>ADD PRODUCT</strong>
+                        <small>Create a new store item</small>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a href="{% url 'admin:shop_product_changelist' %}">
+                    <span class="sw-quick-icon">#</span>
+
+                    <div>
+                        <strong>INVENTORY</strong>
+                        <small>Prices, stock and visibility</small>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a href="{% url 'admin:shop_order_changelist' %}">
+                    <span class="sw-quick-icon">↗</span>
+
+                    <div>
+                        <strong>PROCESS ORDERS</strong>
+                        <small>Update order statuses</small>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a href="{% url 'admin:auth_user_changelist' %}">
+                    <span class="sw-quick-icon">◎</span>
+
+                    <div>
+                        <strong>CUSTOMERS</strong>
+                        <small>Manage customer accounts</small>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECOND ROW -->
+    <section class="sw-dashboard-bottom">
+
+        <!-- STOCK -->
+        <div class="sw-panel">
+
+            <div class="sw-panel-header">
+
+                <div>
+                    <span>INVENTORY</span>
+                    <h2>STOCK WATCH</h2>
+                </div>
+
+                <a href="{% url 'admin:shop_product_changelist' %}">
+                    MANAGE →
+                </a>
+
+            </div>
+
+
+            <div class="sw-stock-watch">
+
+                {% for product in low_stock_products %}
+
+                    <a href="{% url 'admin:shop_product_change' product.pk %}">
+
+                        <div>
+                            <strong>
+                                {{ product.name }}
+                            </strong>
+
+                            <small>
+                                {{ product.category.name }}
+                            </small>
+                        </div>
+
+
+                        {% if product.stock == 0 %}
+
+                            <span class="sw-stock-badge sw-stock-out">
+                                OUT OF STOCK
+                            </span>
+
+                        {% else %}
+
+                            <span class="sw-stock-badge">
+                                {{ product.stock }} LEFT
+                            </span>
+
+                        {% endif %}
+
+                    </a>
+
+                {% empty %}
+
+                    <div class="sw-good-stock">
+                        ✓ INVENTORY LEVELS LOOK GOOD
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- OVERVIEW -->
+        <div class="sw-panel">
+
+            <div class="sw-panel-header">
+
+                <div>
+                    <span>DATABASE</span>
+                    <h2>STORE DATA</h2>
+                </div>
+
+            </div>
+
+
+            <div class="sw-store-data">
+
+                <a href="{% url 'admin:shop_product_changelist' %}">
+                    <span>PRODUCTS</span>
+                    <strong>{{ stats.products|default:"0" }}</strong>
+                </a>
+
+                <a href="{% url 'admin:auth_user_changelist' %}">
+                    <span>CUSTOMERS</span>
+                    <strong>{{ stats.customers|default:"0" }}</strong>
+                </a>
+
+                <a href="{% url 'admin:shop_wishlist_changelist' %}">
+                    <span>WISHLIST SAVES</span>
+                    <strong>{{ stats.wishlist_items|default:"0" }}</strong>
+                </a>
+
+                <div class="sw-store-revenue">
+                    <span>TOTAL REVENUE</span>
+
+                    <strong>
+                        ${{ stats.total_revenue|default:"0"|floatformat:2 }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MANAGEMENT -->
+    <section class="sw-panel sw-management-panel">
+
+        <div class="sw-panel-header">
+
+            <div>
+                <span>ADMINISTRATION</span>
+                <h2>STORE MANAGEMENT</h2>
+            </div>
+
+        </div>
+
+
+        <div class="sw-management-grid">
+
+            <a href="{% url 'admin:shop_product_changelist' %}">
+                <span>01</span>
+                <strong>PRODUCTS</strong>
+                <small>Catalog & inventory</small>
+                <b>→</b>
+            </a>
+
+
+            <a href="{% url 'admin:shop_order_changelist' %}">
+                <span>02</span>
+                <strong>ORDERS</strong>
+                <small>Sales & fulfillment</small>
+                <b>→</b>
+            </a>
+
+
+            <a href="{% url 'admin:shop_category_changelist' %}">
+                <span>03</span>
+                <strong>CATEGORIES</strong>
+                <small>Store organization</small>
+                <b>→</b>
+            </a>
+
+
+            <a href="{% url 'admin:auth_user_changelist' %}">
+                <span>04</span>
+                <strong>CUSTOMERS</strong>
+                <small>User accounts</small>
+                <b>→</b>
+            </a>
+
+
+            <a href="{% url 'admin:shop_wishlist_changelist' %}">
+                <span>05</span>
+                <strong>WISHLISTS</strong>
+                <small>Customer interest</small>
+                <b>→</b>
+            </a>
+
+
+            <a href="{% url 'admin:shop_emailverification_changelist' %}">
+                <span>06</span>
+                <strong>EMAIL</strong>
+                <small>Verification system</small>
+                <b>→</b>
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+{% endblock %}

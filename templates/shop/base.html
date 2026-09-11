@@ -1,0 +1,1067 @@
+{% load i18n static %}
+
+<!doctype html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:'en' }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- =========================================================
+         SEO
+    ========================================================= -->
+
+    <meta
+        name="description"
+        content="{% block meta_description %}{% trans 'Shop LE VAURÉ timeless fashion and elevated everyday essentials online. Refined design, secure checkout and reliable shipping.' %}{% endblock %}"
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <title>
+        {% block title %}LE VAURÉ | {% trans "Timeless Essentials" %}{% endblock %}
+    </title>
+
+    <!-- =========================================================
+         FAVICON
+    ========================================================= -->
+
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon-96.png' %}">
+
+    <!-- =========================================================
+         CANONICAL URL
+    ========================================================= -->
+
+    {% block canonical %}{% endblock %}
+
+    {% block hreflang %}
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="hy" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="de" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="fr" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="ru" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="x-default" href="{{ request.build_absolute_uri }}">
+    {% endblock %}
+
+    <!-- =========================================================
+         STYLES
+    ========================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/product.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/checkout.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/cart_drawer.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/wishlist.css' %}"
+    >
+
+    <link rel="stylesheet" href="{% static 'css/levaure.css' %}">
+
+    <!-- =========================================================
+         PAGE-SPECIFIC HEAD / STRUCTURED DATA
+    ========================================================= -->
+
+    {% block extra_head %}{% endblock %}
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="sw-topbar">
+
+    <div class="sw-topbar-left">
+        LE VAURÉ
+    </div>
+
+    <div class="sw-topbar-message">
+        {% trans "FREE SHIPPING ON SELECTED ORDERS" %}
+        <a href="{% url 'shop' %}">{% trans "SHOP NOW" %}</a>
+    </div>
+
+    <div class="sw-topbar-right">
+
+        <button
+            class="top-location"
+            type="button"
+            aria-label="{% trans 'Location' %}"
+            title="{% trans 'Location' %}"
+        >
+            ◉
+        </button>
+        <div class="language-switcher">
+            <form action="{% url 'set_language' %}" method="post" class="language-form">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button
+                    type="button"
+                    class="language-btn"
+                    aria-label="{% trans 'Language' %}"
+                >
+                    {{ LANGUAGE_CODE|upper|default:"EN" }}
+                    <span>⏷</span>
+                </button>
+                <div class="language-menu">
+    <button type="submit" name="language" value="en">EN</button>
+    <button type="submit" name="language" value="hy">HY</button>
+    <button type="submit" name="language" value="de">DE</button>
+    <button type="submit" name="language" value="ru">RU</button>
+    <button type="submit" name="language" value="fr">FR</button>
+</div>
+            </form>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN HEADER
+========================================================= -->
+
+<header class="sw-header">
+
+    <div class="sw-navbar">
+
+        <!-- BRAND -->
+
+        <a
+            href="{% url 'home' %}"
+            class="sw-logo"
+            aria-label="LE VAURÉ Home"
+        >
+            <img
+                src="{% static 'images/logo.png' %}"
+                alt="LE VAURÉ"
+            >
+
+            <span>LE VAURÉ</span>
+        </a>
+
+
+      <!-- =========================================================
+     MAIN NAV — LE VAURÉ MULTILANGUAGE FIX
+========================================================= -->
+
+<nav class="sw-main-menu" aria-label="{% trans 'Main navigation' %}">
+
+    <a href="{% url 'shop' %}">{% trans "Shop" %}</a>
+    <a href="{% url 'shop' %}">{% trans "Collections" %}</a>
+    <a href="#lv-story">{% trans "About" %}</a>
+    <a href="#journal">{% trans "Journal" %}</a>
+
+</nav>
+
+
+        <!-- TOOLS -->
+
+        <div class="sw-header-tools">
+
+            <a
+                href="{% url 'shop' %}"
+                class="sw-icon-btn"
+                aria-label="{% trans 'Search' %}"
+                title="{% trans 'Search' %}"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20L16.5 16.5"></path>
+                </svg>
+            </a>
+
+
+            {% if user.is_authenticated %}
+
+                <a
+                    href="{% url 'account' %}"
+                    class="sw-icon-btn"
+                    aria-label="{% trans 'Account' %}"
+                    title="{{ user.username }}"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4.5 21C5.2 16.8 7.8 14.5 12 14.5C16.2 14.5 18.8 16.8 19.5 21"></path>
+                    </svg>
+                </a>
+
+            {% else %}
+
+                <a
+                    href="{% url 'login' %}"
+                    class="sw-icon-btn"
+                    aria-label="{% trans 'Login' %}"
+                    title="{% trans 'Login' %}"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4.5 21C5.2 16.8 7.8 14.5 12 14.5C16.2 14.5 18.8 16.8 19.5 21"></path>
+                    </svg>
+                </a>
+
+            {% endif %}
+
+
+            {% if user.is_authenticated %}
+
+                <a
+                    href="{% url 'wishlist' %}"
+                    class="sw-icon-btn"
+                    aria-label="{% trans 'Wishlist' %}"
+                    title="{% trans 'Wishlist' %}"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.8 4.6C18.7 2.5 15.3 2.5 13.2 4.6L12 5.8L10.8 4.6C8.7 2.5 5.3 2.5 3.2 4.6C1.1 6.7 1.1 10.1 3.2 12.2L12 21L20.8 12.2C22.9 10.1 22.9 6.7 20.8 4.6Z"></path>
+                    </svg>
+                </a>
+
+            {% else %}
+
+                <a
+                    href="{% url 'login' %}?next={% url 'wishlist' %}"
+                    class="sw-icon-btn"
+                    aria-label="{% trans 'Login to use wishlist' %}"
+                    title="{% trans 'Wishlist' %}"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.8 4.6C18.7 2.5 15.3 2.5 13.2 4.6L12 5.8L10.8 4.6C8.7 2.5 5.3 2.5 3.2 4.6C1.1 6.7 1.1 10.1 3.2 12.2L12 21L20.8 12.2C22.9 10.1 22.9 6.7 20.8 4.6Z"></path>
+                    </svg>
+                </a>
+
+            {% endif %}
+
+
+            <details class="lv-language-selector">
+                <summary aria-label="{% trans 'Language' %}" title="{% trans 'Language' %}">
+                    <span class="lv-language-code">{{ LANGUAGE_CODE|upper|default:"EN" }}</span>
+                    <span class="lv-language-chevron">⌄</span>
+                </summary>
+                <div class="lv-language-menu" role="menu">
+                    <form action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                        <button type="submit" name="language" value="en"{% if LANGUAGE_CODE == 'en' %} class="active"{% endif %}>English <span>EN</span></button>
+                        <button type="submit" name="language" value="hy"{% if LANGUAGE_CODE == 'hy' %} class="active"{% endif %}>Հայերեն <span>HY</span></button>
+                        <button type="submit" name="language" value="de"{% if LANGUAGE_CODE == 'de' %} class="active"{% endif %}>Deutsch <span>DE</span></button>
+                        <button type="submit" name="language" value="ru"{% if LANGUAGE_CODE == 'ru' %} class="active"{% endif %}>Русский <span>RU</span></button>
+                        <button type="submit" name="language" value="fr"{% if LANGUAGE_CODE == 'fr' %} class="active"{% endif %}>Français <span>FR</span></button>
+                    </form>
+                </div>
+            </details>
+
+
+            <a
+                href="{% url 'cart' %}"
+                class="sw-icon-btn sw-cart-btn"
+                aria-label="{% trans 'Cart' %}"
+                title="{% trans 'Cart' %}"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 8H19L18 21H6L5 8Z"></path>
+                    <path d="M9 8V6C9 4.3 10.3 3 12 3C13.7 3 15 4.3 15 6V8"></path>
+                </svg>
+
+                {% if cart_count %}
+                    <span class="sw-cart-count">
+                        {{ cart_count }}
+                    </span>
+                {% endif %}
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     DJANGO MESSAGES
+========================================================= -->
+
+{% if messages %}
+
+    <div class="messages">
+
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endif %}
+
+
+<!-- =========================================================
+     PAGE CONTENT
+========================================================= -->
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+
+<!-- =========================================================
+     BENEFITS
+========================================================= -->
+
+<section class="sw-benefits">
+
+    <div class="sw-benefit">
+
+        <div class="sw-benefit-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3L20 6V11C20 16 16.5 20 12 21C7.5 20 4 16 4 11V6L12 3Z"></path>
+                <path d="M9 12L11 14L15 10"></path>
+            </svg>
+        </div>
+
+        <div>
+            <strong>{% trans "SECURE CHECKOUT" %}</strong>
+            <span>{% trans "Protected order process" %}</span>
+        </div>
+
+    </div>
+
+
+    <div class="sw-benefit">
+
+        <div class="sw-benefit-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 6H15V17H3Z"></path>
+                <path d="M15 10H19L22 13V17H15"></path>
+                <circle cx="7" cy="18" r="2"></circle>
+                <circle cx="18" cy="18" r="2"></circle>
+            </svg>
+        </div>
+
+        <div>
+            <strong>{% trans "FAST SHIPPING" %}</strong>
+            <span>{% trans "Reliable delivery" %}</span>
+        </div>
+
+    </div>
+
+
+    <div class="sw-benefit">
+
+        <div class="sw-benefit-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 7V3L16 7L20 11V7C20 5 17 3 14 3"></path>
+                <path d="M4 17V21L8 17L4 13V17C4 19 7 21 10 21"></path>
+            </svg>
+        </div>
+
+        <div>
+            <strong>{% trans "EASY RETURNS" %}</strong>
+            <span>{% trans "Simple return process" %}</span>
+        </div>
+
+    </div>
+
+
+    <div class="sw-benefit">
+
+        <div class="sw-benefit-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 13V11C4 6.6 7.6 3 12 3C16.4 3 20 6.6 20 11V13"></path>
+                <path d="M4 13H7V19H5C4.4 19 4 18.6 4 18V13Z"></path>
+                <path d="M20 13H17V19H19C19.6 19 20 18.6 20 18V13Z"></path>
+            </svg>
+        </div>
+
+        <div>
+            <strong>{% trans "CUSTOMER SUPPORT" %}</strong>
+            <span>{% trans "We're here to help" %}</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="lv-newsletter" id="journal">
+    <p class="lv-eyebrow">{% trans "STAY IN TOUCH" %}</p>
+    <h2>{% trans "Journal & Updates" %}</h2>
+    <p>{% trans "Be the first to know about new collections, stories, and exclusive releases." %}</p>
+    <form class="lv-newsletter-form" action="#" method="get" onsubmit="return false;">
+        <input type="email" placeholder="{% trans 'Your email address' %}" aria-label="{% trans 'Email address' %}">
+        <button type="submit">{% trans "SUBSCRIBE →" %}</button>
+    </form>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="footer-brand-line">
+                <img
+                    src="{% static 'images/logo.png' %}"
+                    alt="LE VAURÉ"
+                >
+
+                <strong>LE VAURÉ</strong>
+            </div>
+
+            <p>
+                {% trans "More than clothes. A higher place." %}
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>{% trans "SHOP" %}</strong>
+
+            <a href="{% url 'shop' %}">
+                {% trans "New arrivals" %}
+            </a>
+
+            <a href="{% url 'shop' %}?category=hoodies">
+                {% trans "Hoodies" %}
+            </a>
+
+            <a href="{% url 'shop' %}?category=t-shirts">
+                {% trans "T-Shirts" %}
+            </a>
+
+            <a href="{% url 'shop' %}?category=accessories">
+                {% trans "Accessories" %}
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>{% trans "ACCOUNT" %}</strong>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'account' %}">
+                    {% trans "My account" %}
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}">
+                    {% trans "Login" %}
+                </a>
+            {% endif %}
+
+            <a href="{% url 'cart' %}">
+                {% trans "Shopping bag" %}
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>{% trans "HELP" %}</strong>
+
+            <a href="{% url 'returns' %}">
+                {% trans "Shipping & returns" %}
+            </a>
+
+            <a href="{% url 'privacy' %}">
+                {% trans "Privacy" %}
+            </a>
+
+            <a href="{% url 'terms' %}">
+                {% trans "Terms" %}
+            </a>
+
+            <a href="{% url 'cookies' %}">
+                {% trans "Cookies" %}
+            </a>
+
+            <a href="{% url 'impressum' %}">
+                {% trans "Impressum" %}
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-privacy">
+
+        <button
+            type="button"
+            id="swOpenCookieSettings"
+            class="footer-cookie-settings"
+        >
+            {% trans "COOKIE SETTINGS" %}
+        </button>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © {% now "Y" %} LE VAURÉ. {% trans "ALL RIGHTS RESERVED." %}
+        </span>
+
+        <span>
+            {% trans "ROOTED IN HERITAGE. BUILT FOR TOMORROW." %}
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<div
+    class="sw-cart-drawer-overlay"
+    id="swCartDrawerOverlay"
+    hidden
+></div>
+
+<aside
+    class="sw-cart-drawer"
+    id="swCartDrawer"
+    aria-hidden="true"
+    aria-labelledby="swCartDrawerTitle"
+>
+
+    <div class="sw-cart-drawer-head">
+
+        <h2 id="swCartDrawerTitle">
+            {% trans "ADDED TO YOUR CART" %}
+        </h2>
+
+        <button
+            type="button"
+            class="sw-cart-drawer-close"
+            id="swCartDrawerClose"
+            aria-label="{% trans 'Close cart' %}"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="sw-cart-drawer-body">
+
+        <div
+            class="sw-cart-drawer-item"
+            id="swCartDrawerItem"
+        >
+
+            <a
+                href="#"
+                class="sw-cart-drawer-image"
+                id="swCartDrawerProductLink"
+            >
+                <img
+                    id="swCartDrawerImage"
+                    src="{% static 'images/logo.png' %}"
+                    alt="LE VAURÉ product"
+                >
+            </a>
+
+
+            <div class="sw-cart-drawer-product">
+
+                <p
+                    class="sw-cart-drawer-category"
+                    id="swCartDrawerCategory"
+                >
+                    LE VAURÉ
+                </p>
+
+                <a
+                    href="#"
+                    class="sw-cart-drawer-name"
+                    id="swCartDrawerName"
+                >
+                    {% trans "PRODUCT" %}
+                </a>
+
+                <strong
+                    class="sw-cart-drawer-price"
+                    id="swCartDrawerPrice"
+                >
+                    $0.00
+                </strong>
+
+
+                <div class="sw-cart-drawer-qty">
+
+                    <button
+                        type="button"
+                        id="swCartDrawerMinus"
+                        aria-label="{% trans 'Decrease quantity' %}"
+                    >
+                        −
+                    </button>
+
+                    <span id="swCartDrawerQuantity">
+                        1
+                    </span>
+
+                    <button
+                        type="button"
+                        id="swCartDrawerPlus"
+                        aria-label="{% trans 'Increase quantity' %}"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="sw-cart-drawer-remove"
+                    id="swCartDrawerRemove"
+                >
+                    {% trans "REMOVE" %}
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="sw-cart-drawer-foot">
+
+        <div class="sw-cart-drawer-total">
+
+            <div>
+                <strong>{% trans "TOTAL" %}</strong>
+                <span>
+                    {% trans "Shipping calculated at checkout" %}
+                </span>
+            </div>
+
+            <strong id="swCartDrawerTotal">
+                $0.00
+            </strong>
+
+        </div>
+
+
+        <a
+            href="{% url 'cart' %}"
+            class="sw-cart-drawer-view"
+        >
+            {% trans "VIEW CART" %}
+        </a>
+
+
+        <a
+            href="{% url 'checkout' %}"
+            class="sw-cart-drawer-checkout"
+        >
+            {% trans "CHECKOUT →" %}
+        </a>
+
+
+        <button
+            type="button"
+            class="sw-cart-drawer-continue"
+            id="swCartDrawerContinue"
+        >
+            {% trans "CONTINUE SHOPPING" %}
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     LE VAURÉ COOKIE CONSENT
+========================================================= -->
+
+<div
+    class="sw-cookie-banner"
+    id="swCookieBanner"
+    aria-hidden="true"
+>
+
+    <div class="sw-cookie-banner-top">
+
+        <div>
+
+            <span class="sw-cookie-kicker">
+                LE VAURÉ / PRIVACY
+            </span>
+
+            <h2>
+                {% trans "YOUR PRIVACY." %}<br>
+                {% trans "YOUR CHOICE." %}
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="sw-cookie-close"
+            id="swCookieBannerClose"
+            aria-label="{% trans 'Close privacy message' %}"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <p class="sw-cookie-description">
+        {% blocktrans trimmed %}
+        We use essential cookies to operate LE VAURÉ.
+        With your permission, optional cookies may also be used
+        for analytics and marketing.
+        {% endblocktrans %}
+    </p>
+
+
+    <div class="sw-cookie-essential">
+
+        <div>
+
+            <strong>
+                {% trans "ESSENTIAL COOKIES" %}
+            </strong>
+
+            <span>
+                {% trans "Cart, account and security functions" %}
+            </span>
+
+        </div>
+
+        <span class="sw-cookie-always">
+            {% trans "ALWAYS ACTIVE" %}
+        </span>
+
+    </div>
+
+
+    <div class="sw-cookie-links">
+
+        <a
+            href="{% url 'privacy' %}"
+            target="_blank"
+            rel="noopener"
+        >
+            {% trans "PRIVACY POLICY ↗" %}
+        </a>
+
+        <a
+            href="{% url 'cookies' %}"
+            target="_blank"
+            rel="noopener"
+        >
+            {% trans "COOKIE POLICY ↗" %}
+        </a>
+
+        <a
+            href="{% url 'terms' %}"
+            target="_blank"
+            rel="noopener"
+        >
+            {% trans "TERMS ↗" %}
+        </a>
+
+    </div>
+
+
+    <div class="sw-cookie-actions">
+
+        <button
+            type="button"
+            class="sw-cookie-btn sw-cookie-btn-secondary"
+            id="swCookieReject"
+        >
+            {% trans "REJECT OPTIONAL" %}
+        </button>
+
+
+        <button
+            type="button"
+            class="sw-cookie-btn sw-cookie-btn-primary"
+            id="swCookieAccept"
+        >
+            <span>{% trans "ACCEPT ALL" %}</span>
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="sw-cookie-settings-link"
+        id="swCookieSettings"
+    >
+        {% trans "COOKIE SETTINGS" %}
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
+     COOKIE SETTINGS MODAL
+========================================================= -->
+
+<div
+    class="sw-cookie-modal-overlay"
+    id="swCookieModalOverlay"
+    aria-hidden="true"
+>
+
+    <div
+        class="sw-cookie-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="swCookieModalTitle"
+    >
+
+        <div class="sw-cookie-modal-header">
+
+            <div>
+
+                <span class="sw-cookie-kicker">
+                    LE VAURÉ / PRIVACY
+                </span>
+
+                <h2 id="swCookieModalTitle">
+                    {% trans "COOKIE" %}<br>
+                    {% trans "SETTINGS." %}
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="sw-cookie-close"
+                id="swCookieModalClose"
+                aria-label="{% trans 'Close cookie settings' %}"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <p class="sw-cookie-description">
+            {% blocktrans trimmed %}
+            Choose which optional cookies LE VAURÉ may use.
+            Essential cookies are required for the shop to work
+            and cannot be disabled.
+            {% endblocktrans %}
+        </p>
+
+
+        <div class="sw-cookie-options">
+
+
+            <!-- ESSENTIAL -->
+
+            <div class="sw-cookie-option">
+
+                <div>
+
+                    <strong>
+                        {% trans "ESSENTIAL" %}
+                    </strong>
+
+                    <p>
+                        {% blocktrans trimmed %}
+                        Required for cart, checkout,
+                        login and security.
+                        {% endblocktrans %}
+                    </p>
+
+                </div>
+
+                <span class="sw-cookie-always">
+                    {% trans "ALWAYS ACTIVE" %}
+                </span>
+
+            </div>
+
+
+            <!-- ANALYTICS -->
+
+            <label class="sw-cookie-option">
+
+                <div>
+
+                    <strong>
+                        {% trans "ANALYTICS" %}
+                    </strong>
+
+                    <p>
+                        {% blocktrans trimmed %}
+                        Helps us understand how visitors
+                        use LE VAURÉ.
+                        {% endblocktrans %}
+                    </p>
+
+                </div>
+
+
+                <span class="sw-cookie-switch">
+
+                    <input
+                        type="checkbox"
+                        id="swConsentAnalytics"
+                    >
+
+                    <span></span>
+
+                </span>
+
+            </label>
+
+
+            <!-- MARKETING -->
+
+            <label class="sw-cookie-option">
+
+                <div>
+
+                    <strong>
+                        {% trans "MARKETING" %}
+                    </strong>
+
+                    <p>
+                        {% blocktrans trimmed %}
+                        May be used for personalised advertising
+                        and campaign measurement.
+                        {% endblocktrans %}
+                    </p>
+
+                </div>
+
+
+                <span class="sw-cookie-switch">
+
+                    <input
+                        type="checkbox"
+                        id="swConsentMarketing"
+                    >
+
+                    <span></span>
+
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <div class="sw-cookie-modal-actions">
+
+            <button
+                type="button"
+                class="sw-cookie-btn sw-cookie-btn-secondary"
+                id="swCookieRejectModal"
+            >
+                {% trans "REJECT OPTIONAL" %}
+            </button>
+
+
+            <button
+                type="button"
+                class="sw-cookie-btn sw-cookie-btn-primary"
+                id="swCookieSave"
+            >
+                <span>{% trans "SAVE CHOICES" %}</span>
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <div class="sw-cookie-modal-links">
+
+            <a
+                href="{% url 'privacy' %}"
+                target="_blank"
+                rel="noopener"
+            >
+                {% trans "PRIVACY POLICY ↗" %}
+            </a>
+
+            <a
+                href="{% url 'cookies' %}"
+                target="_blank"
+                rel="noopener"
+            >
+                {% trans "COOKIE POLICY ↗" %}
+            </a>
+
+            <a
+                href="{% url 'terms' %}"
+                target="_blank"
+                rel="noopener"
+            >
+                {% trans "TERMS ↗" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/cart_drawer.js' %}"></script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

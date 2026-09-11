@@ -1,0 +1,125 @@
+{% extends "shop/base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Cart" %} - LE VAURÉ{% endblock %}
+
+{% block content %}
+
+<section class="cart-page">
+    <div class="cart-header">
+        <p class="eyebrow">{% trans "LE VAURÉ / YOUR BAG" %}</p>
+        <h1>{% trans "YOUR CART" %}</h1>
+    </div>
+
+    {% if items %}
+        <div class="cart-layout">
+            <div class="cart-items">
+                {% for item in items %}
+                    <article class="cart-item">
+                        <a class="cart-item-image" href="{{ item.url }}">
+                            {% if item.image %}
+                                <img src="{{ item.image }}" alt="{{ item.title }}">
+                            {% else %}
+                                <img src="{% static 'images/logo.png' %}" alt="{{ item.title }}">
+                            {% endif %}
+                        </a>
+
+                        <div class="cart-item-info">
+                            <div class="cart-item-main">
+                                <p class="cart-category">
+                                    {% if item.source == "printify" %}
+                                        {% trans "LE VAURÉ / PRINTIFY" %}
+                                    {% elif item.product.category %}
+                                        {{ item.product.category.name|upper }}
+                                    {% else %}
+                                        LE VAURÉ
+                                    {% endif %}
+                                </p>
+
+                                <a href="{{ item.url }}" class="cart-product-name">
+                                    {{ item.title }}
+                                </a>
+
+                                {% if item.variant_title %}
+                                    <span class="cart-unit-price">{{ item.variant_title }}</span>
+                                {% endif %}
+
+                                <span class="cart-unit-price">
+                                    €{{ item.unit_price|floatformat:2 }} {% trans "EACH" %}
+                                </span>
+                            </div>
+
+                            <form method="post" action="{{ item.update_url }}" class="cart-update-form">
+                                {% csrf_token %}
+
+                                <label for="quantity-{{ forloop.counter }}">{% trans "QUANTITY" %}</label>
+
+                                <div class="cart-quantity-row">
+                                    <input
+                                        id="quantity-{{ forloop.counter }}"
+                                        name="quantity"
+                                        type="number"
+                                        min="0"
+                                        max="{{ item.max_quantity }}"
+                                        value="{{ item.quantity }}"
+                                        aria-label="{% blocktrans with name=item.title %}Quantity for {{ name }}{% endblocktrans %}"
+                                    >
+
+                                    <button type="submit" class="cart-update-btn">{% trans "UPDATE" %}</button>
+
+                                    <button
+                                        type="submit"
+                                        name="quantity"
+                                        value="0"
+                                        class="cart-remove-btn"
+                                        aria-label="{% blocktrans with name=item.title %}Remove {{ name }} from cart{% endblocktrans %}"
+                                    >
+                                        <span>{% trans "REMOVE" %}</span>
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="cart-item-total">
+                            <span>{% trans "SUBTOTAL" %}</span>
+                            <strong>€{{ item.subtotal|floatformat:2 }}</strong>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+
+            <aside class="cart-summary">
+                <p class="eyebrow">{% trans "ORDER SUMMARY" %}</p>
+                <div class="summary-line">
+                    <span>{% trans "SUBTOTAL" %}</span>
+                    <strong>€{{ total|floatformat:2 }}</strong>
+                </div>
+                <div class="summary-line muted">
+                    <span>{% trans "SHIPPING" %}</span>
+                    <span>{% trans "CALCULATED AT CHECKOUT" %}</span>
+                </div>
+                <div class="summary-total">
+                    <span>{% trans "TOTAL BEFORE SHIPPING" %}</span>
+                    <strong>€{{ total|floatformat:2 }}</strong>
+                </div>
+                <a class="cart-checkout-btn" href="{% url 'checkout' %}">
+                    <span>{% trans "CHECKOUT" %}</span>
+                    <span>→</span>
+                </a>
+                <a class="continue-shopping" href="{% url 'shop' %}">
+                    ← {% trans "CONTINUE SHOPPING" %}
+                </a>
+            </aside>
+        </div>
+    {% else %}
+        <div class="empty-cart">
+            <p class="eyebrow">{% trans "LE VAURÉ / YOUR BAG" %}</p>
+            <h2>{% trans "YOUR BAG" %}<br>{% trans "IS EMPTY." %}</h2>
+            <p>{% trans "Explore the LE VAURÉ collection and add something to your cart." %}</p>
+            <a class="btn" href="{% url 'shop' %}">{% trans "SHOP COLLECTION" %} →</a>
+        </div>
+    {% endif %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,687 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LE VAURE\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A BRIGHTER"
+msgstr "БОЛЕЕ СВЕТЛОЕ"
+
+msgid "A HIGHER PERSPECTIVE"
+msgstr "БОЛЕЕ ВЫСОКИЙ ВЗГЛЯД"
+
+msgid "A higher place."
+msgstr "Место выше."
+
+msgid "ACCOUNT"
+msgstr "АККАУНТ"
+
+msgid "ADD TO CART"
+msgstr "В КОРЗИНУ"
+
+msgid "ALL"
+msgstr "ВСЕ"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "Accessories"
+msgstr "Аксессуары"
+
+msgid "Account"
+msgstr "Аккаунт"
+
+msgid "BUY NOW"
+msgstr "КУПИТЬ СЕЙЧАС"
+
+msgid "CHECKOUT"
+msgstr "ОФОРМЛЕНИЕ"
+
+msgid "CLOTHES"
+msgstr "ОДЕЖДА"
+
+msgid "CONFIRM PASSWORD"
+msgstr "ПОДТВЕРДИТЬ ПАРОЛЬ"
+
+msgid "CONTACT INFORMATION"
+msgstr "КОНТАКТНАЯ ИНФОРМАЦИЯ"
+
+msgid "CONTINUE SHOPPING"
+msgstr "ПРОДОЛЖИТЬ ПОКУПКИ"
+
+msgid "CREATE ACCOUNT"
+msgstr "СОЗДАТЬ АККАУНТ"
+
+msgid "CUSTOMER SUPPORT"
+msgstr "ПОДДЕРЖКА"
+
+msgid "Caps"
+msgstr "Кепки"
+
+msgid "Cart"
+msgstr "Корзина"
+
+msgid "Collections"
+msgstr "Коллекции"
+
+msgid "Create an account"
+msgstr "Создать аккаунт"
+
+msgid "DISCOVER THE COLLECTION"
+msgstr "ОТКРЫТЬ КОЛЛЕКЦИЮ"
+
+msgid "EASY RETURNS"
+msgstr "ПРОСТОЙ ВОЗВРАТ"
+
+msgid "EMAIL"
+msgstr "E-MAIL"
+
+msgid "EMAIL ADDRESS"
+msgstr "E-MAIL"
+
+msgid "EXPLORE"
+msgstr "СМОТРЕТЬ"
+
+msgid "EXPLORE COLLECTION"
+msgstr "СМОТРЕТЬ КОЛЛЕКЦИЮ"
+
+msgid "EXPLORE SHOP"
+msgstr "В МАГАЗИН"
+
+msgid "EXPLORE THE SHOP"
+msgstr "ПЕРЕЙТИ В МАГАЗИН"
+
+msgid "Explore the latest LE VAURÉ collection."
+msgstr "Откройте новую коллекцию LE VAURÉ."
+
+msgid "FAST SHIPPING"
+msgstr "БЫСТРАЯ ДОСТАВКА"
+
+msgid "FREE SHIPPING ON SELECTED ORDERS"
+msgstr "БЕСПЛАТНАЯ ДОСТАВКА ДЛЯ ВЫБРАННЫХ ЗАКАЗОВ"
+
+msgid "Featured"
+msgstr "Рекомендуемые"
+
+msgid "HELP"
+msgstr "ПОМОЩЬ"
+
+msgid "Hoodies"
+msgstr "Худи"
+
+msgid "IN STOCK"
+msgstr "В НАЛИЧИИ"
+
+msgid "INSPIRED BY HERITAGE"
+msgstr "ВДОХНОВЛЕНО НАСЛЕДИЕМ"
+
+msgid "IS EMPTY"
+msgstr "ПУСТА"
+
+msgid "Journal"
+msgstr "Журнал"
+
+msgid "Journal & Updates"
+msgstr "Журнал и новости"
+
+msgid "LE VAURÉ / COLLECTION"
+msgstr "LE VAURÉ / КОЛЛЕКЦИЯ"
+
+msgid "LOGIN"
+msgstr "ВОЙТИ"
+
+msgid "LOGIN TO SAVE"
+msgstr "ВОЙТИ, ЧТОБЫ СОХРАНИТЬ"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "MEMBER"
+msgstr "УЧАСТНИК"
+
+msgid "MEMBER SINCE"
+msgstr "С НАМИ С"
+
+msgid "Made to move beyond seasons."
+msgstr "Создано вне сезонов."
+
+msgid "Men"
+msgstr "Мужчинам"
+
+msgid "More than clothes."
+msgstr "Больше, чем одежда."
+
+msgid "NO PRODUCTS FOUND"
+msgstr "ТОВАРЫ НЕ НАЙДЕНЫ"
+
+msgid "NOTHING SAVED YET"
+msgstr "ПОКА НИЧЕГО НЕТ"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "OPTIONAL"
+msgstr "НЕОБЯЗАТЕЛЬНО"
+
+msgid "ORDER HISTORY"
+msgstr "ИСТОРИЯ ЗАКАЗОВ"
+
+msgid "ORDER RECEIVED"
+msgstr "ЗАКАЗ ПОЛУЧЕН"
+
+msgid "ORDER SUPPORT"
+msgstr "ПОДДЕРЖКА ЗАКАЗА"
+
+msgid "OUR STORY"
+msgstr "НАША ИСТОРИЯ"
+
+msgid "PASSWORD"
+msgstr "ПАРОЛЬ"
+
+msgid "PEOPLE"
+msgstr "ЛЮДИ"
+
+msgid "PLACE ORDER"
+msgstr "ОФОРМИТЬ ЗАКАЗ"
+
+msgid "PLACES"
+msgstr "МЕСТА"
+
+msgid "PRODUCT DETAILS"
+msgstr "О ТОВАРЕ"
+
+msgid "Price: High to Low"
+msgstr "Цена: по убыванию"
+
+msgid "Price: Low to High"
+msgstr "Цена: по возрастанию"
+
+msgid "QUALITY"
+msgstr "КАЧЕСТВО"
+
+msgid "QUANTITY"
+msgstr "КОЛИЧЕСТВО"
+
+msgid "REGISTER"
+msgstr "РЕГИСТРАЦИЯ"
+
+msgid "REMOVE"
+msgstr "УДАЛИТЬ"
+
+msgid "REMOVE FROM WISHLIST"
+msgstr "УДАЛИТЬ ИЗ ИЗБРАННОГО"
+
+msgid "SAVED ITEMS"
+msgstr "СОХРАНЁННЫЕ ТОВАРЫ"
+
+msgid "SECURE CHECKOUT"
+msgstr "БЕЗОПАСНАЯ ОПЛАТА"
+
+msgid "SHIPPING"
+msgstr "ДОСТАВКА"
+
+msgid "SHIPPING & RETURNS"
+msgstr "ДОСТАВКА И ВОЗВРАТ"
+
+msgid "SHIPPING ADDRESS"
+msgstr "АДРЕС ДОСТАВКИ"
+
+msgid "SHOP NOW"
+msgstr "КУПИТЬ СЕЙЧАС"
+
+msgid "SHOPPING BAG"
+msgstr "КОРЗИНА"
+
+msgid "SOLD OUT"
+msgstr "РАСПРОДАНО"
+
+msgid "SORT BY"
+msgstr "СОРТИРОВАТЬ"
+
+msgid "STAY IN TOUCH"
+msgstr "ОСТАВАЙТЕСЬ НА СВЯЗИ"
+
+msgid "SUBSCRIBE →"
+msgstr "ПОДПИСАТЬСЯ →"
+
+msgid "SUBTOTAL"
+msgstr "ПОДЫТОГ"
+
+msgid "SUPPORT"
+msgstr "ПОДДЕРЖКА"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search products..."
+msgstr "Поиск товаров..."
+
+msgid "Shop"
+msgstr "Магазин"
+
+msgid "Shop categories"
+msgstr "Категории магазина"
+
+msgid "T-Shirts"
+msgstr "Футболки"
+
+msgid "THE COLLECTION"
+msgstr "КОЛЛЕКЦИЯ"
+
+msgid "THE ESSENTIALS"
+msgstr "ОСНОВА"
+
+msgid "TOMORROW"
+msgstr "ЗАВТРА"
+
+msgid "TOTAL"
+msgstr "ИТОГО"
+
+msgid "Timeless"
+msgstr "Вне времени"
+
+msgid "UPDATE"
+msgstr "ОБНОВИТЬ"
+
+msgid "USERNAME"
+msgstr "ИМЯ ПОЛЬЗОВАТЕЛЯ"
+
+msgid "VIEW"
+msgstr "СМОТРЕТЬ"
+
+msgid "VIEW ALL PRODUCTS"
+msgstr "СМОТРЕТЬ ВСЕ ТОВАРЫ"
+
+msgid "VIEW CART"
+msgstr "СМОТРЕТЬ КОРЗИНУ"
+
+msgid "VIEW PRODUCT"
+msgstr "СМОТРЕТЬ ТОВАР"
+
+msgid "VISIT SHOP"
+msgstr "В МАГАЗИН"
+
+msgid "We're here to help"
+msgstr "Мы готовы помочь"
+
+msgid "Wishlist"
+msgstr "Избранное"
+
+msgid "Women"
+msgstr "Женщинам"
+
+msgid "YOUR BAG"
+msgstr "ВАША КОРЗИНА"
+
+msgid "YOUR CART"
+msgstr "ВАША КОРЗИНА"
+
+msgid "YOUR WISHLIST"
+msgstr "ИЗБРАННОЕ"
+
+msgid "Your email address"
+msgstr "Ваш e-mail"
+
+msgid "by Design"
+msgstr "по дизайну"
+
+msgid "A brand for those who see more — in places, in people, and in what comes next."
+msgstr "Бренд для тех, кто видит больше — в местах, в людях и в том, что будет дальше."
+
+msgid "ACCEPT ALL"
+msgstr "ПРИНЯТЬ ВСЕ"
+
+msgid "ADDED TO YOUR CART"
+msgstr "ДОБАВЛЕНО В КОРЗИНУ"
+
+msgid "ALL RIGHTS RESERVED."
+msgstr "ВСЕ ПРАВА ЗАЩИЩЕНЫ."
+
+msgid "ALWAYS ACTIVE"
+msgstr "ВСЕГДА АКТИВНО"
+
+msgid "ANALYTICS"
+msgstr "АНАЛИТИКА"
+
+msgid "Access password"
+msgstr "Пароль доступа"
+
+msgid "Already have a LE VAURÉ account?"
+msgstr "Уже есть аккаунт LE VAURÉ?"
+
+msgid "Be the first to know about new collections, stories, and exclusive releases."
+msgstr "Узнавайте первыми о новых коллекциях, историях и эксклюзивных релизах."
+
+msgid "CALCULATED AT CHECKOUT"
+msgstr "РАССЧИТЫВАЕТСЯ ПРИ ОФОРМЛЕНИИ"
+
+msgid "CHECKOUT →"
+msgstr "ОФОРМИТЬ →"
+
+msgid "CONFIRMED."
+msgstr "ПОДТВЕРЖДЕНО."
+
+msgid "CONTACT SUPPORT"
+msgstr "СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "COOKIE POLICY ↗"
+msgstr "ПОЛИТИКА COOKIE ↗"
+
+msgid "COOKIE SETTINGS"
+msgstr "НАСТРОЙКИ COOKIE"
+
+msgid "CUSTOMER"
+msgstr "КЛИЕНТ"
+
+msgid "Cart, account and security functions"
+msgstr "Функции корзины, аккаунта и безопасности"
+
+msgid "Close cart"
+msgstr "Закрыть корзину"
+
+msgid "Close cookie settings"
+msgstr "Закрыть настройки cookie"
+
+msgid "Close privacy message"
+msgstr "Закрыть уведомление о конфиденциальности"
+
+msgid "Cookies"
+msgstr "Файлы cookie"
+
+msgid "Create your LE VAURÉ account to continue."
+msgstr "Создайте аккаунт LE VAURÉ, чтобы продолжить."
+
+msgid "Decrease quantity"
+msgstr "Уменьшить количество"
+
+msgid "Didn't receive the code?"
+msgstr "Не получили код?"
+
+msgid "EACH"
+msgstr "ЗА ШТУКУ"
+
+msgid "ENTER THE STORE"
+msgstr "ВОЙТИ В МАГАЗИН"
+
+msgid "ESSENTIAL"
+msgstr "НЕОБХОДИМЫЕ"
+
+msgid "ESSENTIAL COOKIES"
+msgstr "НЕОБХОДИМЫЕ COOKIE"
+
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+msgid "Enter the address where your order should arrive."
+msgstr "Введите адрес, куда должен быть доставлен ваш заказ."
+
+msgid "Enter the code below to activate your LE VAURÉ account."
+msgstr "Введите код ниже, чтобы активировать аккаунт LE VAURÉ."
+
+msgid "Explore the LE VAURÉ collection and add something to your cart."
+msgstr "Откройте коллекцию LE VAURÉ и добавьте что-нибудь в корзину."
+
+msgid "IS EMPTY."
+msgstr "ПУСТА."
+
+msgid "IS TAKING SHAPE."
+msgstr "ОБРЕТАЕТ ФОРМУ."
+
+msgid "Impressum"
+msgstr "Юридическая информация"
+
+msgid "Increase quantity"
+msgstr "Увеличить количество"
+
+msgid "LE VAURÉ"
+msgstr "LE VAURÉ"
+
+msgid "LE VAURÉ / EMAIL SECURITY"
+msgstr "LE VAURÉ / EMAIL SECURITY"
+
+msgid "LE VAURÉ / MEMBER AREA"
+msgstr "LE VAURÉ / MEMBER AREA"
+
+msgid "LE VAURÉ / PRINTIFY"
+msgstr "LE VAURÉ / PRINTIFY"
+
+msgid "LE VAURÉ / SAVED"
+msgstr "LE VAURÉ / SAVED"
+
+msgid "LE VAURÉ / SECURE CHECKOUT"
+msgstr "LE VAURÉ / SECURE CHECKOUT"
+
+msgid "LE VAURÉ / YOUR BAG"
+msgstr "LE VAURÉ / YOUR BAG"
+
+msgid "LE VAURÉ MEMBER"
+msgstr "LE VAURÉ MEMBER"
+
+msgid "LE VAURÉ · ACCOUNT ACCESS"
+msgstr "LE VAURÉ · ACCOUNT ACCESS"
+
+msgid "LE VAURÉ · CREATE ACCOUNT"
+msgstr "LE VAURÉ · CREATE ACCOUNT"
+
+msgid "LOG OUT"
+msgstr "ВЫЙТИ"
+
+msgid "Login to save"
+msgstr "Войдите, чтобы сохранить"
+
+msgid "Login to use wishlist"
+msgstr "Войдите, чтобы пользоваться избранным"
+
+msgid "MARKETING"
+msgstr "МАРКЕТИНГ"
+
+msgid "MOVE YOUR OWN WAY"
+msgstr "ИДИ СВОИМ ПУТЁМ"
+
+msgid "MOVE YOUR OWN WAY."
+msgstr "ИДИ СВОИМ ПУТЁМ."
+
+msgid "MY"
+msgstr "МОЙ"
+
+msgid "Main navigation"
+msgstr "Главная навигация"
+
+msgid "More than clothes. A higher place."
+msgstr "Больше, чем одежда. Выше обычного."
+
+msgid "My Account"
+msgstr "Мой аккаунт"
+
+msgid "My account"
+msgstr "Мой аккаунт"
+
+msgid "NEED HELP?"
+msgstr "НУЖНА ПОМОЩЬ?"
+
+msgid "NO ORDERS YET."
+msgstr "ПОКА НЕТ ЗАКАЗОВ."
+
+msgid "New arrivals"
+msgstr "Новинки"
+
+msgid "New to LE VAURÉ?"
+msgstr "Впервые в LE VAURÉ?"
+
+msgid "ORDER"
+msgstr "ЗАКАЗ"
+
+msgid "ORDER CONFIRMED"
+msgstr "ЗАКАЗ ПОДТВЕРЖДЁН"
+
+msgid "ORDER NUMBER"
+msgstr "НОМЕР ЗАКАЗА"
+
+msgid "ORDER SUMMARY"
+msgstr "СВОДКА ЗАКАЗА"
+
+msgid "ORDER TOTAL"
+msgstr "ИТОГО"
+
+msgid "Order Confirmed"
+msgstr "Заказ подтверждён"
+
+msgid "PRIVACY POLICY ↗"
+msgstr "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ↗"
+
+msgid "PRIVATE ACCESS · A HIGHER PERSPECTIVE"
+msgstr "ЗАКРЫТЫЙ ДОСТУП · БОЛЕЕ ВЫСОКИЙ ВЗГЛЯД"
+
+msgid "PRODUCT"
+msgstr "ТОВАР"
+
+msgid "PURCHASES"
+msgstr "ПОКУПКИ"
+
+msgid "Privacy"
+msgstr "Конфиденциальность"
+
+msgid "Private Access"
+msgstr "Закрытый доступ"
+
+msgid "Protected order process"
+msgstr "Защищённый процесс заказа"
+
+msgid "Questions about your account or an order? Contact LE VAURÉ support."
+msgstr "Вопросы по аккаунту или заказу? Свяжитесь с поддержкой LE VAURÉ."
+
+msgid "REJECT OPTIONAL"
+msgstr "ОТКЛОНИТЬ НЕОБЯЗАТЕЛЬНЫЕ"
+
+msgid "RESEND CODE"
+msgstr "ОТПРАВИТЬ КОД СНОВА"
+
+msgid "ROOTED IN HERITAGE. BUILT FOR TOMORROW."
+msgstr "КОРНИ В НАСЛЕДИИ. СОЗДАНО ДЛЯ ЗАВТРА."
+
+msgid "Register"
+msgstr "Регистрация"
+
+msgid "Reliable delivery"
+msgstr "Надёжная доставка"
+
+msgid "SAVE CHOICES"
+msgstr "СОХРАНИТЬ ВЫБОР"
+
+msgid "SECURE"
+msgstr "БЕЗОПАСНО"
+
+msgid "SECURE VERIFICATION"
+msgstr "БЕЗОПАСНАЯ ПРОВЕРКА"
+
+msgid "SETTINGS."
+msgstr "НАСТРОЙКИ."
+
+msgid "SHIPPING TO"
+msgstr "ДОСТАВКА В"
+
+msgid "SHOP"
+msgstr "МАГАЗИН"
+
+msgid "SHOP COLLECTION"
+msgstr "СМОТРЕТЬ КОЛЛЕКЦИЮ"
+
+msgid "Save the pieces you want to come back to. Saved products stay connected to your LE VAURÉ account until you remove them."
+msgstr "Сохраняйте вещи, к которым хотите вернуться. Они останутся привязаны к вашему аккаунту LE VAURÉ, пока вы их не удалите."
+
+msgid "Shipping & returns"
+msgstr "Доставка и возврат"
+
+msgid "Shipping calculated at checkout"
+msgstr "Доставка рассчитывается при оформлении"
+
+msgid "Shop LE VAURÉ timeless fashion and elevated everyday essentials online. Refined design, secure checkout and reliable shipping."
+msgstr "Покупайте в LE VAURÉ вневременную моду и премиальные базовые вещи онлайн. Продуманный дизайн, безопасная оплата и надёжная доставка."
+
+msgid "Shopping bag"
+msgstr "Корзина"
+
+msgid "Sign in to your LE VAURÉ account."
+msgstr "Войдите в свой аккаунт LE VAURÉ."
+
+msgid "Simple return process"
+msgstr "Простой процесс возврата"
+
+msgid "TERMS ↗"
+msgstr "УСЛОВИЯ ↗"
+
+msgid "THANK YOU FOR SHOPPING WITH US"
+msgstr "СПАСИБО ЗА ПОКУПКУ"
+
+msgid "THE FIRST COLLECTION"
+msgstr "ПЕРВАЯ КОЛЛЕКЦИЯ"
+
+msgid "TOTAL BEFORE SHIPPING"
+msgstr "ИТОГО БЕЗ ДОСТАВКИ"
+
+msgid "Terms"
+msgstr "Условия"
+
+msgid "Timeless Essentials"
+msgstr "Вневременная база"
+
+msgid "Timeless essentials, considered silhouettes and pieces made for a higher perspective."
+msgstr "Вневременная база, продуманные силуэты и вещи, созданные с более высоким взглядом."
+
+msgid "Try another search or browse all products."
+msgstr "Попробуйте другой поиск или просмотрите все товары."
+
+msgid "VERIFICATION CODE"
+msgstr "КОД ПОДТВЕРЖДЕНИЯ"
+
+msgid "VERIFY"
+msgstr "ПОДТВЕРДИТЬ"
+
+msgid "VERIFY EMAIL"
+msgstr "ПОДТВЕРДИТЬ EMAIL"
+
+msgid "VIEW MY ACCOUNT"
+msgstr "ОТКРЫТЬ МОЙ АККАУНТ"
+
+msgid "Verify Email"
+msgstr "Подтвердить email"
+
+msgid "WISHLIST"
+msgstr "ИЗБРАННОЕ"
+
+msgid "We sent a 6-digit verification code to"
+msgstr "Мы отправили 6-значный код подтверждения на"
+
+msgid "We’re preparing your order now. Keep your order number for reference."
+msgstr "Мы уже готовим ваш заказ. Сохраните номер заказа."
+
+msgid "Where we can contact you about your order."
+msgstr "Контакты, по которым мы сможем связаться с вами по поводу заказа."
+
+msgid "YOUR CHOICE."
+msgstr "ВАШ ВЫБОР."
+
+msgid "YOUR EMAIL"
+msgstr "ВАШ EMAIL"
+
+msgid "YOUR PRIVACY."
+msgstr "ВАША КОНФИДЕНЦИАЛЬНОСТЬ."
+
+msgid "Your LE VAURÉ orders will appear here."
+msgstr "Ваши заказы LE VAURÉ появятся здесь."
+
+msgid "Your order has been received successfully. A confirmation email has been sent to"
+msgstr "Ваш заказ успешно получен. Письмо с подтверждением отправлено на"
+
+msgid "Your verification code expires automatically for security. If it expires, request a new code."
+msgstr "Для безопасности код подтверждения автоматически истекает. Если он истёк, запросите новый."
