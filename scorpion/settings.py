@@ -35,44 +35,60 @@ DEBUG = os.getenv("DEBUG", "1") == "1"
 # ALLOWED HOSTS
 # =========================================================
 
-ALLOWED_HOSTS = [
+# levauré.store is an internationalized domain name (IDN).
+# Browsers/DNS use its ASCII/Punycode form: xn--levaur-gva.store.
+DEFAULT_ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "[::1]",
     "southward.store",
     "www.southward.store",
     "southward-store.onrender.com",
+    ".onrender.com",
     "levaure.store",
     "www.levaure.store",
+    "xn--levaur-gva.store",
+    "www.xn--levaur-gva.store",
 ]
 
-ALLOWED_HOSTS = [
+ENV_ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv("ALLOWED_HOSTS", "").split(",")
     if host.strip()
 ]
 
-if not ALLOWED_HOSTS:
-    ALLOWED_HOSTS = DEFAULT_ALLOWED_HOSTS + [
-        "levaure.store",
-        "www.levaure.store",
-        "xn--levaur-gva.store",
-        "www.xn--levaur-gva.store",
-    ]
-
+# Merge defaults with Render/.env values instead of replacing the defaults.
+ALLOWED_HOSTS = list(
+    dict.fromkeys(DEFAULT_ALLOWED_HOSTS + ENV_ALLOWED_HOSTS)
+)
 
 # =========================================================
 # CSRF
 # =========================================================
 
-CSRF_TRUSTED_ORIGINS = [
+DEFAULT_CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://localhost:8000",
+    "https://southward.store",
+    "https://www.southward.store",
+    "https://southward-store.onrender.com",
     "https://levaure.store",
     "https://www.levaure.store",
     "https://xn--levaur-gva.store",
     "https://www.xn--levaur-gva.store",
 ]
+
+ENV_CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = list(
+    dict.fromkeys(
+        DEFAULT_CSRF_TRUSTED_ORIGINS + ENV_CSRF_TRUSTED_ORIGINS
+    )
+)
 
 CSRF_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_SAMESITE = "Lax"
@@ -263,7 +279,7 @@ LANGUAGE_COOKIE_SAMESITE = "Lax"
 # STATIC FILES
 # =========================================================
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -280,7 +296,7 @@ STATICFILES_STORAGE = (
 # MEDIA FILES
 # =========================================================
 
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -537,6 +553,35 @@ STRIPE_WEBHOOK_SECRET = os.getenv(
     "STRIPE_WEBHOOK_SECRET",
     "",
 ).strip()
+
+
+
+# =========================================================
+# LOGGING
+# =========================================================
+# Keep request errors visible in Render logs, including HTTP 500 errors.
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
+}
 
 
 # =========================================================
