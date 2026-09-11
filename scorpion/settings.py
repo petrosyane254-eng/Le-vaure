@@ -35,10 +35,15 @@ DEBUG = os.getenv("DEBUG", "1") == "1"
 # ALLOWED HOSTS
 # =========================================================
 
-DEFAULT_ALLOWED_HOSTS = [
+ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "[::1]",
+    "southward.store",
+    "www.southward.store",
+    "southward-store.onrender.com",
+    "levaure.store",
+    "www.levaure.store",
 ]
 
 ALLOWED_HOSTS = [
