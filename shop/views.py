@@ -230,19 +230,19 @@ def _send_verification_email(
     username=""
 ):
     """
-    Send account verification email through Django's configured email backend.
-
-    With the project's SMTP settings, this sends from the Gmail account configured
-    by EMAIL_HOST_USER / DEFAULT_FROM_EMAIL instead of using Resend.
+    Send LE VAURÉ verification email through Resend API.
     """
+
     recipient_email = (recipient_email or "").strip().lower()
     username = (username or "").strip()
 
     if not recipient_email:
         raise ValueError("User has no email address.")
 
+    # Verification code expiration time
     minutes = _verification_minutes()
 
+    # Render HTML email template
     html_message = render_to_string(
         "emails/verification_email.html",
         {
@@ -254,96 +254,64 @@ def _send_verification_email(
         },
     )
 
+    # Plain-text fallback
     text_message = (
         "LE VAURÉ\n\n"
         f"Welcome, {username or 'LE VAURÉ member'}.\n\n"
         f"Your email verification code is: {code}\n\n"
         f"This code expires in {minutes} minutes.\n\n"
         "If you did not create a LE VAURÉ account, "
-        "you can safely ignore this email."
-    )
-
-    from_email = (
-        getattr(settings, "DEFAULT_FROM_EMAIL", "")
-        or getattr(settings, "EMAIL_HOST_USER", "")
-    ).strip()
-
-    if not from_email:
-        raise RuntimeError(
-            "DEFAULT_FROM_EMAIL / EMAIL_HOST_USER is not configured."
-        )
-
-    email_message = EmailMultiAlternatives(
-        subject="Your LE VAURÉ verification code",
-        body=text_message,
-        from_email=from_email,
-        to=[recipient_email],
-    )
-    email_message.attach_alternative(html_message, "text/html")
-
-    sent_count = email_message.send(fail_silently=False)
-
-    if sent_count != 1:
-        raise RuntimeError(
-            f"Verification email was not sent. Django returned {sent_count}."
-        )
-
-    logger.info(
-        "LE VAURÉ verification email sent via Django email backend. recipient=%s",
-        recipient_email,
-    )
-
-    return sent_count
-
-def _send_order_confirmation_email(order):
-    if not settings.RESEND_API_KEY:
-        raise RuntimeError("RESEND_API_KEY is not configured.")
-
-    order_number = f"LV-{order.pk:06d}"
-    order_items = order.items.select_related("product").all()
-
-    html_message = render_to_string(
-        "emails/order_confirmation_email.html",
-        {
-            "order": order,
-            "order_number": order_number,
-            "items": order_items,
-            "logo_cid": "",
-        },
-    )
-
-    item_lines = [
-        f"- {item.product.name} x {item.quantity} ({item.subtotal})"
-        for item in order_items
-    ]
-
-    text_message = (
-        "LE VAURÉ\n\n"
-        f"Thank you for your order, {order.full_name}.\n\n"
-        f"Order number: {order_number}\n"
-        f"Total: {order.total}\n\n"
-        "Items:\n"
-        + "\n".join(item_lines)
-        + "\n\n"
-        "We received your order successfully and we are preparing it now.\n\n"
+        "you can safely ignore this email.\n\n"
         "LE VAURÉ\n"
         "MOVE YOUR OWN WAY."
     )
 
-    resend.api_key = settings.RESEND_API_KEY
+    # Check Resend configuration
+    resend_api_key = getattr(
+        settings,
+        "RESEND_API_KEY",
+        "",
+    ).strip()
 
+    resend_from_email = getattr(
+        settings,
+        "RESEND_FROM_EMAIL",
+        "",
+    ).strip()
+
+    if not resend_api_key:
+        raise RuntimeError(
+            "RESEND_API_KEY is not configured."
+        )
+
+    if not resend_from_email:
+        raise RuntimeError(
+            "RESEND_FROM_EMAIL is not configured."
+        )
+
+    # Configure Resend
+    resend.api_key = resend_api_key
+
+    # Send verification email
     response = resend.Emails.send(
         {
-            "from": settings.RESEND_FROM_EMAIL,
-            "to": [order.email],
-            "subject": f"LE VAURÉ Order Confirmation - {order_number}",
+            "from": resend_from_email,
+            "to": [recipient_email],
+            "subject": "Your LE VAURÉ verification code",
             "html": html_message,
             "text": text_message,
         }
     )
 
     if not response:
-        raise RuntimeError("Resend did not return a response.")
+        raise RuntimeError(
+            "Resend did not return a response."
+        )
+
+    logger.info(
+        "LE VAURÉ verification email sent via Resend. recipient=%s",
+        recipient_email,
+    )
 
     return response
 
