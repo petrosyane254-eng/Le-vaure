@@ -801,7 +801,18 @@ def product(request, slug):
     item = get_object_or_404(
         Product,
         slug=slug,
-        active=True
+        active=True,
+    )
+
+    # All gallery images uploaded from Admin Panel
+    images = (
+        item.images
+        .all()
+        .order_by(
+            "-is_primary",
+            "sort_order",
+            "id",
+        )
     )
 
     is_wishlisted = False
@@ -819,6 +830,7 @@ def product(request, slug):
         "shop/product.html",
         {
             "product": item,
+            "images": images,
             "is_wishlisted": is_wishlisted,
         },
     )
